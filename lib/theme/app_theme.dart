@@ -36,7 +36,7 @@ class MyAppTheme {
           fontSize: 20, fontWeight: FontWeight.w600, color: AppColors.kBlack),
       // title large for top headings
       titleLarge: TextStyle(
-          fontSize: 24, fontWeight: FontWeight.w600, color: AppColors.kBlack));
+          fontSize: 33, fontWeight: FontWeight.w600, color: AppColors.kBlack));
 
   static InputDecorationTheme textFieldThemeLight = InputDecorationTheme(
       border: OutlineInputBorder(
