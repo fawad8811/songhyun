@@ -23,7 +23,8 @@ class HomeAppBarWidget extends StatelessWidget {
           const Spacer(),
           Padding(
             padding: EdgeInsets.symmetric(
-                horizontal: getProportionateScreenWidth(20)),
+                horizontal: getProportionateScreenWidth(20),
+                vertical: getProportionateScreenHeight(35)),
             child: const Text(
               'OVERVIEW',
               style: TextStyle(fontSize: 14, color: AppColors.kWhite),
@@ -31,7 +32,8 @@ class HomeAppBarWidget extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.symmetric(
-                horizontal: getProportionateScreenWidth(20)),
+                horizontal: getProportionateScreenWidth(20),
+                vertical: getProportionateScreenHeight(35)),
             child: const Text(
               'INVESTMENT',
               style: TextStyle(fontSize: 14, color: AppColors.kWhite),
@@ -39,7 +41,8 @@ class HomeAppBarWidget extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.symmetric(
-                horizontal: getProportionateScreenWidth(20)),
+                horizontal: getProportionateScreenWidth(20),
+                vertical: getProportionateScreenHeight(35)),
             child: const Text(
               'PORTFOLIO',
               style: TextStyle(fontSize: 14, color: AppColors.kWhite),
@@ -47,15 +50,17 @@ class HomeAppBarWidget extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.symmetric(
-                horizontal: getProportionateScreenWidth(20)),
+                horizontal: getProportionateScreenWidth(20),
+                vertical: getProportionateScreenHeight(35)),
             child: const Text(
               'NEWS',
               style: TextStyle(fontSize: 14, color: AppColors.kWhite),
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(
-                left: getProportionateScreenWidth(20),),
+            padding: EdgeInsets.symmetric(
+                horizontal: getProportionateScreenWidth(20),
+                vertical: getProportionateScreenHeight(35)),
             child: const Text(
               'CONTACT',
               style: TextStyle(fontSize: 14, color: AppColors.kWhite),
