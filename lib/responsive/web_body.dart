@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:songhyun/generated/assets.dart';
 import 'package:songhyun/home/components/footer_continer.dart';
 import 'package:songhyun/home/components/home_text_widget.dart';
-import 'package:songhyun/responsive/mobile_body.dart';
 import 'package:songhyun/size_config.dart';
 import 'package:songhyun/theme/app_colors.dart';
 
@@ -25,8 +24,10 @@ class WebBody extends StatelessWidget {
         fit: StackFit.expand,
         children: [
           // Background Image
-
-          const RandomImageRotator(),
+          Image.asset(
+            Assets.imagesHomeBackgroundPng, // Replace with your image path
+            fit: BoxFit.cover,
+          ),
           // Column for the content
           Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -110,5 +111,53 @@ class WebBody extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+
+
+class LanguageButton extends StatefulWidget {
+  const LanguageButton({Key? key}) : super(key: key);
+
+  @override
+  _LanguageButtonState createState() => _LanguageButtonState();
+}
+
+class _LanguageButtonState extends State<LanguageButton> {
+  bool _isKorean = false;
+
+  @override
+  Widget build(BuildContext context) {
+    String buttonText = _isKorean ? '한국어' : 'ENGLISH';
+    return TextButton(
+      onPressed: _toggleLanguage,
+      style: TextButton.styleFrom(
+        backgroundColor: const Color(0xFFababa8),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          const Icon(
+            Icons.language,
+            color: AppColors.kBlack,
+          ),
+          const SizedBox(width: 10.0),
+          Text(
+            buttonText,
+            style: const TextStyle(
+              color: AppColors.kBlack,
+              fontSize: 14.0,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _toggleLanguage() {
+    setState(() {
+      _isKorean = !_isKorean;
+    });
+    // You can perform any other actions related to language change here
   }
 }

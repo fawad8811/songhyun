@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:songhyun/generated/assets.dart';
+import 'package:songhyun/responsive/web_body.dart';
 import 'package:songhyun/size_config.dart';
 import 'package:songhyun/theme/app_colors.dart';
 
@@ -36,7 +37,7 @@ class FooterContiner extends StatelessWidget {
           const SizedBox(
             width: 20,
           ),
-          Image.asset(Assets.imagesBtnKorean),
+          const LanguageButton(),
         ],
       ),
     );

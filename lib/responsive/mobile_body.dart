@@ -1,9 +1,7 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:songhyun/generated/assets.dart';
-import 'package:songhyun/home/components/footer_continer.dart';
 import 'package:songhyun/home/components/home_text_widget.dart';
+import 'package:songhyun/responsive/web_body.dart';
 import 'package:songhyun/size_config.dart';
 import 'package:songhyun/theme/app_colors.dart';
 
@@ -27,9 +25,17 @@ class _MobileScaffoldState extends State<MobileScaffold> {
   };
 
   String? _selectedMenu;
+  bool _isKorean = false; // Flag to track language state
+
+  void _toggleLanguage() {
+    setState(() {
+      _isKorean = !_isKorean;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
+    String buttonText = _isKorean ? '한국어' : 'ENGLISH';
     return Scaffold(
         key: _scaffoldKey,
         endDrawer: Drawer(
@@ -43,7 +49,10 @@ class _MobileScaffoldState extends State<MobileScaffold> {
           fit: StackFit.expand,
           children: [
             // Background Image
-            const RandomImageRotator(),
+            Image.asset(
+              Assets.imagesHomeBackgroundPng, // Replace with your image path
+              fit: BoxFit.cover,
+            ),
             // Column for the content
             Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -93,14 +102,14 @@ class _MobileScaffoldState extends State<MobileScaffold> {
               bottom: 0,
               child: Container(
                 padding: EdgeInsets.symmetric(
-                  horizontal: getProportionateScreenWidth(30),
+                  horizontal: getProportionateScreenWidth(60),
                 ),
-                height: getProportionateScreenHeight(100),
+                height: getProportionateScreenHeight(140),
                 color: Colors.transparent.withOpacity(0.5),
-                child: Row(
+                child: const Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Padding(
+                    Padding(
                       padding: EdgeInsets.all(8.0),
                       child: Text(
                         'COPYRIGHT (C) 2015 SONGHYUN INVESTMENT \n ALL RIGHTS RESERVED',
@@ -112,8 +121,8 @@ class _MobileScaffoldState extends State<MobileScaffold> {
                         textAlign: TextAlign.center,
                       ),
                     ),
-                    const Spacer(),
-                    Image.asset(Assets.imagesBtnKorean),
+                    Spacer(),
+                    LanguageButton()
                   ],
                 ),
               ),
@@ -186,54 +195,5 @@ class _MobileScaffoldState extends State<MobileScaffold> {
               print('Tapped on top-level item: $title');
             },
           );
-  }
-}
-
-class RandomImageRotator extends StatefulWidget {
-  const RandomImageRotator({super.key});
-
-  @override
-  _RandomImageRotatorState createState() => _RandomImageRotatorState();
-}
-
-class _RandomImageRotatorState extends State<RandomImageRotator> {
-  String _imageUrl = 'https://source.unsplash.com/random'; // Default URL
-  Timer? _timer;
-
-  @override
-  void initState() {
-    super.initState();
-    _timer = Timer.periodic(const Duration(seconds: 10), (Timer t) {
-      setState(() {
-        _imageUrl =
-            'https://source.unsplash.com/random'; // Update the URL to fetch a new random image
-      });
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Image.network(
-      _imageUrl,
-      fit: BoxFit.cover,
-      loadingBuilder: (BuildContext context, Widget child,
-          ImageChunkEvent? loadingProgress) {
-        if (loadingProgress == null) return child;
-        return Center(
-          child: CircularProgressIndicator(
-            value: loadingProgress.expectedTotalBytes != null
-                ? loadingProgress.cumulativeBytesLoaded /
-                    loadingProgress.expectedTotalBytes!
-                : null,
-          ),
-        );
-      },
-    );
-  }
-
-  @override
-  void dispose() {
-    _timer?.cancel();
-    super.dispose();
   }
 }
