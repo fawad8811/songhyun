@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:songhyun/generated/assets.dart';
+import 'package:songhyun/home/components/home_bottom_widget.dart';
+import 'package:songhyun/home/components/home_text_widget.dart';
 import 'package:songhyun/size_config.dart';
 import 'package:songhyun/theme/app_colors.dart';
 
@@ -40,10 +42,12 @@ class _MobileScaffoldState extends State<MobileScaffold> {
         ],
       ),
       endDrawer: Drawer(
+        // width: 200,
         backgroundColor: AppColors.kBlack.withOpacity(0.6),
         elevation: 0,
         child: const Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          // mainAxisSize: MainAxisSize.min,
           children: [
             ListTile(
               title: Text(
@@ -91,6 +95,11 @@ class _MobileScaffoldState extends State<MobileScaffold> {
               ),
             ),
           ],
+        ),
+      ),
+      body: const SingleChildScrollView(
+        child: Column(
+          children: [HomeTextWidget(), HomeBottomWidget()],
         ),
       ),
     );

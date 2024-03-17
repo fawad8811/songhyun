@@ -11,26 +11,34 @@ class HomeBottomWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      bottom: 0,
+      top: 500,
       child: Container(
-        padding: EdgeInsets.only(
-            left: getProportionateScreenWidth(150),
-            right: getProportionateScreenWidth(150)),
+        padding: EdgeInsets.symmetric(
+          horizontal: getProportionateScreenWidth(150),
+          vertical: getProportionateScreenHeight(
+              10), // Adjust vertical spacing as needed
+        ),
         width: SizeConfig.screenWidth,
-        height: getProportionateScreenHeight(70),
         color: AppColors.kBlack.withOpacity(0.6),
-        child: Row(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const Text(
               'COPYRIGHT (C) 2015 SONGHYUN INVESTMENT ALL RIGHTS RESERVED',
               style: TextStyle(fontSize: 11, color: AppColors.kWhite),
+              textAlign: TextAlign.center, // Align text in the center
             ),
-            const Spacer(),
-            Image.asset(Assets.imagesLogoFooterEng),
             SizedBox(
-              width: getProportionateScreenWidth(20),
+                height: getProportionateScreenHeight(
+                    10)), // Add some vertical spacing
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(Assets.imagesLogoFooterEng),
+                SizedBox(width: getProportionateScreenWidth(20)),
+                Image.asset(Assets.imagesBtnKorean),
+              ],
             ),
-            Image.asset(Assets.imagesBtnKorean),
           ],
         ),
       ),
