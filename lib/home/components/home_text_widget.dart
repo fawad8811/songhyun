@@ -11,25 +11,29 @@ class HomeTextWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(
-        horizontal: getProportionateScreenWidth(150),
-        vertical: getProportionateScreenHeight(150),
+        horizontal: getProportionateScreenWidth(60),
+        vertical: getProportionateScreenHeight(20),
       ),
-      child: RichText(
-        text: const TextSpan(
+      child: const SelectableText.rich(
+        TextSpan(
           style: TextStyle(color: AppColors.kWhite, fontSize: 33),
           children: <TextSpan>[
             TextSpan(
-              text: 'Evergreen Pine Hill, Songhyeon ',
-            ),
-            TextSpan(
-              text: '松峴',
+              text: "SONGHYUN('松峴', Evergreen pine hills), ",
               style: TextStyle(
                   color: Colors
                       .green), // Change the color of the Chinese words here
             ),
+            // ),
+            // TextSpan(
+            //   text: '松峴',
+            //   style: TextStyle(
+            //       color: Colors
+            //           .green), // Change the color of the Chinese words here
+            // ),
             TextSpan(
               text:
-                  ' always\npursues shared growth with invested companies with consistent investment\nprinciples.',
+                  'pursues long-term mutual growth with its portfolio companies through proven investment management principles.',
               // style: TextStyle(color: ), // Change the color of the Chinese words here
             ),
           ],

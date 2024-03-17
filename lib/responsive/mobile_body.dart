@@ -113,6 +113,7 @@ class _MobileScaffoldState extends State<MobileScaffold> {
               const Expanded(
                 child: SingleChildScrollView(
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       HomeTextWidget(),
                       FooterContiner(),

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:songhyun/generated/assets.dart';
 import 'package:songhyun/size_config.dart';
@@ -20,7 +19,7 @@ class FooterContiner extends StatelessWidget {
             : getProportionateScreenWidth(60),
       ),
       width: double.infinity,
-      height: getProportionateScreenHeight(200),
+      height: getProportionateScreenHeight(100),
       color: Colors.transparent.withOpacity(0.5),
       child: Row(
         // crossAxisAlignment: CrossAxisAlignment.center,
@@ -36,9 +35,12 @@ class FooterContiner extends StatelessWidget {
             ),
           ),
           const Spacer(),
-          isWebBody
-              ? Image.asset(Assets.imagesLogoFooterEng)
-              : const SizedBox.shrink(),
+          if (isWebBody) ...{
+            Image.asset(Assets.imagesLogoFooterEng),
+            const SizedBox(
+              width: 20,
+            )
+          },
           Image.asset(Assets.imagesBtnKorean),
         ],
       ),

@@ -11,7 +11,7 @@ class WebBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       body: Stack(
+      body: Stack(
         fit: StackFit.expand,
         children: [
           // Background Image
@@ -22,15 +22,17 @@ class WebBody extends StatelessWidget {
           // Column for the content
           Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               // AppBar
               AppBar(
+                toolbarHeight: getProportionateScreenHeight(120),
                 backgroundColor: Colors.transparent.withOpacity(0.5),
                 elevation: 0,
                 actions: [
                   Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: getProportionateScreenWidth(32),
+                    padding: EdgeInsets.only(
+                      left: getProportionateScreenWidth(60),
                     ),
                     child: Image.asset(Assets.imagesMainLogo),
                   ),
@@ -43,18 +45,18 @@ class WebBody extends StatelessWidget {
                 ],
               ),
               // Body Content
-              const Expanded(
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      HomeTextWidget(),
-                      FooterContiner(
-                        isWebBody: true,
-                      ),
-                    ],
-                  ),
-                ),
+              // const Expanded(
+              //   child: SingleChildScrollView(
+              //     child: Column(
+              //       children: [
+              const HomeTextWidget(),
+              const FooterContiner(
+                isWebBody: true,
               ),
+              //       ],
+              //     ),
+              //   ),
+              // ),
             ],
           ),
         ],
@@ -65,7 +67,7 @@ class WebBody extends StatelessWidget {
   Widget _buildAppBarButton(String title) {
     return Padding(
       padding: const EdgeInsets.symmetric(
-        horizontal: 16,
+        horizontal: 24,
       ),
       child: Text(
         title,
