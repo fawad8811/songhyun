@@ -13,11 +13,8 @@ class FooterContiner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(
-        horizontal: isWebBody
-            ? getProportionateScreenWidth(150)
-            : getProportionateScreenWidth(60),
-      ),
+      padding:
+          EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(150)),
       width: double.infinity,
       height: getProportionateScreenHeight(100),
       color: Colors.transparent.withOpacity(0.5),
@@ -25,8 +22,8 @@ class FooterContiner extends StatelessWidget {
         // crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const SizedBox(
-            // height: getProportionateScreenHeight(70),
+          const Padding(
+            padding: EdgeInsets.all(8.0),
             child: Text(
               'COPYRIGHT (C) 2015 SONGHYUN INVESTMENT ALL RIGHTS RESERVED',
               style: TextStyle(fontSize: 11, color: AppColors.kWhite),
@@ -35,12 +32,10 @@ class FooterContiner extends StatelessWidget {
             ),
           ),
           const Spacer(),
-          if (isWebBody) ...{
-            Image.asset(Assets.imagesLogoFooterEng),
-            const SizedBox(
-              width: 20,
-            )
-          },
+          Image.asset(Assets.imagesLogoFooterEng),
+          const SizedBox(
+            width: 20,
+          ),
           Image.asset(Assets.imagesBtnKorean),
         ],
       ),
