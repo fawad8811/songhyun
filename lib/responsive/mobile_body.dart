@@ -25,17 +25,9 @@ class _MobileScaffoldState extends State<MobileScaffold> {
   };
 
   String? _selectedMenu;
-  bool _isKorean = false; // Flag to track language state
-
-  void _toggleLanguage() {
-    setState(() {
-      _isKorean = !_isKorean;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
-    String buttonText = _isKorean ? '한국어' : 'ENGLISH';
     return Scaffold(
         key: _scaffoldKey,
         endDrawer: Drawer(
@@ -49,10 +41,14 @@ class _MobileScaffoldState extends State<MobileScaffold> {
           fit: StackFit.expand,
           children: [
             // Background Image
-            Image.asset(
-              Assets.imagesHomeBackgroundPng, // Replace with your image path
+            Image.network(
+              'https://cdn.pixabay.com/photo/2017/09/07/08/54/money-2724241_1280.jpg',
               fit: BoxFit.cover,
             ),
+            // Image.asset(
+            //   Assets.imagesHomeBackgroundPng, // Replace with your image path
+            //   fit: BoxFit.cover,
+            // ),
             // Column for the content
             Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -63,10 +59,23 @@ class _MobileScaffoldState extends State<MobileScaffold> {
                   elevation: 0,
                   actions: [
                     Padding(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: getProportionateScreenWidth(32),
+                      padding: EdgeInsets.only(
+                        left: getProportionateScreenWidth(60),
                       ),
-                      child: Image.asset(Assets.imagesMainLogo),
+                      child: Row(
+                        children: [
+                          Image.asset(Assets.onlyLogo2, width: 70, height: 70),
+                          const SizedBox(width: 20),
+                          const Text(
+                            'Choege Investment\n Private Limited',
+                            style: TextStyle(
+                              color: AppColors.kWhite,
+                              fontSize: 20,
+                              fontFamily: 'NotoSerifKR',
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                     const Spacer(),
                     IconButton(
@@ -104,16 +113,17 @@ class _MobileScaffoldState extends State<MobileScaffold> {
                 padding: EdgeInsets.symmetric(
                   horizontal: getProportionateScreenWidth(60),
                 ),
-                height: getProportionateScreenHeight(140),
+                height: getProportionateScreenHeight(120),
                 color: Colors.transparent.withOpacity(0.5),
-                child: const Column(
+                child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Padding(
-                      padding: EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        'COPYRIGHT (C) 2015 SONGHYUN INVESTMENT \n ALL RIGHTS RESERVED',
-                        style: TextStyle(
+                        'COPYRIGHT (C) 2024 Choege Investment \n ALL RIGHTS RESERVED'
+                            .toUpperCase(),
+                        style: const TextStyle(
                           fontSize: 11,
                           color: AppColors.kWhite,
                         ),
@@ -121,8 +131,8 @@ class _MobileScaffoldState extends State<MobileScaffold> {
                         textAlign: TextAlign.center,
                       ),
                     ),
-                    Spacer(),
-                    LanguageButton()
+                    const Spacer(),
+                    const LanguageButton()
                   ],
                 ),
               ),

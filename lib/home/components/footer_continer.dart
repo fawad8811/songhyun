@@ -5,9 +5,7 @@ import 'package:songhyun/size_config.dart';
 import 'package:songhyun/theme/app_colors.dart';
 
 class FooterContiner extends StatelessWidget {
-  final bool isWebBody;
   const FooterContiner({
-    this.isWebBody = false,
     super.key,
   });
 
@@ -23,17 +21,31 @@ class FooterContiner extends StatelessWidget {
         // crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Padding(
-            padding: EdgeInsets.all(8.0),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
             child: Text(
-              'COPYRIGHT (C) 2015 SONGHYUN INVESTMENT ALL RIGHTS RESERVED',
-              style: TextStyle(fontSize: 11, color: AppColors.kWhite),
+              'COPYRIGHT (C) 2024 Choege Investment ALL RIGHTS RESERVED'
+                  .toUpperCase(),
+              style: const TextStyle(fontSize: 11, color: AppColors.kWhite),
               maxLines: 3,
               textAlign: TextAlign.center,
             ),
           ),
           const Spacer(),
-          Image.asset(Assets.imagesLogoFooterEng),
+          Row(
+            children: [
+              Image.asset(Assets.onlyLogo2, width: 30, height: 30),
+              const SizedBox(width: 10),
+              const Text(
+                'Choege Investment\n Private Limited',
+                style: TextStyle(
+                  color: AppColors.kWhite,
+                  fontSize: 10,
+                  fontFamily: 'NotoSerifKR',
+                ),
+              ),
+            ],
+          ),
           const SizedBox(
             width: 20,
           ),

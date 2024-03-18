@@ -12,6 +12,7 @@ class AppColors {
   static const Color kTabBarTextColor = Color(0XFF595959);
   static const Color kLightGreyBTwoColor = Color(0XFF757575);
   static const Color kBidSendMessageColor = Color(0XFFE2E2E2);
+  static const Color kBrandColor = Color(0xFF01337a);
 
   static const MaterialColor primarySwatch =
       MaterialColor(_primaryColorValue, <int, Color>{

@@ -3,10 +3,14 @@ class Assets {
   Assets._();
 
   static const String imagesBtnKorean = 'assets/images/btn_korean.png';
-  static const String imagesHomeBackgroundPng = 'assets/images/home_background_png.png';
+  static const String imagesHomeBackgroundPng =
+      'assets/images/home_background_png.png';
   static const String imagesLogoFooterEng = 'assets/images/logo_footer_eng.png';
   static const String imagesMainLogo = 'assets/images/main_logo.png';
   static const String imagesMenuMobile = 'assets/images/menu_mobile.png';
   static const String imagesMenuMobileX = 'assets/images/menu_mobile_x.png';
-
+  static const String logo = 'assets/images/choege_logo.png';
+  static const String logoBgRemove = 'assets/images/choege_logo_removebg.png';
+  static const String onlyLogo = 'assets/images/only_logo.png';
+  static const String onlyLogo2 = 'assets/images/only_logo2.png';
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:songhyun/generated/assets.dart';
 import 'package:songhyun/home/components/footer_continer.dart';
 import 'package:songhyun/home/components/home_text_widget.dart';
@@ -24,10 +25,14 @@ class WebBody extends StatelessWidget {
         fit: StackFit.expand,
         children: [
           // Background Image
-          Image.asset(
-            Assets.imagesHomeBackgroundPng, // Replace with your image path
+          Image.network(
+            'https://cdn.pixabay.com/photo/2017/08/30/07/56/money-2696229_1280.jpg',
             fit: BoxFit.cover,
           ),
+          // Image.asset(
+          //   Assets.imagesHomeBackgroundPng, // Replace with your image path
+          //   fit: BoxFit.cover,
+          // ),
           // Column for the content
           Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -43,7 +48,20 @@ class WebBody extends StatelessWidget {
                     padding: EdgeInsets.only(
                       left: getProportionateScreenWidth(60),
                     ),
-                    child: Image.asset(Assets.imagesMainLogo),
+                    child: Row(
+                      children: [
+                        Image.asset(Assets.onlyLogo2, width: 70, height: 70),
+                        const SizedBox(width: 20),
+                        const Text(
+                          'Choege Investment\n Private Limited',
+                          style: TextStyle(
+                            color: AppColors.kWhite,
+                            fontSize: 20,
+                            fontFamily: 'NotoSerifKR',
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                   const Spacer(),
                   ...submenuItems.keys
@@ -59,7 +77,6 @@ class WebBody extends StatelessWidget {
               // Body Content
               const HomeTextWidget(),
               const FooterContiner(
-                isWebBody: true,
               ),
             ],
           ),
@@ -114,8 +131,6 @@ class WebBody extends StatelessWidget {
   }
 }
 
-
-
 class LanguageButton extends StatefulWidget {
   const LanguageButton({Key? key}) : super(key: key);
 
@@ -128,7 +143,7 @@ class _LanguageButtonState extends State<LanguageButton> {
 
   @override
   Widget build(BuildContext context) {
-    String buttonText = _isKorean ? '한국어' : 'ENGLISH';
+    String buttonText = _isKorean ? 'korean' : 'ENGLISH';
     return TextButton(
       onPressed: _toggleLanguage,
       style: TextButton.styleFrom(
@@ -143,7 +158,7 @@ class _LanguageButtonState extends State<LanguageButton> {
           ),
           const SizedBox(width: 10.0),
           Text(
-            buttonText,
+            buttonText.toUpperCase(),
             style: const TextStyle(
               color: AppColors.kBlack,
               fontSize: 14.0,
