@@ -17,11 +17,11 @@ class HomeTextWidget extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.all(getProportionateScreenWidth(20)),
         color: Colors.transparent.withOpacity(0.5),
-        child: const SelectableText.rich(
+        child: SelectableText.rich(
           TextSpan(
-            style: TextStyle(color: AppColors.kWhite, fontSize: 33),
+            style: const TextStyle(color: AppColors.kWhite, fontSize: 33),
             children: <TextSpan>[
-              TextSpan(
+              const TextSpan(
                 text: "Choege Investment Private Limited, ",
                 style: TextStyle(
                     color: Colors
@@ -37,7 +37,10 @@ class HomeTextWidget extends StatelessWidget {
               TextSpan(
                 text:
                     'pursues long-term mutual growth with its portfolio companies through proven investment management principles.',
-                style: TextStyle(color: AppColors.kWhite),
+                style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                  color: AppColors.kWhite,
+                  fontWeight: FontWeight.w100
+                ),
               ),
             ],
           ),
