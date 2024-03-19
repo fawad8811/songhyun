@@ -12,5 +12,4 @@ class Assets {
   static const String logo = 'assets/images/choege_logo.png';
   static const String logoBgRemove = 'assets/images/choege_logo_removebg.png';
   static const String onlyLogo = 'assets/images/only_logo.png';
-  static const String onlyLogo2 = 'assets/images/only_logo2.png';
 }

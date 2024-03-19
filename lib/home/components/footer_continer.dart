@@ -34,7 +34,7 @@ class FooterContiner extends StatelessWidget {
           const Spacer(),
           Row(
             children: [
-              Image.asset(Assets.onlyLogo2, width: 30, height: 30),
+              Image.asset(Assets.onlyLogo, width: 30, height: 30),
               const SizedBox(width: 10),
               const Text(
                 'Choege Investment\n Private Limited',
