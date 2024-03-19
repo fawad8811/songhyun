@@ -64,7 +64,7 @@ class _MobileScaffoldState extends State<MobileScaffold> {
                       ),
                       child: Row(
                         children: [
-                          Image.asset(Assets.onlyLogo, width: 70, height: 70),
+                          Image.asset(Assets.imagesOnlyLogo, width: 70, height: 70),
                           const SizedBox(width: 20),
                           const Text(
                             'Choege Investment\n Private Limited',

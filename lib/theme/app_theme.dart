@@ -11,7 +11,7 @@ class MyAppTheme {
           seedColor: AppColors.kBlack, brightness: Brightness.light),
       indicatorColor: AppColors.kBlack,
       appBarTheme: appBarThemeLight,
-      fontFamily: "LeagueSpartan",
+      fontFamily: "notos",
       textTheme: textThemeLight,
       scaffoldBackgroundColor: AppColors.kGrey,
       inputDecorationTheme: textFieldThemeLight,
