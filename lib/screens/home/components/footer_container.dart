@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:songhyun/generated/assets.dart';
-import 'package:songhyun/responsive/web_body.dart';
+import 'package:songhyun/screens/home/responsive/web_body.dart';
 import 'package:songhyun/size_config.dart';
 import 'package:songhyun/theme/app_colors.dart';
 
-class FooterContiner extends StatelessWidget {
-  const FooterContiner({
+class FooterContainer extends StatelessWidget {
+  const FooterContainer({
     super.key,
   });
 

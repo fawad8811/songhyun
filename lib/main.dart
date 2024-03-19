@@ -1,9 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:songhyun/responsive/web_body.dart';
-import 'package:songhyun/responsive/mobile_body.dart';
-import 'package:songhyun/responsive/responsive_layout.dart';
+import 'package:songhyun/screens/greetings/greetings_screen.dart';
+import 'package:songhyun/screens/home/components/custom_app_bar.dart';
+import 'package:songhyun/screens/home/components/footer_container.dart';
+import 'package:songhyun/screens/home/responsive/mobile_body.dart';
+import 'package:songhyun/screens/home/responsive/responsive_layout.dart';
+import 'package:songhyun/screens/home/responsive/web_body.dart';
 import 'package:songhyun/size_config.dart';
 import 'package:songhyun/theme/app_theme.dart';
+
+final Map<String, WidgetBuilder> routes = {
+  '/': (context) => const ResponsiveLayout(
+        mobileBody: MobileScaffold(),
+        webBody: WebBody(),
+      ),
+  '/greetings': (context) => const Scaffold(
+        appBar: CustomAppBar(),
+        body: GreetingsScreen(),
+        bottomNavigationBar: FooterContainer(),
+      ),
+};
 
 void main() {
   runApp(const MyApp());
@@ -16,10 +31,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return MaterialApp(
-      home: const ResponsiveLayout(
-        mobileBody: MobileScaffold(),
-        webBody: WebBody(),
-      ),
+      // home: const ResponsiveLayout(
+      //   mobileBody: MobileScaffold(),
+      //   webBody: WebBody(),
+      // ),
+      routes: routes,
       theme: MyAppTheme.themeDataLight,
       debugShowCheckedModeBanner: false,
     );

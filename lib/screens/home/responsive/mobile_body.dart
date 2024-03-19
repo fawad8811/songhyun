@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:songhyun/generated/assets.dart';
-import 'package:songhyun/home/components/home_text_widget.dart';
-import 'package:songhyun/responsive/web_body.dart';
+import 'package:songhyun/screens/home/components/home_text_widget.dart';
+import 'package:songhyun/screens/home/responsive/web_body.dart';
 import 'package:songhyun/size_config.dart';
 import 'package:songhyun/theme/app_colors.dart';
 
@@ -18,7 +18,7 @@ class _MobileScaffoldState extends State<MobileScaffold> {
   // Define submenu items for each top-level button
   static final Map<String, List<String>> submenuItems = {
     'OVERVIEW': ['Greeting', 'Vision', 'History', 'Team'],
-    'INVESTMENT': ['Philosophy', 'Stategy', 'Fund'],
+    'INVESTMENT': ['Philosophy', 'Strategy', 'Fund'],
     'PORTFOLIO': [],
     'NEWS': [],
     'CONTACT': [],
