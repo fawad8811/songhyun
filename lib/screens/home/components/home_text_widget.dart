@@ -27,13 +27,6 @@ class HomeTextWidget extends StatelessWidget {
                     color: Colors
                         .green), // Change the color of the Chinese words here
               ),
-              // ),
-              // TextSpan(
-              //   text: '松峴',
-              //   style: TextStyle(
-              //       color: Colors
-              //           .green), // Change the color of the Chinese words here
-              // ),
               TextSpan(
                 text:
                     'pursues long-term mutual growth with its portfolio companies through proven investment management principles.',

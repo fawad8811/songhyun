@@ -181,10 +181,7 @@ class _MobileScaffoldState extends State<MobileScaffold> {
                   fontWeight: FontWeight.normal,
                 ),
               ),
-              onTap: () {
-                // Handle subitem tap here
-                print('Tapped on subitem: $title');
-              },
+              onTap: () {},
             ),
           )
         : ListTile(
@@ -202,8 +199,6 @@ class _MobileScaffoldState extends State<MobileScaffold> {
                   _selectedMenu = title;
                 });
               }
-              // Handle top-level item tap here
-              print('Tapped on top-level item: $title');
             },
           );
   }
