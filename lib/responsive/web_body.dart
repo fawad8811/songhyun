@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:songhyun/generated/assets.dart';
 import 'package:songhyun/home/components/footer_continer.dart';
 import 'package:songhyun/home/components/home_text_widget.dart';
@@ -9,10 +8,9 @@ import 'package:songhyun/theme/app_colors.dart';
 class WebBody extends StatelessWidget {
   const WebBody({Key? key}) : super(key: key);
 
-  // Define submenu items for each top-level button
   static final Map<String, List<String>> submenuItems = {
     'OVERVIEW': ['Greeting', 'Vision', 'History', 'Team'],
-    'INVESTMENT': ['Philosophy', 'Stategy', 'Fund'],
+    'INVESTMENT': ['Philosophy', 'Strategy', 'Fund'],
     'PORTFOLIO': [],
     'NEWS': [],
     'CONTACT': [],
@@ -57,18 +55,15 @@ class WebBody extends StatelessWidget {
                           style: TextStyle(
                             color: AppColors.kWhite,
                             fontSize: 20,
-                            fontFamily: 'NotoSerifKR',
                           ),
                         ),
                       ],
                     ),
                   ),
                   const Spacer(),
-                  ...submenuItems.keys
-                      .take(2) // Limit to the first two items
-                      .map((title) => _buildSubMenuButton(title, context))
-                      .toList(),
-                  // Regular buttons for the rest of the items
+                  ...submenuItems.keys.take(2).map((title) {
+                    return _buildSubMenuButton(title, context);
+                  }).toList(),
                   for (int i = 2; i < submenuItems.length; i++)
                     _buildRegularButton(
                         submenuItems.keys.elementAt(i), context),
@@ -114,9 +109,9 @@ class WebBody extends StatelessWidget {
         }).toList();
       },
       onSelected: (value) {
-        // Perform actions based on the selected submenu item
-        print('Selected: $value');
-        // You can navigate or perform other actions based on the selected submenu item
+        ///
+        ///
+        ///
       },
       // Position the submenu at the bottom of the AppBar button
       offset: const Offset(0, 50),
@@ -135,10 +130,10 @@ class LanguageButton extends StatefulWidget {
   const LanguageButton({Key? key}) : super(key: key);
 
   @override
-  _LanguageButtonState createState() => _LanguageButtonState();
+  LanguageButtonState createState() => LanguageButtonState();
 }
 
-class _LanguageButtonState extends State<LanguageButton> {
+class LanguageButtonState extends State<LanguageButton> {
   bool _isKorean = false;
 
   @override
@@ -159,10 +154,7 @@ class _LanguageButtonState extends State<LanguageButton> {
           const SizedBox(width: 10.0),
           Text(
             buttonText.toUpperCase(),
-            style: const TextStyle(
-              color: AppColors.kBlack,
-              fontSize: 14.0,
-            ),
+            style: Theme.of(context).textTheme.bodyMedium,
           ),
         ],
       ),
@@ -173,6 +165,5 @@ class _LanguageButtonState extends State<LanguageButton> {
     setState(() {
       _isKorean = !_isKorean;
     });
-    // You can perform any other actions related to language change here
   }
 }

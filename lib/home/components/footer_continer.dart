@@ -26,7 +26,9 @@ class FooterContiner extends StatelessWidget {
             child: Text(
               'COPYRIGHT (C) 2024 Choege Investment ALL RIGHTS RESERVED'
                   .toUpperCase(),
-              style: const TextStyle(fontSize: 11, color: AppColors.kWhite),
+              style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                color: AppColors.kWhite
+              ),
               maxLines: 3,
               textAlign: TextAlign.center,
             ),
