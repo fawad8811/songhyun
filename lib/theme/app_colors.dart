@@ -13,6 +13,7 @@ class AppColors {
   static const Color kLightGreyBTwoColor = Color(0XFF757575);
   static const Color kBidSendMessageColor = Color(0XFFE2E2E2);
   static const Color kBrandColor = Color(0xFF01337a);
+  static const Color kGreenTextColor = Color(0XFF6f8f4f);
 
   static const MaterialColor primarySwatch =
       MaterialColor(_primaryColorValue, <int, Color>{

@@ -31,7 +31,7 @@ class WebBody extends StatelessWidget {
             children: [
               CustomAppBar(),
               HomeTextWidget(),
-              FooterContainer(),
+              FooterContainer(isMainScreen: true,),
             ],
           ),
         ],

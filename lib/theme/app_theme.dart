@@ -30,14 +30,17 @@ class MyAppTheme {
           fontSize: 16, fontWeight: FontWeight.w400, color: AppColors.kBlack),
       // label large for button text style
       labelMedium: TextStyle(
-          fontSize: 18, fontWeight: FontWeight.w600, color: AppColors.kBlack),
+          fontSize: 15, color: AppColors.kBlack),
       //
       labelLarge: TextStyle(
-          fontSize: 20, fontWeight: FontWeight.w600, color: AppColors.kBlack),
+          fontSize: 20, color: AppColors.kBlack),
       // title large for top headings
       titleLarge: TextStyle(
-          fontSize: 33, fontWeight: FontWeight.w600, color: AppColors.kBlack));
-
+          fontSize: 33, color: AppColors.kBlack),
+  displayLarge: TextStyle(
+    fontSize: 50
+  )
+  );
   static InputDecorationTheme textFieldThemeLight = InputDecorationTheme(
       border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(50), borderSide: BorderSide.none),

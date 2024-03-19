@@ -5,8 +5,11 @@ import 'package:songhyun/size_config.dart';
 import 'package:songhyun/theme/app_colors.dart';
 
 class FooterContainer extends StatelessWidget {
+  final bool isMainScreen;
+
   const FooterContainer({
     super.key,
+    required this.isMainScreen,
   });
 
   @override
@@ -15,10 +18,10 @@ class FooterContainer extends StatelessWidget {
       padding:
           EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(150)),
       width: double.infinity,
-      height: getProportionateScreenHeight(100),
-      color: Colors.transparent.withOpacity(0.5),
+      height: getProportionateScreenHeight(80),
+      color:
+          isMainScreen ? Colors.transparent.withOpacity(0.5) : AppColors.kWhite,
       child: Row(
-        // crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
@@ -29,7 +32,7 @@ class FooterContainer extends StatelessWidget {
               style: Theme.of(context)
                   .textTheme
                   .bodySmall
-                  ?.copyWith(color: AppColors.kWhite),
+                  ?.copyWith(color: isMainScreen? AppColors.kWhite : AppColors.kBlack),
               maxLines: 3,
               textAlign: TextAlign.center,
             ),
@@ -39,13 +42,11 @@ class FooterContainer extends StatelessWidget {
             children: [
               Image.asset(Assets.imagesOnlyLogo, width: 30, height: 30),
               const SizedBox(width: 10),
-              const Text(
+              Text(
                 'Choege Investment\n Private Limited',
-                style: TextStyle(
-                  color: AppColors.kWhite,
-                  fontSize: 10,
-                  fontFamily: 'NotoSerifKR',
-                ),
+                style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                  color: isMainScreen ? AppColors.kWhite : AppColors.kBlack
+                )
               ),
             ],
           ),

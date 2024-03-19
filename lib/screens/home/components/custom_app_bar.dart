@@ -10,7 +10,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      toolbarHeight: getProportionateScreenHeight(120),
+      centerTitle: false,
+      leading: const SizedBox.shrink(),
+      toolbarHeight: getProportionateScreenHeight(100),
       backgroundColor: Colors.transparent.withOpacity(0.5),
       elevation: 0,
       actions: [

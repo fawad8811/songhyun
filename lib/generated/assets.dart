@@ -3,6 +3,7 @@ class Assets {
   Assets._();
 
   static const String fontsNotoSansCondensedRegular = 'assets/fonts/NotoSans_Condensed-Regular.ttf';
+  static const String imagesBgTopGreeting = 'assets/images/bg_top_greeting.png';
   static const String imagesBtnKorean = 'assets/images/btn_korean.png';
   static const String imagesChoegeLogo = 'assets/images/choege_logo.png';
   static const String imagesChoegeLogoRemovebg = 'assets/images/choege_logo_removebg.png';

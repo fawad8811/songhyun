@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:songhyun/screens/greetings/greetings_screen.dart';
-import 'package:songhyun/screens/home/components/custom_app_bar.dart';
-import 'package:songhyun/screens/home/components/footer_container.dart';
 import 'package:songhyun/screens/home/responsive/mobile_body.dart';
 import 'package:songhyun/screens/home/responsive/responsive_layout.dart';
 import 'package:songhyun/screens/home/responsive/web_body.dart';
@@ -13,11 +11,11 @@ final Map<String, WidgetBuilder> routes = {
         mobileBody: MobileScaffold(),
         webBody: WebBody(),
       ),
-  '/greetings': (context) => const Scaffold(
-        appBar: CustomAppBar(),
-        body: GreetingsScreen(),
-        bottomNavigationBar: FooterContainer(),
-      ),
+  '/greetings': (context) => const GreetingsScreen()
+  // '/greetings': (context) => const Scaffold(
+  //       body: GreetingsScreen(),
+  //       bottomNavigationBar: FooterContainer(),
+  //     ),
 };
 
 void main() {
