@@ -9,6 +9,7 @@ class Assets {
   static const String imagesChoegeLogoRemovebg = 'assets/images/choege_logo_removebg.png';
   static const String imagesHomeBackgroundPng = 'assets/images/home_background_png.png';
   static const String imagesLogoFooterEng = 'assets/images/logo_footer_eng.png';
+  static const String imagesLogoLauncherIcon = 'assets/images/logo_launcher_icon.png';
   static const String imagesMainLogo = 'assets/images/main_logo.png';
   static const String imagesMenuMobile = 'assets/images/menu_mobile.png';
   static const String imagesMenuMobileX = 'assets/images/menu_mobile_x.png';
