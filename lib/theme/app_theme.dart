@@ -21,16 +21,16 @@ class MyAppTheme {
 
   static TextTheme textThemeLight = const TextTheme(
       titleSmall: TextStyle(
-          fontSize: 12, fontWeight: FontWeight.w400, color: AppColors.kBlackTextColor),
+          fontSize: 12, fontWeight: FontWeight.w400, color: AppColors.kBlack),
       // body small for hints
       bodySmall: TextStyle(
-          fontSize: 14, fontWeight: FontWeight.w400, color: AppColors.kBlackTextColor),
+          fontSize: 14, fontWeight: FontWeight.w400, color: AppColors.kBlack),
       // body medium for normal text
       bodyMedium: TextStyle(
-          fontSize: 16, fontWeight: FontWeight.w400, color: AppColors.kBlackTextColor),
-      labelMedium: TextStyle(fontSize: 15,fontWeight: FontWeight.w100, color: AppColors.kBlackTextColor),
-      labelLarge: TextStyle(fontSize: 20,fontWeight: FontWeight.w400, color: AppColors.kBlackTextColor),
-      titleLarge: TextStyle(fontSize: 50,fontWeight: FontWeight.w100, color: AppColors.kBlackTextColor),
+          fontSize: 16, fontWeight: FontWeight.w400, color: AppColors.kBlack),
+      labelMedium: TextStyle(fontSize: 15,fontWeight: FontWeight.w100, color: AppColors.kBlack),
+      labelLarge: TextStyle(fontSize: 20,fontWeight: FontWeight.w400, color: AppColors.kBlack),
+      titleLarge: TextStyle(fontSize: 50,fontWeight: FontWeight.w100, color: AppColors.kBlack),
       displayLarge: TextStyle(fontSize: 50));
   static InputDecorationTheme textFieldThemeLight = InputDecorationTheme(
       border: OutlineInputBorder(

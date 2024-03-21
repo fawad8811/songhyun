@@ -60,19 +60,21 @@ class VisionScreen extends StatelessWidget {
                           const Image(image: AssetImage(Assets.imagesVision1)),
                           Text(
                             textAlign: TextAlign.center,
-                            'Based on the philosophy of Jeong-Do\nmanagement,',
+                            'Principle-based management',
                             style: Theme.of(context)
                                 .textTheme
                                 .labelLarge
-                                ?.copyWith(color: AppColors.kGreenTextColor),
+                                ?.copyWith(
+                                    color: AppColors.kGreenTextColor,
+                                    height: 2.0),
                           ),
                           Text(
                               textAlign: TextAlign.center,
-                              'Songhyun was established through a combination of transparent management philosophy and investment\nexperience\nbased on Jeong-Do management principles .',
+                              'SongHyun was built on over 50 years of\ntransparent management philosophy of\nHanglas Group and over 40 years of\ninvestment experience.',
                               style: Theme.of(context)
                                   .textTheme
                                   .labelMedium
-                                  ?.copyWith(color: AppColors.kBlack))
+                                  ?.copyWith(color: AppColors.kBlack,height: 1.5))
                         ],
                       ),
                     ),
@@ -80,33 +82,23 @@ class VisionScreen extends StatelessWidget {
                       child: Column(
                         children: [
                           const Image(image: AssetImage(Assets.imagesVision2)),
-                          RichText(
+                          Text(
                             textAlign: TextAlign.center,
-                            text: TextSpan(
+                            'Mutual Growth',
+                            style: Theme.of(context)
+                                .textTheme
+                                .labelLarge
+                                ?.copyWith(
+                                    color: AppColors.kGreenTextColor,
+                                    height: 2.0),
+                          ),
+                          Text(
+                              textAlign: TextAlign.center,
+                              'Management team of SongHyun has helped\nover 40portfolio companies to have a successful IPO\nand achieved strong growth with its managed funds;\nThrough this, the management of Songhyun\nhas been able to return profits to all concerned parties.',
                               style: Theme.of(context)
                                   .textTheme
-                                  .titleMedium
-                                  ?.copyWith(color: AppColors.kGreenTextColor),
-                              children: [
-                                TextSpan(
-                                    text: 'Pursuing shared growth,',
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelLarge
-                                        ?.copyWith(
-                                            color: AppColors.kGreenTextColor)),
-                                TextSpan(
-                                  text:
-                                      'we have achieved shared\ngrowth by distributing the fruits to all executives and\nemployees, investors, and investment companies through\nthe\n40% IPO success rate of investment companies and the\nexcellent performance of the management association .',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .labelMedium
-                                      ?.copyWith(
-                                          color: AppColors.kBlackTextColor),
-                                ),
-                              ],
-                            ),
-                          ),
+                                  .labelMedium
+                                  ?.copyWith(color: AppColors.kBlack,height: 1.5))
                         ],
                       ),
                     ),
@@ -114,21 +106,31 @@ class VisionScreen extends StatelessWidget {
                       child: Column(
                         children: [
                           const Image(image: AssetImage(Assets.imagesVision3)),
-                          Text(
-                            textAlign: TextAlign.center,
-                            'Aiming for the Long-Run',
-                            style: Theme.of(context)
-                                .textTheme
-                                .labelLarge
-                                ?.copyWith(color: AppColors.kGreenTextColor),
-                          ),
-                          Text(
-                              textAlign: TextAlign.center,
-                              'Songhyun aims to be an investment institution that\nlooks to the future and lays the foundation for long-term\ngrowth rather than pursuing short-term profits.',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .labelMedium
-                                  ?.copyWith(color: AppColors.kBlack))
+                          SizedBox(
+                            height: getProportionateScreenHeight(190),
+                            width: getProportionateScreenWidth(380),
+                            child: Column(
+                              children: [
+                                Text(
+                                  textAlign: TextAlign.center,
+                                  'Long-term perspective Horizon',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .labelLarge
+                                      ?.copyWith(
+                                          color: AppColors.kGreenTextColor,
+                                          height: 2.0),
+                                ),
+                                Text(
+                                    textAlign: TextAlign.center,
+                                    'SongHyun aims to become a world-class investment firm\nwhich is committed to a long term investment horizon\nwhile strengthening its current growth foundation',
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .labelMedium
+                                        ?.copyWith(color: AppColors.kBlack,height: 1.5))
+                              ],
+                            ),
+                          )
                         ],
                       ),
                     ),
