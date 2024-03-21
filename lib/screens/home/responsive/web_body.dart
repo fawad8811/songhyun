@@ -21,6 +21,7 @@ class WebBody extends StatefulWidget {
 class WebBodyState extends State<WebBody> {
   late PageController _pageController;
   late List<Widget> _pages;
+  int currentIndex = 0;
 
   @override
   void initState() {
@@ -66,7 +67,6 @@ class WebBodyState extends State<WebBody> {
                   });
                 },
                 onLogoTap: () {
-                  // Handle logo tap here, for example, navigate to the home screen
                   setState(() {
                     _pageController.animateToPage(
                       0,
