@@ -129,9 +129,9 @@ class _MobileScaffoldState extends State<MobileScaffold> {
                   widget.scaffoldKey,
                 );
                 setState(() {
-                  _selectedMenu = title; // Update _selectedMenu
+                  _selectedMenu = title;
                 });
-                Navigator.pop(context); // Close the drawer
+                Navigator.pop(context);
               },
             ),
           )

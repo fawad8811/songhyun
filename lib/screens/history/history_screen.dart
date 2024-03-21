@@ -3,10 +3,10 @@ import 'package:responsive_config/responsive_config.dart';
 import 'package:songhyun/generated/assets.dart';
 import 'package:songhyun/theme/app_colors.dart';
 
-class VisionScreen extends StatelessWidget {
+class HistoryScreen extends StatelessWidget {
   final GlobalKey<ScaffoldState> scaffoldKey;
 
-  const VisionScreen({Key? key, required this.scaffoldKey}) : super(key: key);
+  const HistoryScreen({Key? key, required this.scaffoldKey}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +74,8 @@ class VisionScreen extends StatelessWidget {
                               style: Theme.of(context)
                                   .textTheme
                                   .labelMedium
-                                  ?.copyWith(color: AppColors.kBlack,height: 1.5))
+                                  ?.copyWith(
+                                      color: AppColors.kBlack, height: 1.5))
                         ],
                       ),
                     ),
@@ -98,7 +99,8 @@ class VisionScreen extends StatelessWidget {
                               style: Theme.of(context)
                                   .textTheme
                                   .labelMedium
-                                  ?.copyWith(color: AppColors.kBlack,height: 1.5))
+                                  ?.copyWith(
+                                      color: AppColors.kBlack, height: 1.5))
                         ],
                       ),
                     ),
@@ -127,7 +129,9 @@ class VisionScreen extends StatelessWidget {
                                     style: Theme.of(context)
                                         .textTheme
                                         .labelMedium
-                                        ?.copyWith(color: AppColors.kBlack,height: 1.5))
+                                        ?.copyWith(
+                                            color: AppColors.kBlack,
+                                            height: 1.5))
                               ],
                             ),
                           )

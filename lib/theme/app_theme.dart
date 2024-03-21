@@ -1,4 +1,3 @@
-
 import 'package:songhyun/utils/app_exports.dart';
 
 class MyAppTheme {
@@ -17,19 +16,34 @@ class MyAppTheme {
       elevatedButtonTheme: elevatedButtonThemeLight,
       checkboxTheme: checkboxThemeDataLight);
 
-  static TextTheme textThemeLight = const TextTheme(
+  static TextTheme textThemeLight = TextTheme(
       titleSmall: TextStyle(
-          fontSize: 12, fontWeight: FontWeight.w400, color: AppColors.kBlack),
+          fontSize: getProportionateScreenHeight(12),
+          fontWeight: FontWeight.w400,
+          color: AppColors.kBlack),
       // body small for hints
       bodySmall: TextStyle(
-          fontSize: 14, fontWeight: FontWeight.w400, color: AppColors.kBlack),
+          fontSize: getProportionateScreenHeight(14),
+          fontWeight: FontWeight.w400,
+          color: AppColors.kBlack),
       // body medium for normal text
       bodyMedium: TextStyle(
-          fontSize: 16, fontWeight: FontWeight.w400, color: AppColors.kBlack),
-      labelMedium: TextStyle(fontSize: 15,fontWeight: FontWeight.w100, color: AppColors.kBlack),
-      labelLarge: TextStyle(fontSize: 20,fontWeight: FontWeight.w400, color: AppColors.kBlack),
-      titleLarge: TextStyle(fontSize: 50,fontWeight: FontWeight.w100, color: AppColors.kBlack),
-      displayLarge: TextStyle(fontSize: 50));
+          fontSize: getProportionateScreenHeight(16),
+          fontWeight: FontWeight.w400,
+          color: AppColors.kBlack),
+      labelMedium: TextStyle(
+          fontSize: getProportionateScreenHeight(15),
+          fontWeight: FontWeight.w100,
+          color: AppColors.kBlack),
+      labelLarge: TextStyle(
+          fontSize: getProportionateScreenHeight(20),
+          fontWeight: FontWeight.w400,
+          color: AppColors.kBlack),
+      titleLarge: TextStyle(
+          fontSize: getProportionateScreenHeight(50),
+          fontWeight: FontWeight.w100,
+          color: AppColors.kBlack),
+      displayLarge: const TextStyle(fontSize: 50));
   static InputDecorationTheme textFieldThemeLight = InputDecorationTheme(
       border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(50), borderSide: BorderSide.none),
