@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:songhyun/screens/vision/vision_screen.dart';
 import 'package:songhyun/utils/app_exports.dart';
 
@@ -20,7 +21,7 @@ class WebBody extends StatefulWidget {
 class WebBodyState extends State<WebBody> {
   late PageController _pageController;
   late List<Widget> _pages;
-  int _currentPageIndex = 0; 
+  int _currentPageIndex = 0;
   @override
   void initState() {
     super.initState();

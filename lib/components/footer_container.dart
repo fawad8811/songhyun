@@ -1,4 +1,3 @@
-import 'package:responsive_config/responsive_config.dart';
 import 'package:songhyun/utils/app_exports.dart';
 
 class FooterContainer extends StatelessWidget {
@@ -21,30 +20,25 @@ class FooterContainer extends StatelessWidget {
   }
 
   Widget buildMobileFooter(BuildContext context) {
-    return Positioned(
-      left: 0,
-      right: 0,
-      bottom: 0,
-      child: Container(
-        padding: EdgeInsets.symmetric(
-          horizontal: getProportionateScreenWidth(60),
-        ),
-        height: getProportionateScreenHeight(130),
-        color: pageIndex == 0
-            ? Colors.transparent.withOpacity(0.75)
-            : AppColors.kWhite,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: buildCopyrightText(context),
-            ),
-            const Spacer(),
-            const LanguageButton(),
-            SizedBox(height: getProportionateScreenHeight(10)),
-          ],
-        ),
+    return Container(
+      padding: EdgeInsets.symmetric(
+        horizontal: getProportionateScreenWidth(60),
+      ),
+      height: getProportionateScreenHeight(130),
+      color: pageIndex == 0
+          ? Colors.transparent.withOpacity(0.75)
+          : AppColors.kWhite,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: buildCopyrightText(context),
+          ),
+          const Spacer(),
+          const LanguageButton(),
+          SizedBox(height: getProportionateScreenHeight(10)),
+        ],
       ),
     );
   }
@@ -67,7 +61,7 @@ class FooterContainer extends StatelessWidget {
           ),
           const Spacer(),
           buildLogoAndCompanyName(context, isMainScreen),
-           SizedBox(
+          SizedBox(
             width: getProportionateScreenWidth(20),
           ),
           const LanguageButton(),

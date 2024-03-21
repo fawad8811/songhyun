@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:flutter/material.dart';
 import 'package:songhyun/screens/vision/vision_screen.dart';
 import 'package:songhyun/utils/app_exports.dart';
 
@@ -54,7 +55,7 @@ class _MobileScaffoldState extends State<MobileScaffold> {
             children: [
               const HomeTextWidget(),
               GreetingsScreen(scaffoldKey: widget.scaffoldKey),
-              VisionScreen(scaffoldKey: widget.scaffoldKey),
+              VisionScreen(scaffoldKey: widget.scaffoldKey,isMobile: true,),
               // Add other screens here
             ],
           ),
@@ -73,7 +74,7 @@ class _MobileScaffoldState extends State<MobileScaffold> {
                 isMobile: true,
                 
                 pageIndex: _currentPageIndex,
-              ),
+                             ),
             ],
           ),
         ],

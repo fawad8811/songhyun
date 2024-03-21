@@ -1,3 +1,4 @@
+import 'package:songhyun/screens/widgets/page_head.dart';
 import 'package:songhyun/utils/app_exports.dart';
 
 class GreetingsScreen extends StatelessWidget {
@@ -13,30 +14,7 @@ class GreetingsScreen extends StatelessWidget {
           shrinkWrap: true,
           padding: EdgeInsets.zero,
           children: [
-            Container(
-              width: double.infinity,
-              height: getProportionateScreenHeight(450),
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage(Assets.imagesBgTopGreeting),
-                    fit: BoxFit.cover),
-              ),
-              child: Stack(
-                children: [
-                  Positioned(
-                    bottom: getProportionateScreenHeight(10),
-                    left: getProportionateScreenWidth(10),
-                    child: Text(
-                      'Greetings',
-                      style: Theme.of(context)
-                          .textTheme
-                          .displayLarge
-                          ?.copyWith(color: AppColors.kWhite),
-                    ),
-                  )
-                ],
-              ),
-            ),
+            const PageHead(title:'Greetings', image: Assets.imagesBgTopGreeting),
             Padding(
               padding: EdgeInsets.only(
                   top: getProportionateScreenHeight(50),
