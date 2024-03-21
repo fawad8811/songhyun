@@ -74,8 +74,7 @@ class VisionScreen extends StatelessWidget {
                               style: Theme.of(context)
                                   .textTheme
                                   .labelMedium
-                                  ?.copyWith(
-                                      color: AppColors.kBlack, height: 1.5))
+                                  ?.copyWith(color: AppColors.kBlack,height: 1.5))
                         ],
                       ),
                     ),
@@ -99,8 +98,7 @@ class VisionScreen extends StatelessWidget {
                               style: Theme.of(context)
                                   .textTheme
                                   .labelMedium
-                                  ?.copyWith(
-                                      color: AppColors.kBlack, height: 1.5))
+                                  ?.copyWith(color: AppColors.kBlack,height: 1.5))
                         ],
                       ),
                     ),
@@ -129,9 +127,7 @@ class VisionScreen extends StatelessWidget {
                                     style: Theme.of(context)
                                         .textTheme
                                         .labelMedium
-                                        ?.copyWith(
-                                            color: AppColors.kBlack,
-                                            height: 1.5))
+                                        ?.copyWith(color: AppColors.kBlack,height: 1.5))
                               ],
                             ),
                           )

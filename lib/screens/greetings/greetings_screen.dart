@@ -30,12 +30,12 @@ class GreetingsScreen extends StatelessWidget {
                   children: [
                     Positioned(
                       bottom: getProportionateScreenHeight(10),
-                      left: getProportionateScreenWidth(50),
+                      left: getProportionateScreenWidth(10),
                       child: Text(
                         'Greetings',
                         style: Theme.of(context)
                             .textTheme
-                            .titleLarge
+                            .displayLarge
                             ?.copyWith(color: AppColors.kWhite),
                       ),
                     )
