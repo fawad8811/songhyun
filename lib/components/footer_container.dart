@@ -1,13 +1,16 @@
+import 'package:responsive_config/responsive_config.dart';
 import 'package:songhyun/utils/app_exports.dart';
 
 class FooterContainer extends StatelessWidget {
   final bool isMainScreen;
   final bool isMobile;
+  final int? pageIndex;
 
   const FooterContainer({
     Key? key,
     this.isMainScreen = false,
     this.isMobile = false,
+    this.pageIndex,
   }) : super(key: key);
 
   @override
@@ -26,8 +29,10 @@ class FooterContainer extends StatelessWidget {
         padding: EdgeInsets.symmetric(
           horizontal: getProportionateScreenWidth(60),
         ),
-        height: getProportionateScreenHeight(120),
-        color: Colors.transparent.withOpacity(0.75),
+        height: getProportionateScreenHeight(130),
+        color: pageIndex == 0
+            ? Colors.transparent.withOpacity(0.75)
+            : AppColors.kWhite,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -50,7 +55,7 @@ class FooterContainer extends StatelessWidget {
           EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
       width: ResponsiveConfig.screenWidth,
       height: getProportionateScreenHeight(80),
-      color: isMainScreen
+      color: pageIndex == 0
           ? Colors.transparent.withOpacity(0.75)
           : AppColors.kWhite,
       child: Row(
@@ -62,8 +67,8 @@ class FooterContainer extends StatelessWidget {
           ),
           const Spacer(),
           buildLogoAndCompanyName(context, isMainScreen),
-          const SizedBox(
-            width: 20,
+           SizedBox(
+            width: getProportionateScreenWidth(20),
           ),
           const LanguageButton(),
         ],
@@ -75,8 +80,7 @@ class FooterContainer extends StatelessWidget {
     return Text(
       'COPYRIGHT (C) 2024 Choege Investment ALL RIGHTS RESERVED'.toUpperCase(),
       style: Theme.of(context).textTheme.bodySmall?.copyWith(
-            color:
-                isMainScreen || isMobile ? AppColors.kWhite : AppColors.kBlack,
+            color: pageIndex == 0 ? AppColors.kWhite : AppColors.kBlack,
           ),
       maxLines: 3,
       textAlign: TextAlign.center,
@@ -90,7 +94,7 @@ class FooterContainer extends StatelessWidget {
         const SizedBox(width: 10),
         Text('Choege Investment\n Private Limited',
             style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                color: isMainScreen ? AppColors.kWhite : AppColors.kBlack)),
+                color: pageIndex == 0 ? AppColors.kWhite : AppColors.kBlack)),
       ],
     );
   }

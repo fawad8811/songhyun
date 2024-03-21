@@ -74,7 +74,8 @@ class VisionScreen extends StatelessWidget {
                               style: Theme.of(context)
                                   .textTheme
                                   .labelMedium
-                                  ?.copyWith(color: AppColors.kBlack,height: 1.5))
+                                  ?.copyWith(
+                                      color: AppColors.kBlack, height: 1.5))
                         ],
                       ),
                     ),
@@ -98,7 +99,8 @@ class VisionScreen extends StatelessWidget {
                               style: Theme.of(context)
                                   .textTheme
                                   .labelMedium
-                                  ?.copyWith(color: AppColors.kBlack,height: 1.5))
+                                  ?.copyWith(
+                                      color: AppColors.kBlack, height: 1.5))
                         ],
                       ),
                     ),
@@ -106,37 +108,35 @@ class VisionScreen extends StatelessWidget {
                       child: Column(
                         children: [
                           const Image(image: AssetImage(Assets.imagesVision3)),
-                          SizedBox(
-                            height: getProportionateScreenHeight(190),
-                            width: getProportionateScreenWidth(380),
-                            child: Column(
-                              children: [
-                                Text(
+                          Column(
+                            children: [
+                              Text(
+                                textAlign: TextAlign.center,
+                                'Long-term perspective Horizon',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .labelLarge
+                                    ?.copyWith(
+                                        color: AppColors.kGreenTextColor,
+                                        height: 2.0),
+                              ),
+                              Text(
                                   textAlign: TextAlign.center,
-                                  'Long-term perspective Horizon',
+                                  'SongHyun aims to become a world-class investment firm\nwhich is committed to a long term investment horizon\nwhile strengthening its current growth foundation',
                                   style: Theme.of(context)
                                       .textTheme
-                                      .labelLarge
+                                      .labelMedium
                                       ?.copyWith(
-                                          color: AppColors.kGreenTextColor,
-                                          height: 2.0),
-                                ),
-                                Text(
-                                    textAlign: TextAlign.center,
-                                    'SongHyun aims to become a world-class investment firm\nwhich is committed to a long term investment horizon\nwhile strengthening its current growth foundation',
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelMedium
-                                        ?.copyWith(color: AppColors.kBlack,height: 1.5))
-                              ],
-                            ),
+                                          color: AppColors.kBlack, height: 1.5))
+                            ],
                           )
                         ],
                       ),
                     ),
                   ],
                 ),
-              )
+              ),
+              SizedBox(height: getProportionateScreenHeight(150)),
             ],
           ),
         ),

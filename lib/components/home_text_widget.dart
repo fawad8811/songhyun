@@ -21,7 +21,7 @@ class HomeTextWidget extends StatelessWidget {
         ),
         Padding(
           padding: EdgeInsets.symmetric(
-            horizontal: getProportionateScreenWidth(60),
+            horizontal: getProportionateScreenWidth(20),
             vertical: getProportionateScreenHeight(10),
           ),
           child: Center(

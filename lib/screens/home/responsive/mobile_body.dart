@@ -69,8 +69,10 @@ class _MobileScaffoldState extends State<MobileScaffold> {
                   WebBody.navigateToPage(_pageController, 0);
                 },
               ),
-              const FooterContainer(
+               FooterContainer(
                 isMobile: true,
+                
+                pageIndex: _currentPageIndex,
               ),
             ],
           ),

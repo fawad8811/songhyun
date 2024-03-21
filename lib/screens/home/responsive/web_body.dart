@@ -1,4 +1,3 @@
-
 import 'package:songhyun/screens/vision/vision_screen.dart';
 import 'package:songhyun/utils/app_exports.dart';
 
@@ -21,7 +20,7 @@ class WebBody extends StatefulWidget {
 class WebBodyState extends State<WebBody> {
   late PageController _pageController;
   late List<Widget> _pages;
-
+  int _currentPageIndex = 0; 
   @override
   void initState() {
     super.initState();
@@ -47,6 +46,11 @@ class WebBodyState extends State<WebBody> {
             physics: const NeverScrollableScrollPhysics(),
             controller: _pageController,
             itemCount: _pages.length,
+            onPageChanged: (index) {
+              setState(() {
+                _currentPageIndex = index; // Update current page index
+              });
+            },
             itemBuilder: (context, index) {
               return _pages[index];
             },
@@ -80,8 +84,9 @@ class WebBodyState extends State<WebBody> {
                       value, _pageController, widget.scaffoldKey);
                 },
               ),
-              const FooterContainer(
+              FooterContainer(
                 isMainScreen: true,
+                pageIndex: _currentPageIndex, // Pass current page index
               ),
             ],
           ),
