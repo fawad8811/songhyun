@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:songhyun/screens/greetings/greetings_screen.dart';
+import 'package:responsive_config/responsive_config.dart';
 import 'package:songhyun/screens/home/responsive/mobile_body.dart';
 import 'package:songhyun/screens/home/responsive/responsive_layout.dart';
 import 'package:songhyun/screens/home/responsive/web_body.dart';
-import 'package:songhyun/size_config.dart';
 import 'package:songhyun/theme/app_theme.dart';
 
 final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
@@ -28,7 +27,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SizeConfig().init(context);
+    ResponsiveConfig().init(context);
     return MaterialApp(
       home: ResponsiveLayout(
         mobileBody: MobileScaffold(

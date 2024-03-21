@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:songhyun/size_config.dart';
+import 'package:responsive_config/responsive_config.dart';
 import 'package:songhyun/theme/app_colors.dart';
 
 class MyAppTheme {
@@ -29,18 +29,12 @@ class MyAppTheme {
       bodyMedium: TextStyle(
           fontSize: 16, fontWeight: FontWeight.w400, color: AppColors.kBlack),
       // label large for button text style
-      labelMedium: TextStyle(
-          fontSize: 15, color: AppColors.kBlack),
+      labelMedium: TextStyle(fontSize: 15, color: AppColors.kBlack),
       //
-      labelLarge: TextStyle(
-          fontSize: 20, color: AppColors.kBlack),
+      labelLarge: TextStyle(fontSize: 20, color: AppColors.kBlack),
       // title large for top headings
-      titleLarge: TextStyle(
-          fontSize: 33, color: AppColors.kBlack),
-  displayLarge: TextStyle(
-    fontSize: 50
-  )
-  );
+      titleLarge: TextStyle(fontSize: 33, color: AppColors.kBlack),
+      displayLarge: TextStyle(fontSize: 50));
   static InputDecorationTheme textFieldThemeLight = InputDecorationTheme(
       border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(50), borderSide: BorderSide.none),
@@ -56,9 +50,9 @@ class MyAppTheme {
       ElevatedButtonThemeData(
           style: ButtonStyle(
     minimumSize: MaterialStateProperty.all(
-        Size(SizeConfig.screenWidth, getProportionateScreenHeight(52))),
+        Size(ResponsiveConfig.screenWidth, getProportionateScreenHeight(52))),
     maximumSize: MaterialStateProperty.all(
-        Size(SizeConfig.screenWidth, getProportionateScreenHeight(52))),
+        Size(ResponsiveConfig.screenWidth, getProportionateScreenHeight(52))),
     backgroundColor: MaterialStateProperty.all(AppColors.kBlack),
     foregroundColor: MaterialStateProperty.all(AppColors.kWhite),
     overlayColor: MaterialStateProperty.all(Colors.transparent),

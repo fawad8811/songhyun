@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_config/responsive_config.dart';
 import 'package:songhyun/generated/assets.dart';
-import 'package:songhyun/components/custom_app_bar.dart';
-import 'package:songhyun/components/footer_container.dart';
-import 'package:songhyun/size_config.dart';
 import 'package:songhyun/theme/app_colors.dart';
 
 class GreetingsScreen extends StatelessWidget {
@@ -24,7 +22,7 @@ class GreetingsScreen extends StatelessWidget {
             padding: EdgeInsets.zero,
             children: [
               Container(
-                width: SizeConfig.screenWidth,
+                width: double.infinity,
                 height: getProportionateScreenHeight(450),
                 decoration: const BoxDecoration(
                   image: DecorationImage(
@@ -101,7 +99,7 @@ class VisionScreen extends StatelessWidget {
             padding: EdgeInsets.zero,
             children: [
               Container(
-                width: SizeConfig.screenWidth,
+                width: double.infinity,
                 height: getProportionateScreenHeight(450),
                 decoration: const BoxDecoration(
                   image: DecorationImage(

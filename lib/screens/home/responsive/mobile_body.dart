@@ -3,9 +3,7 @@ import 'package:songhyun/components/custom_app_bar.dart';
 import 'package:songhyun/components/footer_container.dart';
 import 'package:songhyun/components/menu_map.dart';
 import 'package:songhyun/components/home_text_widget.dart';
-import 'package:songhyun/size_config.dart';
 import 'package:songhyun/theme/app_colors.dart';
-import 'package:songhyun/utils/constants.dart';
 
 class MobileScaffold extends StatefulWidget {
   final GlobalKey<ScaffoldState> scaffoldKey;

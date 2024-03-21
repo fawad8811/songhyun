@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:songhyun/size_config.dart';
+import 'package:responsive_config/responsive_config.dart';
 import 'package:songhyun/theme/app_colors.dart';
 import 'package:songhyun/theme/app_theme.dart';
 

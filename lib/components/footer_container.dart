@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_config/responsive_config.dart';
 import 'package:songhyun/components/language_button.dart';
 import 'package:songhyun/generated/assets.dart';
-import 'package:songhyun/size_config.dart';
 import 'package:songhyun/theme/app_colors.dart';
 
 class FooterContainer extends StatelessWidget {
@@ -51,7 +51,7 @@ class FooterContainer extends StatelessWidget {
     return Container(
       padding:
           EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(150)),
-      width: double.infinity,
+      width: ResponsiveConfig.screenWidth,
       height: getProportionateScreenHeight(80),
       color: isMainScreen
           ? Colors.transparent.withOpacity(0.75)
