@@ -11,9 +11,9 @@ class MyAppTheme {
           seedColor: AppColors.kBlack, brightness: Brightness.light),
       indicatorColor: AppColors.kBlack,
       appBarTheme: appBarThemeLight,
-      fontFamily: "notos",
+      fontFamily: "noto",
       textTheme: textThemeLight,
-      scaffoldBackgroundColor: AppColors.kGrey,
+      scaffoldBackgroundColor: AppColors.kMainBackgroundColor,
       inputDecorationTheme: textFieldThemeLight,
       textButtonTheme: textButtonThemeDataLight,
       elevatedButtonTheme: elevatedButtonThemeLight,
@@ -21,19 +21,16 @@ class MyAppTheme {
 
   static TextTheme textThemeLight = const TextTheme(
       titleSmall: TextStyle(
-          fontSize: 12, fontWeight: FontWeight.w400, color: AppColors.kBlack),
+          fontSize: 12, fontWeight: FontWeight.w400, color: AppColors.kBlackTextColor),
       // body small for hints
       bodySmall: TextStyle(
-          fontSize: 14, fontWeight: FontWeight.w400, color: AppColors.kBlack),
+          fontSize: 14, fontWeight: FontWeight.w400, color: AppColors.kBlackTextColor),
       // body medium for normal text
       bodyMedium: TextStyle(
-          fontSize: 16, fontWeight: FontWeight.w400, color: AppColors.kBlack),
-      // label large for button text style
-      labelMedium: TextStyle(fontSize: 15, color: AppColors.kBlack),
-      //
-      labelLarge: TextStyle(fontSize: 20, color: AppColors.kBlack),
-      // title large for top headings
-      titleLarge: TextStyle(fontSize: 33, color: AppColors.kBlack),
+          fontSize: 16, fontWeight: FontWeight.w400, color: AppColors.kBlackTextColor),
+      labelMedium: TextStyle(fontSize: 15,fontWeight: FontWeight.w100, color: AppColors.kBlackTextColor),
+      labelLarge: TextStyle(fontSize: 20,fontWeight: FontWeight.w300, color: AppColors.kBlackTextColor),
+      titleLarge: TextStyle(fontSize: 33, color: AppColors.kBlackTextColor),
       displayLarge: TextStyle(fontSize: 50));
   static InputDecorationTheme textFieldThemeLight = InputDecorationTheme(
       border: OutlineInputBorder(
@@ -66,8 +63,8 @@ class MyAppTheme {
       // fillColor: MaterialStateProperty.all(AppColors.kBlack),
       shape: const CircleBorder());
   static AppBarTheme appBarThemeLight = const AppBarTheme(
-    backgroundColor: AppColors.kGrey,
-    surfaceTintColor: AppColors.kGrey,
+    backgroundColor: AppColors.kMainBackgroundColor,
+    surfaceTintColor: AppColors.kMainBackgroundColor,
     systemOverlayStyle: SystemUiOverlayStyle(
       statusBarIconBrightness: Brightness.dark,
       statusBarColor: AppColors.kGrey,

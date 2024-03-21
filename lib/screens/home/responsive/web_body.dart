@@ -3,6 +3,8 @@ import 'package:songhyun/components/custom_app_bar.dart';
 import 'package:songhyun/components/footer_container.dart';
 import 'package:songhyun/components/home_text_widget.dart';
 import 'package:songhyun/screens/greetings/greetings_screen.dart';
+import 'package:songhyun/screens/vision/vision_screen.dart';
+import 'package:songhyun/theme/app_colors.dart';
 
 class WebBody extends StatefulWidget {
   final GlobalKey<ScaffoldState> scaffoldKey;
@@ -14,7 +16,7 @@ class WebBody extends StatefulWidget {
 
 class WebBodyState extends State<WebBody> {
   late PageController _pageController; // Add a PageController
-  late List<Widget> _pages; // List of pages
+  late List<Widget> _pages;
 
   @override
   void initState() {
@@ -33,7 +35,6 @@ class WebBodyState extends State<WebBody> {
 
   void _handleSubmenuSelected(String value) {
     if (value == 'Greeting') {
-      // Use the PageController to navigate to the Greeting screen
       _pageController.animateToPage(
         1, // Assuming GreetingsScreen is at index 1
         duration: const Duration(milliseconds: 300),
@@ -52,6 +53,7 @@ class WebBodyState extends State<WebBody> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.kMainBackgroundColor,
       body: Stack(
         children: [
           PageView.builder(

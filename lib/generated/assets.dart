@@ -2,8 +2,17 @@
 class Assets {
   Assets._();
 
-  static const String fontsNotoSansCondensedRegular = 'assets/fonts/NotoSans_Condensed-Regular.ttf';
+  static const String fontsNotoSansKRBlack = 'assets/fonts/NotoSansKR-Black.ttf';
+  static const String fontsNotoSansKRBold = 'assets/fonts/NotoSansKR-Bold.ttf';
+  static const String fontsNotoSansKRExtraBold = 'assets/fonts/NotoSansKR-ExtraBold.ttf';
+  static const String fontsNotoSansKRExtraLight = 'assets/fonts/NotoSansKR-ExtraLight.ttf';
+  static const String fontsNotoSansKRLight = 'assets/fonts/NotoSansKR-Light.ttf';
+  static const String fontsNotoSansKRMedium = 'assets/fonts/NotoSansKR-Medium.ttf';
+  static const String fontsNotoSansKRRegular = 'assets/fonts/NotoSansKR-Regular.ttf';
+  static const String fontsNotoSansKRSemiBold = 'assets/fonts/NotoSansKR-SemiBold.ttf';
+  static const String fontsNotoSansKRThin = 'assets/fonts/NotoSansKR-Thin.ttf';
   static const String imagesBgTopGreeting = 'assets/images/bg_top_greeting.png';
+  static const String imagesBgTopVision = 'assets/images/bg_top_vision.png';
   static const String imagesBtnKorean = 'assets/images/btn_korean.png';
   static const String imagesChoegeLogo = 'assets/images/choege_logo.png';
   static const String imagesChoegeLogoRemovebg = 'assets/images/choege_logo_removebg.png';
@@ -14,5 +23,8 @@ class Assets {
   static const String imagesMenuMobile = 'assets/images/menu_mobile.png';
   static const String imagesMenuMobileX = 'assets/images/menu_mobile_x.png';
   static const String imagesOnlyLogo = 'assets/images/only_logo.png';
+  static const String imagesVision1 = 'assets/images/vision_1.png';
+  static const String imagesVision2 = 'assets/images/vision_2.png';
+  static const String imagesVision3 = 'assets/images/vision_3.png';
 
 }
