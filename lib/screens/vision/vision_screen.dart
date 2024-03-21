@@ -94,7 +94,6 @@ class VisionScreen extends StatelessWidget {
                                         .textTheme
                                         .labelLarge
                                         ?.copyWith(
-                                            fontWeight: FontWeight.w300,
                                             color: AppColors.kGreenTextColor)),
                                 TextSpan(
                                   text:

@@ -29,8 +29,8 @@ class MyAppTheme {
       bodyMedium: TextStyle(
           fontSize: 16, fontWeight: FontWeight.w400, color: AppColors.kBlackTextColor),
       labelMedium: TextStyle(fontSize: 15,fontWeight: FontWeight.w100, color: AppColors.kBlackTextColor),
-      labelLarge: TextStyle(fontSize: 20,fontWeight: FontWeight.w300, color: AppColors.kBlackTextColor),
-      titleLarge: TextStyle(fontSize: 33, color: AppColors.kBlackTextColor),
+      labelLarge: TextStyle(fontSize: 20,fontWeight: FontWeight.w400, color: AppColors.kBlackTextColor),
+      titleLarge: TextStyle(fontSize: 50,fontWeight: FontWeight.w100, color: AppColors.kBlackTextColor),
       displayLarge: TextStyle(fontSize: 50));
   static InputDecorationTheme textFieldThemeLight = InputDecorationTheme(
       border: OutlineInputBorder(
