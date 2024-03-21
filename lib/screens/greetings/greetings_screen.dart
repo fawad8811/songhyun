@@ -2,6 +2,7 @@ import 'package:songhyun/utils/app_exports.dart';
 
 class GreetingsScreen extends StatelessWidget {
   final GlobalKey<ScaffoldState> scaffoldKey;
+
   const GreetingsScreen({Key? key, required this.scaffoldKey})
       : super(key: key);
 
