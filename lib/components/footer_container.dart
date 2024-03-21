@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:responsive_config/responsive_config.dart';
-import 'package:songhyun/components/language_button.dart';
-import 'package:songhyun/generated/assets.dart';
-import 'package:songhyun/theme/app_colors.dart';
+import 'package:songhyun/utils/app_exports.dart';
 
 class FooterContainer extends StatelessWidget {
   final bool isMainScreen;
@@ -50,7 +46,7 @@ class FooterContainer extends StatelessWidget {
   Widget buildDesktopFooter(BuildContext context, bool isMainScreen) {
     return Container(
       padding:
-          EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(150)),
+          EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
       width: ResponsiveConfig.screenWidth,
       height: getProportionateScreenHeight(80),
       color: isMainScreen

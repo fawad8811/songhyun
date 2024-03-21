@@ -1,15 +1,13 @@
-import 'package:flutter/material.dart';
-import 'package:responsive_config/responsive_config.dart';
-import 'package:songhyun/components/menu_map.dart';
-import 'package:songhyun/generated/assets.dart';
-import 'package:songhyun/theme/app_colors.dart';
-import 'package:songhyun/theme/app_theme.dart';
+
+
+import 'package:songhyun/utils/app_exports.dart';
 
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
   final bool isMobile;
   final GlobalKey<ScaffoldState> scaffoldKey;
   final ValueChanged<int>? onPageSelected;
   final Function(String)? onSubmenuSelected;
+  final VoidCallback? onLogoTap;
 
   const CustomAppBar({
     Key? key,
@@ -17,6 +15,7 @@ class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
     this.onPageSelected,
     this.onSubmenuSelected,
     this.isMobile = false,
+    this.onLogoTap,
   }) : super(key: key);
 
   @override
@@ -36,21 +35,29 @@ class _CustomAppBarState extends State<CustomAppBar> {
       backgroundColor: Colors.transparent.withOpacity(0.75),
       elevation: 0,
       actions: [
-        Padding(
-          padding: EdgeInsets.only(
-            left: getProportionateScreenWidth(60),
-          ),
-          child: Row(
-            children: [
-              Image.asset(Assets.imagesOnlyLogo, width: 50, height: 50),
-              const SizedBox(width: 20),
-              Text(
-                'Choege Investment\n Private Limited',
-                style: MyAppTheme.textThemeLight.labelLarge!.copyWith(
-                  color: AppColors.kWhite,
-                ),
+        MouseRegion(
+          cursor: SystemMouseCursors.click,
+          child: GestureDetector(
+            onTap: () {
+              widget.onLogoTap?.call();
+            },
+            child: Padding(
+              padding: EdgeInsets.only(
+                left: getProportionateScreenWidth(20),
               ),
-            ],
+              child: Row(
+                children: [
+                  Image.asset(Assets.imagesOnlyLogo, width: 50, height: 50),
+                  const SizedBox(width: 20),
+                  Text(
+                    'Choege Investment\n Private Limited',
+                    style: MyAppTheme.textThemeLight.labelLarge!.copyWith(
+                      color: AppColors.kWhite,
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ),
         ),
         if (widget.isMobile) ...{
