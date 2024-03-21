@@ -1,8 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:songhyun/components/custom_app_bar.dart';
-import 'package:songhyun/components/footer_container.dart';
-import 'package:songhyun/components/home_text_widget.dart';
-import 'package:songhyun/screens/greetings/greetings_screen.dart';
+
+import 'package:songhyun/utils/app_exports.dart';
 
 class WebBody extends StatefulWidget {
   final GlobalKey<ScaffoldState> scaffoldKey;
@@ -10,16 +7,24 @@ class WebBody extends StatefulWidget {
 
   @override
   WebBodyState createState() => WebBodyState();
+
+  static void navigateToPage(PageController pageController, int index) {
+    pageController.animateToPage(
+      index,
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.easeInOut,
+    );
+  }
 }
 
 class WebBodyState extends State<WebBody> {
-  late PageController _pageController; // Add a PageController
-  late List<Widget> _pages; // List of pages
+  late PageController _pageController;
+  late List<Widget> _pages;
 
   @override
   void initState() {
     super.initState();
-    _pageController = PageController(); // Initialize the PageController
+    _pageController = PageController();
     _pages = [
       const HomeTextWidget(),
       GreetingsScreen(
@@ -31,30 +36,13 @@ class WebBodyState extends State<WebBody> {
     ];
   }
 
-  void _handleSubmenuSelected(String value) {
-    if (value == 'Greeting') {
-      // Use the PageController to navigate to the Greeting screen
-      _pageController.animateToPage(
-        1, // Assuming GreetingsScreen is at index 1
-        duration: const Duration(milliseconds: 300),
-        curve: Curves.easeInOut,
-      );
-    } else if (value == 'Vision') {
-      // Use the PageController to navigate to the Vision screen
-      _pageController.animateToPage(
-        2, // Assuming VisionScreen is at index 2
-        duration: const Duration(milliseconds: 300),
-        curve: Curves.easeInOut,
-      );
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
         children: [
           PageView.builder(
+            physics: const NeverScrollableScrollPhysics(),
             controller: _pageController,
             itemCount: _pages.length,
             itemBuilder: (context, index) {
@@ -68,15 +56,27 @@ class WebBodyState extends State<WebBody> {
               CustomAppBar(
                 scaffoldKey: widget.scaffoldKey,
                 onPageSelected: (index) {
-                  // Change the page when a menu item is selected
                   setState(() {
-                    // Ensure index is within bounds of _pages list
                     if (index >= 0 && index < _pages.length) {
-                      _pages[index] = _getPageByIndex(index);
+                      _pages[index] = MyNavigation.getPageByIndex(
+                          index, widget.scaffoldKey);
                     }
                   });
                 },
-                onSubmenuSelected: _handleSubmenuSelected,
+                onLogoTap: () {
+                  // Handle logo tap here, for example, navigate to the home screen
+                  setState(() {
+                    _pageController.animateToPage(
+                      0,
+                      duration: const Duration(milliseconds: 300),
+                      curve: Curves.easeInOut,
+                    );
+                  });
+                },
+                onSubmenuSelected: (value) {
+                  MyNavigation.handleSubmenuSelected(
+                      value, _pageController, widget.scaffoldKey);
+                },
               ),
               const FooterContainer(
                 isMainScreen: true,
@@ -87,211 +87,41 @@ class WebBodyState extends State<WebBody> {
       ),
     );
   }
+}
 
-  Widget _getPageByIndex(int index) {
+class MyNavigation {
+  static Widget getPageByIndex(
+      int index, GlobalKey<ScaffoldState> scaffoldKey) {
     switch (index) {
       case 0:
         return const HomeTextWidget();
       case 1:
         return GreetingsScreen(
-          scaffoldKey: widget.scaffoldKey,
+          scaffoldKey: scaffoldKey,
         );
       case 2:
         return VisionScreen(
-          scaffoldKey: widget.scaffoldKey,
+          scaffoldKey: scaffoldKey,
         );
-      // Add other cases for additional screens
       default:
         return Container();
     }
   }
+
+  static void handleSubmenuSelected(String value, PageController pageController,
+      GlobalKey<ScaffoldState> scaffoldKey) {
+    if (value == 'Greeting') {
+      _navigateToPage(pageController, 1);
+    } else if (value == 'Vision') {
+      _navigateToPage(pageController, 2);
+    }
+  }
+
+  static void _navigateToPage(PageController pageController, int index) {
+    pageController.animateToPage(
+      index,
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.easeInOut,
+    );
+  }
 }
-
-// class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
-//   final bool isMobile;
-//   final GlobalKey<ScaffoldState> scaffoldKey;
-//   final ValueChanged<int>? onPageSelected;
-//   final Function(String)? onSubmenuSelected;
-
-//   const CustomAppBar({
-//     Key? key,
-//     required this.scaffoldKey,
-//     this.onPageSelected,
-//     this.onSubmenuSelected,
-//     this.isMobile = false,
-//   }) : super(key: key);
-
-//   @override
-//   State<CustomAppBar> createState() => _CustomAppBarState();
-
-//   @override
-//   Size get preferredSize => const Size.fromHeight(120);
-// }
-
-// class _CustomAppBarState extends State<CustomAppBar> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return AppBar(
-//       centerTitle: false,
-//       leading: const SizedBox.shrink(),
-//       toolbarHeight: getProportionateScreenHeight(100),
-//       backgroundColor: Colors.transparent.withOpacity(0.75),
-//       elevation: 0,
-//       actions: [
-//         Padding(
-//           padding: EdgeInsets.only(
-//             left: getProportionateScreenWidth(60),
-//           ),
-//           child: Row(
-//             children: [
-//               Image.asset(Assets.imagesOnlyLogo, width: 50, height: 50),
-//               const SizedBox(width: 20),
-//               Text(
-//                 'Choege Investment\n Private Limited',
-//                 style: MyAppTheme.textThemeLight.labelLarge!.copyWith(
-//                   color: AppColors.kWhite,
-//                 ),
-//               ),
-//             ],
-//           ),
-//         ),
-//         if (widget.isMobile) ...{
-//           const Spacer(),
-//           IconButton(
-//             icon: const Icon(
-//               Icons.menu,
-//               color: AppColors.kWhite,
-//             ),
-//             onPressed: () {
-//               // Open the end drawer when the menu icon is pressed
-//               widget.scaffoldKey.currentState!.openEndDrawer();
-//             },
-//           ),
-//         } else ...{
-//           const Spacer(),
-//           ...MenuMap.submenuItems.keys.take(2).map((title) {
-//             return _buildSubMenuButton(title, context);
-//           }).toList(),
-//           for (int i = 2; i < MenuMap.submenuItems.length; i++)
-//             _buildRegularButton(
-//                 MenuMap.submenuItems.keys.elementAt(i), context),
-//         }
-//       ],
-//     );
-//   }
-
-//   Widget _buildSubMenuButton(String title, BuildContext context) {
-//     return _buildAppBarButton(title, context, true);
-//   }
-
-//   Widget _buildRegularButton(String title, BuildContext context) {
-//     return _buildAppBarButton(title, context, false);
-//   }
-
-//   PopupMenuButton<String> _buildAppBarButton(
-//       String title, BuildContext context, bool isSubMenu) {
-//     return PopupMenuButton<String>(
-//       tooltip: '',
-//       color: isSubMenu ? Colors.transparent.withOpacity(0.2) : null,
-//       itemBuilder: (context) {
-//         return MenuMap.submenuItems[title]!.map((item) {
-//           return PopupMenuItem<String>(
-//             height: 30,
-//             value: item,
-//             child: Text(
-//               item.toUpperCase(),
-//               style: MyAppTheme.textThemeLight.bodySmall!.copyWith(
-//                 color: AppColors.kWhite,
-//               ),
-//             ),
-//           );
-//         }).toList();
-//       },
-//       onSelected: (String result) {
-//         widget.onSubmenuSelected?.call(result);
-//         // Navigator.pop(context); // Close the first menu
-//       },
-//       offset: const Offset(0, 50),
-//       child: Padding(
-//         padding: const EdgeInsets.symmetric(horizontal: 24),
-//         child: Text(
-//           title,
-//           style: const TextStyle(fontSize: 14, color: AppColors.kWhite),
-//         ),
-//       ),
-//     );
-//   }
-// }
-
-// class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
-//   final GlobalKey<ScaffoldState> scaffoldKey;
-//   final ValueChanged<int>? onPageSelected;
-//   final Function(String)? onSubmenuSelected;
-
-//   const CustomAppBar({
-//     Key? key,
-//     required this.scaffoldKey,
-//     this.onPageSelected,
-//     this.onSubmenuSelected,
-//   }) : super(key: key);
-
-//   @override
-//   CustomAppBarState createState() => CustomAppBarState();
-
-//   @override
-//   Size get preferredSize => const Size.fromHeight(120);
-// }
-
-// class CustomAppBarState extends State<CustomAppBar> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return AppBar(
-//       centerTitle: false,
-//       leading: const SizedBox.shrink(),
-//       toolbarHeight: getProportionateScreenHeight(100),
-//       backgroundColor: Colors.transparent.withOpacity(0.75),
-//       elevation: 0,
-//       actions: [
-//         Padding(
-//           padding: EdgeInsets.only(
-//             left: getProportionateScreenWidth(60),
-//           ),
-//           child: Row(
-//             children: [
-//               Image.asset(Assets.imagesOnlyLogo, width: 50, height: 50),
-//               const SizedBox(width: 20),
-//               Text(
-//                 'Choege Investment\n Private Limited',
-//                 style: MyAppTheme.textThemeLight.labelLarge!.copyWith(
-//                   color: AppColors.kWhite,
-//                 ),
-//               ),
-//             ],
-//           ),
-//         ),
-//         PopupMenuButton(
-//           child: const Text('MENU'),
-//           itemBuilder: (BuildContext context) =>
-//               MenuMap.submenuItems.keys.map((title) {
-//             return PopupMenuItem(
-//               child: PopupMenuButton(
-//                 child: Text(title),
-//                 onSelected: (String result) {
-//                   widget.onSubmenuSelected?.call(result);
-//                   Navigator.pop(context); // Close the first menu
-//                 },
-//                 itemBuilder: (BuildContext context) =>
-//                     MenuMap.submenuItems[title]!.map((String submenuItem) {
-//                   return PopupMenuItem<String>(
-//                     value: submenuItem,
-//                     child: Text(submenuItem),
-//                   );
-//                 }).toList(),
-//               ),
-//             );
-//           }).toList(),
-//         ),
-//       ],
-//     );
-//   }
-// }

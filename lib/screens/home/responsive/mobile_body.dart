@@ -1,12 +1,10 @@
-import 'package:flutter/material.dart';
-import 'package:songhyun/components/custom_app_bar.dart';
-import 'package:songhyun/components/footer_container.dart';
-import 'package:songhyun/components/menu_map.dart';
-import 'package:songhyun/components/home_text_widget.dart';
-import 'package:songhyun/theme/app_colors.dart';
+import 'dart:developer';
+
+import 'package:songhyun/utils/app_exports.dart';
 
 class MobileScaffold extends StatefulWidget {
   final GlobalKey<ScaffoldState> scaffoldKey;
+
   const MobileScaffold({Key? key, required this.scaffoldKey}) : super(key: key);
 
   @override
@@ -14,38 +12,70 @@ class MobileScaffold extends StatefulWidget {
 }
 
 class _MobileScaffoldState extends State<MobileScaffold> {
-  String? _selectedMenu;
+  late PageController _pageController;
+  int _currentPageIndex = 0;
+  String? _selectedMenu; // Define _selectedMenu here
+
+  @override
+  void initState() {
+    super.initState();
+    _pageController = PageController(initialPage: _currentPageIndex);
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        key: widget.scaffoldKey,
-        endDrawer: Drawer(
-          backgroundColor: Colors.transparent.withOpacity(0.5),
-          elevation: 0,
-          child: ListView(
-            children: _buildMenuItems(),
-          ),
+      key: widget.scaffoldKey,
+      endDrawer: Drawer(
+        backgroundColor: Colors.transparent.withOpacity(0.5),
+        elevation: 0,
+        child: ListView(
+          children: _buildMenuItems(),
         ),
-        body: Stack(
-          fit: StackFit.expand,
-          children: [
-            const HomeTextWidget(),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                CustomAppBar(
-                  isMobile: true,
-                  scaffoldKey: widget.scaffoldKey,
-                ),
-                const FooterContainer(
-                  isMobile: true,
-                ),
-              ],
-            ),
-          ],
-        ));
+      ),
+      body: Stack(
+        fit: StackFit.expand,
+        children: [
+          PageView(
+            physics: const NeverScrollableScrollPhysics(),
+            controller: _pageController,
+            onPageChanged: (index) {
+              setState(() {
+                _currentPageIndex = index;
+              });
+            },
+            children: [
+              const HomeTextWidget(),
+              GreetingsScreen(scaffoldKey: widget.scaffoldKey),
+              VisionScreen(scaffoldKey: widget.scaffoldKey),
+              // Add other screens here
+            ],
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              CustomAppBar(
+                isMobile: true,
+                scaffoldKey: widget.scaffoldKey,
+                onLogoTap: () {
+                  WebBody.navigateToPage(_pageController, 0);
+                },
+              ),
+              const FooterContainer(
+                isMobile: true,
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
   }
 
   List<Widget> _buildMenuItems() {
@@ -75,8 +105,8 @@ class _MobileScaffoldState extends State<MobileScaffold> {
             decoration: BoxDecoration(
               color: Colors.transparent.withOpacity(0.2),
               border: Border.all(
-                  color: const Color.fromARGB(255, 167, 167, 167)
-                      .withOpacity(1)), // Adjust color and width as needed
+                color: const Color.fromARGB(255, 167, 167, 167).withOpacity(1),
+              ), // Adjust color and width as needed
             ),
             child: ListTile(
               title: Text(
@@ -88,16 +118,28 @@ class _MobileScaffoldState extends State<MobileScaffold> {
                 ),
               ),
               onTap: () {
-                
+                log('Subitem tapped: $title');
+                // Handle subitem tap, you can replace this with navigation logic
+                MyNavigation.handleSubmenuSelected(
+                  title,
+                  _pageController,
+                  widget.scaffoldKey,
+                );
+                setState(() {
+                  _selectedMenu = title; // Update _selectedMenu
+                });
+                Navigator.pop(context); // Close the drawer
               },
             ),
           )
         : ListTile(
             title: Text(
               title,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 14,
-                color: AppColors.kWhite,
+                color: _selectedMenu == title
+                    ? AppColors.kWhite // Highlight selected menu item
+                    : Colors.white, // Default color
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -106,6 +148,13 @@ class _MobileScaffoldState extends State<MobileScaffold> {
                 setState(() {
                   _selectedMenu = title;
                 });
+                // Handle main item tap, you can replace this with navigation logic
+                MyNavigation.handleSubmenuSelected(
+                  title,
+                  _pageController,
+                  widget.scaffoldKey,
+                );
+                // Navigator.pop(context); // Close the drawer
               }
             },
           );

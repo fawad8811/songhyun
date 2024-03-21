@@ -1,9 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:responsive_config/responsive_config.dart';
-import 'package:songhyun/screens/home/responsive/mobile_body.dart';
-import 'package:songhyun/screens/home/responsive/responsive_layout.dart';
-import 'package:songhyun/screens/home/responsive/web_body.dart';
-import 'package:songhyun/theme/app_theme.dart';
+
+import 'package:songhyun/utils/app_exports.dart';
 
 final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 // final Map<String, WidgetBuilder> routes = {

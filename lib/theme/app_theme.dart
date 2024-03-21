@@ -1,7 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:responsive_config/responsive_config.dart';
-import 'package:songhyun/theme/app_colors.dart';
+
+import 'package:songhyun/utils/app_exports.dart';
 
 class MyAppTheme {
   static ThemeData themeDataLight = ThemeData(
