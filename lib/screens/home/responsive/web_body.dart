@@ -1,8 +1,10 @@
+import 'package:songhyun/screens/history/history_screen.dart';
 import 'package:songhyun/screens/vision/vision_screen.dart';
 import 'package:songhyun/utils/app_exports.dart';
 
 class WebBody extends StatefulWidget {
   final GlobalKey<ScaffoldState> scaffoldKey;
+
   const WebBody({Key? key, required this.scaffoldKey}) : super(key: key);
 
   @override
@@ -20,7 +22,8 @@ class WebBody extends StatefulWidget {
 class WebBodyState extends State<WebBody> {
   late PageController _pageController;
   late List<Widget> _pages;
-  int _currentPageIndex = 0; 
+  int _currentPageIndex = 0;
+
   @override
   void initState() {
     super.initState();
@@ -33,6 +36,7 @@ class WebBodyState extends State<WebBody> {
       VisionScreen(
         scaffoldKey: widget.scaffoldKey,
       ),
+      HistoryScreen(scaffoldKey: widget.scaffoldKey)
     ];
   }
 
@@ -48,7 +52,7 @@ class WebBodyState extends State<WebBody> {
             itemCount: _pages.length,
             onPageChanged: (index) {
               setState(() {
-                _currentPageIndex = index; // Update current page index
+                _currentPageIndex = index;
               });
             },
             itemBuilder: (context, index) {
@@ -70,7 +74,6 @@ class WebBodyState extends State<WebBody> {
                   });
                 },
                 onLogoTap: () {
-                  // Handle logo tap here, for example, navigate to the home screen
                   setState(() {
                     _pageController.animateToPage(
                       0,
@@ -110,6 +113,8 @@ class MyNavigation {
         return VisionScreen(
           scaffoldKey: scaffoldKey,
         );
+      case 3:
+        return HistoryScreen(scaffoldKey: scaffoldKey);
       default:
         return Container();
     }
@@ -121,6 +126,8 @@ class MyNavigation {
       _navigateToPage(pageController, 1);
     } else if (value == 'Vision') {
       _navigateToPage(pageController, 2);
+    } else if(value == 'History'){
+      _navigateToPage(pageController, 3);
     }
   }
 

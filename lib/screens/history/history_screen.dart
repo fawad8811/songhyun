@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_config/responsive_config.dart';
 import 'package:songhyun/generated/assets.dart';
+import 'package:songhyun/screens/history/components/time_line_widget.dart';
 import 'package:songhyun/theme/app_colors.dart';
 
 class HistoryScreen extends StatelessWidget {
@@ -36,111 +37,78 @@ class HistoryScreen extends StatelessWidget {
                       bottom: getProportionateScreenHeight(10),
                       left: getProportionateScreenWidth(50),
                       child: Text(
-                        'Vision',
+                        'History',
                         style: Theme.of(context)
                             .textTheme
-                            .displayLarge
+                            .titleLarge
                             ?.copyWith(color: AppColors.kWhite),
                       ),
                     )
                   ],
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.only(
-                  left: getProportionateScreenWidth(40),
-                  right: getProportionateScreenWidth(40),
-                ),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Expanded(
-                      child: Column(
-                        children: [
-                          const Image(image: AssetImage(Assets.imagesVision1)),
-                          Text(
-                            textAlign: TextAlign.center,
-                            'Principle-based management',
-                            style: Theme.of(context)
-                                .textTheme
-                                .labelLarge
-                                ?.copyWith(
-                                    color: AppColors.kGreenTextColor,
-                                    height: 2.0),
-                          ),
-                          Text(
-                              textAlign: TextAlign.center,
-                              'SongHyun was built on over 50 years of\ntransparent management philosophy of\nHanglas Group and over 40 years of\ninvestment experience.',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .labelMedium
-                                  ?.copyWith(
-                                      color: AppColors.kBlack, height: 1.5))
-                        ],
-                      ),
-                    ),
-                    Expanded(
-                      child: Column(
-                        children: [
-                          const Image(image: AssetImage(Assets.imagesVision2)),
-                          Text(
-                            textAlign: TextAlign.center,
-                            'Mutual Growth',
-                            style: Theme.of(context)
-                                .textTheme
-                                .labelLarge
-                                ?.copyWith(
-                                    color: AppColors.kGreenTextColor,
-                                    height: 2.0),
-                          ),
-                          Text(
-                              textAlign: TextAlign.center,
-                              'Management team of SongHyun has helped\nover 40portfolio companies to have a successful IPO\nand achieved strong growth with its managed funds;\nThrough this, the management of Songhyun\nhas been able to return profits to all concerned parties.',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .labelMedium
-                                  ?.copyWith(
-                                      color: AppColors.kBlack, height: 1.5))
-                        ],
-                      ),
-                    ),
-                    Expanded(
-                      child: Column(
-                        children: [
-                          const Image(image: AssetImage(Assets.imagesVision3)),
-                          SizedBox(
-                            height: getProportionateScreenHeight(190),
-                            width: getProportionateScreenWidth(380),
-                            child: Column(
-                              children: [
-                                Text(
-                                  textAlign: TextAlign.center,
-                                  'Long-term perspective Horizon',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .labelLarge
-                                      ?.copyWith(
-                                          color: AppColors.kGreenTextColor,
-                                          height: 2.0),
-                                ),
-                                Text(
-                                    textAlign: TextAlign.center,
-                                    'SongHyun aims to become a world-class investment firm\nwhich is committed to a long term investment horizon\nwhile strengthening its current growth foundation',
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelMedium
-                                        ?.copyWith(
-                                            color: AppColors.kBlack,
-                                            height: 1.5))
-                              ],
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              )
+              const Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  TimelineItem(
+                    dates: ['2012. 05.', '06.'],
+                    descriptions: [
+                      'Establish SongHyun Investment (Paid in Capital KRW 20bn)',
+                      'Register as Venture Capital (SMBA)',
+                    ],
+                  ),
+                  TimelineItem(
+                    dates: ['2013. 08.'],
+                    descriptions: [
+                      'Raise ‘ SongHyun Growth Ladder the 1st Fund’ (KRW 30bn)'
+                    ],
+                  ),
+                  TimelineItem(
+                    dates: ['2014. 09.', '11.	', '12. ', '13. '],
+                    descriptions: [
+                      'Raise ‘SongHyun Young Entrepreneur the 1st Fund’ (KRW 24bn)',
+                      'Raise ‘2014 SongHyun Growth Ladder 2nd Start-up Fund’ (KRW 16.5bn)',
+                      'Raise ‘Keystone-SongHyun Value Creation PEF Fund’ (KRW 155bn)',
+                      'Acquire institutional investor rating ‘A’ from SMBA',
+                    ],
+                  ),
+                  TimelineItem(
+                    dates: ['2012. 05.', '06.'],
+                    descriptions: [
+                      'Establish SongHyun Investment (Paid in Capital KRW 20bn)',
+                      'Register as Venture Capital (SMBA)',
+                    ],
+                  ),
+                  TimelineItem(
+                    dates: ['2012. 05.', '06.'],
+                    descriptions: [
+                      'Establish SongHyun Investment (Paid in Capital KRW 20bn)',
+                      'Register as Venture Capital (SMBA)',
+                    ],
+                  ),
+                  TimelineItem(
+                    dates: ['2012. 05.', '06.'],
+                    descriptions: [
+                      'Establish SongHyun Investment (Paid in Capital KRW 20bn)',
+                      'Register as Venture Capital (SMBA)',
+                    ],
+                  ),
+                  TimelineItem(
+                    dates: ['2012. 05.', '06.'],
+                    descriptions: [
+                      'Establish SongHyun Investment (Paid in Capital KRW 20bn)',
+                      'Register as Venture Capital (SMBA)',
+                    ],
+                  ),
+                  TimelineItem(
+                    dates: ['2012. 05.', '06.'],
+                    descriptions: [
+                      'Establish SongHyun Investment (Paid in Capital KRW 20bn)',
+                      'Register as Venture Capital (SMBA)',
+                    ],
+                  ),
+                ],
+              ),
             ],
           ),
         ),

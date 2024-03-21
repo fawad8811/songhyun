@@ -39,7 +39,7 @@ class VisionScreen extends StatelessWidget {
                         'Vision',
                         style: Theme.of(context)
                             .textTheme
-                            .displayLarge
+                            .titleLarge
                             ?.copyWith(color: AppColors.kWhite),
                       ),
                     )
