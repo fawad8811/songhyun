@@ -1,4 +1,3 @@
-
 import 'package:songhyun/utils/app_exports.dart';
 
 class GreetingsScreen extends StatelessWidget {
@@ -31,7 +30,7 @@ class GreetingsScreen extends StatelessWidget {
                   children: [
                     Positioned(
                       bottom: getProportionateScreenHeight(10),
-                      left: getProportionateScreenWidth(150),
+                      left: getProportionateScreenWidth(10),
                       child: Text(
                         'Greetings',
                         style: Theme.of(context)
@@ -49,27 +48,23 @@ class GreetingsScreen extends StatelessWidget {
                     bottom: getProportionateScreenHeight(20)),
                 child: Text(
                   textAlign: TextAlign.center,
-                  'Evergreen Pine Hill, Songhyeon \'松峴\' always\npursues shared growth with invested companies with consistent investment principles.',
-                  style: Theme.of(context)
-                      .textTheme
-                      .labelLarge
-                      ?.copyWith(color: AppColors.kGreenTextColor, height: 1.5),
+                  'Thank you for visiting SongHyun Investment.',
+                  style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                      color: AppColors.kGreenTextColor,
+                      fontWeight: FontWeight.w400),
                 ),
               ),
-              Text(
-                textAlign: TextAlign.center,
-                'Song Hyun\'s investment team has successfully supported the IPO of about 60 venture companies and\n'
-                'has been generating excellent investment performance, including remarkable returns in the private equity investment sector since 2015.\n'
-                'All funds under management have demonstrated excellent performance, and\n'
-                'we are solidifying our investment capabilities from the startup stage to the growth capital stage, as well as expanding our investment horizon from the private equity investment sector to the small & medium cap market.\n'
-                'Meanwhile, by becoming a member of Mugunghwa Financial Group in July 2023, Song Hyun\n'
-                'will be able to further accelerate venture investment and private equity investment based on Mugunghwa Financial Group\'s powerful financial power and network.\n'
-                'Songhyun will continue to pursue shared growth as a faithful partner in the growth momentum of investment companies and\n'
-                'pursue the philosophy of sharing by sharing the results with all investors, investment reviewers, and shareholders.',
-                style: Theme.of(context)
-                    .textTheme
-                    .labelMedium
-                    ?.copyWith(height: 2.0),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: getProportionateScreenWidth(50)),
+                child: Text(
+                  textAlign: TextAlign.center,
+                  'We would like to extend our warmest welcome to you.\n We manage a full spectrum of funds specifically dedicated to each phase of development of small and medium-sized companies.\n Our strategy is to expand from early stage venture to growth and private equity investments as evidenced by our first\n private equity fund of KRW 155 billion (USD 135 million) launched in 2015. At the same time, we plan to expand our investment universe beyond Korea into neighboring countries in Asia.\n We are committed to pursuing mutual growth with the invested companies.\n We bring with us a wealth of management and industry expertise.\n We invite you to join us to embark on the next phase of growth in you company.',
+                  style: Theme.of(context)
+                      .textTheme
+                      .labelMedium
+                      ?.copyWith(height: 2.0, color: AppColors.kBlack),
+                ),
               )
             ],
           ),
@@ -78,5 +73,3 @@ class GreetingsScreen extends StatelessWidget {
     );
   }
 }
-
-

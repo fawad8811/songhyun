@@ -37,6 +37,7 @@ class FooterContainer extends StatelessWidget {
             ),
             const Spacer(),
             const LanguageButton(),
+            SizedBox(height: getProportionateScreenHeight(10)),
           ],
         ),
       ),
