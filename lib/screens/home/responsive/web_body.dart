@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+
+import 'package:songhyun/screens/team/team_screen.dart';
 import 'package:songhyun/screens/vision/vision_screen.dart';
 import 'package:songhyun/utils/app_exports.dart';
 
@@ -27,7 +28,9 @@ class WebBodyState extends State<WebBody> {
     super.initState();
     _pageController = PageController();
     _pages = [
-      const HomeTextWidget(),
+      TeamScreen(
+        scaffoldKey: widget.scaffoldKey,
+      ),
       GreetingsScreen(
         scaffoldKey: widget.scaffoldKey,
       ),
