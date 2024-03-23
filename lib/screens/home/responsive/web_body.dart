@@ -1,3 +1,10 @@
+import 'package:songhyun/screens/investment/fund/fund_screen.dart';
+import 'package:songhyun/screens/investment/philosophy/philosophy_screen.dart';
+import 'package:songhyun/screens/investment/strategy/strategy_screen.dart';
+import 'package:songhyun/screens/overview/greetings/greetings_screen.dart';
+import 'package:songhyun/screens/overview/history/history_screen.dart';
+import 'package:songhyun/screens/overview/team/team_screen.dart';
+import 'package:songhyun/screens/overview/vision/vision_screen.dart';
 import 'package:songhyun/screens/portfolio/portfolio_screen.dart';
 import 'package:songhyun/utils/app_exports.dart';
 
