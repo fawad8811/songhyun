@@ -31,14 +31,10 @@ class MyAppTheme {
           fontSize: getProportionateScreenHeight(16),
           fontWeight: FontWeight.w400,
           color: AppColors.kBlack),
-      labelMedium: TextStyle(
-          fontSize: getProportionateScreenHeight(15),
-          fontWeight: FontWeight.w100,
-          color: AppColors.kBlack),
-      labelLarge: TextStyle(
-          fontSize: getProportionateScreenHeight(20),
-          fontWeight: FontWeight.w400,
-          color: AppColors.kBlack),
+      labelMedium: const TextStyle(
+          fontSize: 15, fontWeight: FontWeight.w100, color: AppColors.kBlack),
+      labelLarge: const TextStyle(
+          fontSize: 20, fontWeight: FontWeight.w400, color: AppColors.kBlack),
       titleLarge: TextStyle(
           fontSize: getProportionateScreenHeight(50),
           fontWeight: FontWeight.w100,

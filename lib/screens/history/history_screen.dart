@@ -1,13 +1,11 @@
-import 'package:flutter/material.dart';
-import 'package:responsive_config/responsive_config.dart';
-import 'package:songhyun/generated/assets.dart';
+
 import 'package:songhyun/screens/history/components/time_line_widget.dart';
-import 'package:songhyun/theme/app_colors.dart';
+import 'package:songhyun/screens/widgets/page_head.dart';
+import 'package:songhyun/utils/app_exports.dart';
 
 class HistoryScreen extends StatelessWidget {
-  final GlobalKey<ScaffoldState> scaffoldKey;
 
-  const HistoryScreen({Key? key, required this.scaffoldKey}) : super(key: key);
+  const HistoryScreen({Key? key, }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,33 +19,9 @@ class HistoryScreen extends StatelessWidget {
           child: ListView(
             shrinkWrap: true,
             padding: EdgeInsets.zero,
-            children: [
-              Container(
-                width: double.infinity,
-                height: getProportionateScreenHeight(450),
-                decoration: const BoxDecoration(
-                  color: AppColors.kMainBackgroundColor,
-                  image: DecorationImage(
-                      image: AssetImage(Assets.imagesBgTopVision),
-                      fit: BoxFit.cover),
-                ),
-                child: Stack(
-                  children: [
-                    Positioned(
-                      bottom: getProportionateScreenHeight(10),
-                      left: getProportionateScreenWidth(50),
-                      child: Text(
-                        'History',
-                        style: Theme.of(context)
-                            .textTheme
-                            .titleLarge
-                            ?.copyWith(color: AppColors.kWhite),
-                      ),
-                    )
-                  ],
-                ),
-              ),
-              const Column(
+            children: const [
+              PageHead(title: 'History', image: Assets.imagesBgTopVision),
+              Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   TimelineItem(

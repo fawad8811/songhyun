@@ -2,9 +2,8 @@ import 'package:songhyun/screens/widgets/page_head.dart';
 import 'package:songhyun/utils/app_exports.dart';
 
 class GreetingsScreen extends StatelessWidget {
-  final GlobalKey<ScaffoldState> scaffoldKey;
 
-  const GreetingsScreen({Key? key, required this.scaffoldKey})
+  const GreetingsScreen({Key? key, scaffoldKey})
       : super(key: key);
 
   @override

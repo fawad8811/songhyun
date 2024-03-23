@@ -39,4 +39,8 @@ class Assets {
   static const String imagesBgTopTeam = 'assets/images/bg_top_team.png';
   static const String imagesteamProfile = 'assets/images/teamImage.png';
   static const String imagesTeam1 = 'assets/images/ocs.jpg';
+  static const String imagesBgTopPhilosophy = 'assets/images/bg_top_philosophy.png';
+  static const String imagesPhilosophy1 = 'assets/images/philosophy_1.png';
+  static const String imagesPhilosophy2 = 'assets/images/philosophy_2.png';
+  static const String imagesPhilosophy3 = 'assets/images/philosophy_3.png';
 }

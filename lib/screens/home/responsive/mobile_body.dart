@@ -1,7 +1,4 @@
 import 'dart:developer';
-
-import 'package:flutter/material.dart';
-import 'package:songhyun/screens/vision/vision_screen.dart';
 import 'package:songhyun/utils/app_exports.dart';
 
 class MobileScaffold extends StatefulWidget {
@@ -55,7 +52,14 @@ class _MobileScaffoldState extends State<MobileScaffold> {
             children: [
               const HomeTextWidget(),
               GreetingsScreen(scaffoldKey: widget.scaffoldKey),
-              VisionScreen(scaffoldKey: widget.scaffoldKey,isMobile: true,),
+              const VisionScreen(
+                isMobile: true,
+              ),
+              const HistoryScreen(),
+              const TeamScreen(),
+              const PhilosophyScreen(
+                isMobile: true,
+              )
               // Add other screens here
             ],
           ),
@@ -70,11 +74,10 @@ class _MobileScaffoldState extends State<MobileScaffold> {
                   WebBody.navigateToPage(_pageController, 0);
                 },
               ),
-               FooterContainer(
+              FooterContainer(
                 isMobile: true,
-                
                 pageIndex: _currentPageIndex,
-                             ),
+              ),
             ],
           ),
         ],
@@ -152,13 +155,11 @@ class _MobileScaffoldState extends State<MobileScaffold> {
                 setState(() {
                   _selectedMenu = title;
                 });
-                // Handle main item tap, you can replace this with navigation logic
                 MyNavigation.handleSubmenuSelected(
                   title,
                   _pageController,
                   widget.scaffoldKey,
                 );
-                // Navigator.pop(context); // Close the drawer
               }
             },
           );

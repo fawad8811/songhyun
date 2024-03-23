@@ -2,8 +2,7 @@ import 'package:songhyun/screens/widgets/page_head.dart';
 import 'package:songhyun/utils/app_exports.dart';
 
 class TeamScreen extends StatelessWidget {
-  final GlobalKey<ScaffoldState> scaffoldKey;
-  const TeamScreen({Key? key, required this.scaffoldKey}) : super(key: key);
+  const TeamScreen({Key? key, }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

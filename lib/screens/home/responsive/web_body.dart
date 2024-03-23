@@ -1,7 +1,4 @@
-import 'package:songhyun/components/home_text_widget.dart';
-import 'package:songhyun/screens/history/history_screen.dart';
-import 'package:songhyun/screens/team/team_screen.dart';
-import 'package:songhyun/screens/vision/vision_screen.dart';
+
 import 'package:songhyun/utils/app_exports.dart';
 
 class WebBody extends StatefulWidget {
@@ -30,20 +27,14 @@ class WebBodyState extends State<WebBody> {
     super.initState();
     _pageController = PageController();
     _pages = [
-      HomeTextWidget(
-          // scaffoldKey: widget.scaffoldKey,
-          ),
+      const HomeTextWidget(),
       GreetingsScreen(
         scaffoldKey: widget.scaffoldKey,
       ),
-      VisionScreen(
-        scaffoldKey: widget.scaffoldKey,
-      ),
-      HistoryScreen(scaffoldKey: widget.scaffoldKey),
-      
-      TeamScreen(
-        scaffoldKey: widget.scaffoldKey,
-      ),
+      const VisionScreen(),
+      const HistoryScreen(),
+      const TeamScreen(),
+      const PhilosophyScreen(),
     ];
   }
 
@@ -113,15 +104,15 @@ class MyNavigation {
       case 0:
         return const HomeTextWidget();
       case 1:
-        return GreetingsScreen(
-          scaffoldKey: scaffoldKey,
-        );
+        return const GreetingsScreen();
       case 2:
-        return VisionScreen(
-          scaffoldKey: scaffoldKey,
-        );
+        return const VisionScreen();
       case 3:
-        return HistoryScreen(scaffoldKey: scaffoldKey);
+        return const HistoryScreen();
+      case 4:
+        return const TeamScreen();
+      case 5:
+        return const PhilosophyScreen();
       default:
         return Container();
     }
@@ -133,8 +124,12 @@ class MyNavigation {
       _navigateToPage(pageController, 1);
     } else if (value == 'Vision') {
       _navigateToPage(pageController, 2);
-    } else if(value == 'History'){
+    } else if (value == 'History') {
       _navigateToPage(pageController, 3);
+    } else if (value == 'Team') {
+      _navigateToPage(pageController, 4);
+    } else if (value == 'Philosophy') {
+      _navigateToPage(pageController, 5);
     }
   }
 

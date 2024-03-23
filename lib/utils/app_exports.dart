@@ -16,3 +16,9 @@ export 'package:songhyun/generated/assets.dart';
 export 'package:songhyun/components/language_button.dart';
 
 
+//navigate 
+
+export 'package:songhyun/screens/history/history_screen.dart';
+export 'package:songhyun/screens/philosophy/philosophy_screen.dart';
+export 'package:songhyun/screens/team/team_screen.dart';
+export 'package:songhyun/screens/vision/vision_screen.dart';
