@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'package:songhyun/screens/strategy/strategy_screen.dart';
 import 'package:songhyun/utils/app_exports.dart';
 
 class MobileScaffold extends StatefulWidget {
@@ -59,7 +60,10 @@ class _MobileScaffoldState extends State<MobileScaffold> {
               const TeamScreen(),
               const PhilosophyScreen(
                 isMobile: true,
-              )
+              ),
+
+              const StrategyScreen(isMobile: true),
+
               // Add other screens here
             ],
           ),

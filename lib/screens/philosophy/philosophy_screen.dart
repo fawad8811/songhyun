@@ -41,7 +41,7 @@ class PhilosophyScreen extends StatelessWidget {
         'Transparency and ethics',
         'Commitment to transparent decision making and high ethical standards.',
       ),
-      _buildVisionColumn(context, Assets.imagesVision1, 'Value Creation',
+      _buildVisionColumn(context, Assets.imagesPhilosophy1, 'Value Creation',
           'Pursue mutual growth with portfolio companies through value creation.'),
     ];
   }

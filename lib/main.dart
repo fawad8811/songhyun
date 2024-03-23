@@ -1,8 +1,6 @@
-
 import 'package:songhyun/utils/app_exports.dart';
 
 final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
-
 
 void main() {
   runApp(const MyApp());
@@ -15,9 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     ResponsiveConfig().init(context);
     return MaterialApp(
-      home:
-      //  HistoryScreen(scaffoldKey: scaffoldKey),
-      ResponsiveLayout(
+      home: ResponsiveLayout(
         mobileBody: MobileScaffold(
           scaffoldKey: scaffoldKey,
         ),
@@ -25,7 +21,6 @@ class MyApp extends StatelessWidget {
           scaffoldKey: scaffoldKey,
         ),
       ),
-      // routes: routes,
       theme: MyAppTheme.themeDataLight,
       debugShowCheckedModeBanner: false,
     );

@@ -1,4 +1,4 @@
-
+import 'package:songhyun/screens/strategy/strategy_screen.dart';
 import 'package:songhyun/utils/app_exports.dart';
 
 class WebBody extends StatefulWidget {
@@ -35,6 +35,7 @@ class WebBodyState extends State<WebBody> {
       const HistoryScreen(),
       const TeamScreen(),
       const PhilosophyScreen(),
+      const StrategyScreen(),
     ];
   }
 
@@ -113,6 +114,8 @@ class MyNavigation {
         return const TeamScreen();
       case 5:
         return const PhilosophyScreen();
+      case 6:
+        return const StrategyScreen();
       default:
         return Container();
     }
@@ -130,6 +133,8 @@ class MyNavigation {
       _navigateToPage(pageController, 4);
     } else if (value == 'Philosophy') {
       _navigateToPage(pageController, 5);
+    } else if (value == 'Strategy') {
+      _navigateToPage(pageController, 6);
     }
   }
 
