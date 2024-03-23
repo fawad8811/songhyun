@@ -1,4 +1,4 @@
-
+import 'package:songhyun/components/home_text_widget.dart';
 import 'package:songhyun/screens/team/team_screen.dart';
 import 'package:songhyun/screens/vision/vision_screen.dart';
 import 'package:songhyun/utils/app_exports.dart';
@@ -28,13 +28,17 @@ class WebBodyState extends State<WebBody> {
     super.initState();
     _pageController = PageController();
     _pages = [
-      TeamScreen(
-        scaffoldKey: widget.scaffoldKey,
-      ),
+      HomeTextWidget(
+          // scaffoldKey: widget.scaffoldKey,
+          ),
       GreetingsScreen(
         scaffoldKey: widget.scaffoldKey,
       ),
       VisionScreen(
+        scaffoldKey: widget.scaffoldKey,
+      ),
+      
+      TeamScreen(
         scaffoldKey: widget.scaffoldKey,
       ),
     ];
