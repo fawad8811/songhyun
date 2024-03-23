@@ -3,7 +3,7 @@ import 'package:songhyun/utils/app_exports.dart';
 
 class GreetingsScreen extends StatelessWidget {
 
-  const GreetingsScreen({Key? key, scaffoldKey})
+  const GreetingsScreen({Key? key, })
       : super(key: key);
 
   @override

@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'package:songhyun/screens/fund/fund_screen.dart';
 import 'package:songhyun/screens/strategy/strategy_screen.dart';
 import 'package:songhyun/utils/app_exports.dart';
 
@@ -50,19 +51,19 @@ class _MobileScaffoldState extends State<MobileScaffold> {
                 _currentPageIndex = index;
               });
             },
-            children: [
-              const HomeTextWidget(),
-              GreetingsScreen(scaffoldKey: widget.scaffoldKey),
-              const VisionScreen(
+            children: const [
+              HomeTextWidget(),
+              GreetingsScreen(),
+              VisionScreen(
                 isMobile: true,
               ),
-              const HistoryScreen(),
-              const TeamScreen(),
-              const PhilosophyScreen(
+              HistoryScreen(),
+              TeamScreen(),
+              PhilosophyScreen(
                 isMobile: true,
               ),
-
-              const StrategyScreen(isMobile: true),
+              StrategyScreen(isMobile: true),
+              FundScreen(),
 
               // Add other screens here
             ],

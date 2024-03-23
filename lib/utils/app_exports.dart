@@ -22,3 +22,7 @@ export 'package:songhyun/screens/history/history_screen.dart';
 export 'package:songhyun/screens/philosophy/philosophy_screen.dart';
 export 'package:songhyun/screens/team/team_screen.dart';
 export 'package:songhyun/screens/vision/vision_screen.dart';
+export 'package:songhyun/screens/strategy/strategy_screen.dart';
+export 'package:songhyun/screens/fund/fund_screen.dart';
+
+export 'package:songhyun/utils/my_navigation.dart';

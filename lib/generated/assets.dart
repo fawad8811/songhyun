@@ -41,6 +41,8 @@ class Assets {
   static const String imagesTeam1 = 'assets/images/ocs.jpg';
   static const String imagesBgTopPhilosophy =
       'assets/images/bg_top_philosophy.png';
+      
+  static const String imagesBgTopHistory = 'assets/images/bg_top_History.png';
   static const String imagesPhilosophy1 = 'assets/images/philosophy_1.png';
   static const String imagesPhilosophy2 = 'assets/images/philosophy_2.png';
   static const String imagesPhilosophy3 = 'assets/images/philosophy_3.png';
@@ -48,4 +50,7 @@ class Assets {
   static const String imagesStrategy1 = 'assets/images/Strategy_1.png';
   static const String imagesStrategy2 = 'assets/images/Strategy_2.png';
   static const String imagesStrategy3 = 'assets/images/Strategy_3.png';
+  static const String imagesBgTopFund = 'assets/images/bg_top_fund.png';
+  static const String imagesfund1 = 'assets/images/fund_1_en.png';
+  static const String imagesfund2 = 'assets/images/fund_2_en.png';
 }
