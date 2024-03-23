@@ -41,7 +41,7 @@ class Assets {
   static const String imagesTeam1 = 'assets/images/ocs.jpg';
   static const String imagesBgTopPhilosophy =
       'assets/images/bg_top_philosophy.png';
-      
+
   static const String imagesBgTopHistory = 'assets/images/bg_top_History.png';
   static const String imagesPhilosophy1 = 'assets/images/philosophy_1.png';
   static const String imagesPhilosophy2 = 'assets/images/philosophy_2.png';
@@ -53,4 +53,17 @@ class Assets {
   static const String imagesBgTopFund = 'assets/images/bg_top_fund.png';
   static const String imagesfund1 = 'assets/images/fund_1_en.png';
   static const String imagesfund2 = 'assets/images/fund_2_en.png';
+
+  static const String imagesBgTopPortfolio =
+      'assets/images/bg_top_portfolio.png';
+  static const String imagesBgTopNews = 'assets/images/bg_top_news.png';
+  static const String imagesBgTopContact = 'assets/images/bg_top_contact.png';
+  static const String imagesCop1 = 'assets/images/1.jpg';
+  static const String imagesCop2 = 'assets/images/2.jpg';
+  static const String imagesCop3 = 'assets/images/3.jpg';
+  static const String imagesCop4 = 'assets/images/4.jpg';
+  static const String imagesBtnPort1 = 'assets/images/btn_port1.png';
+  static const String imagesBtnPort2 = 'assets/images/btn_port2.png';
+  static const String imagesBtnPort3 = 'assets/images/btn_port3.png';
+  static const String imagesBtnPort4 = 'assets/images/btn_port4.png';
 }

@@ -1,3 +1,4 @@
+import 'package:songhyun/screens/portfolio/portfolio_screen.dart';
 import 'package:songhyun/utils/app_exports.dart';
 
 class WebBody extends StatefulWidget {
@@ -26,8 +27,8 @@ class WebBodyState extends State<WebBody> {
     super.initState();
     _pageController = PageController();
     _pages = [
+      PortfolioScreen(),
       // const HomeTextWidget(),
-      const TeamScreen(),
       const GreetingsScreen(),
       const VisionScreen(),
       const HistoryScreen(),
