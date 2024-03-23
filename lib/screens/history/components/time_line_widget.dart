@@ -1,7 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_dash/flutter_dash.dart';
-import 'package:responsive_config/responsive_config.dart';
-import 'package:songhyun/theme/app_colors.dart';
+import 'package:songhyun/utils/app_exports.dart';
 
 class TimelineItem extends StatelessWidget {
   final List<String> dates;
@@ -17,10 +15,11 @@ class TimelineItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
-        left: getProportionateScreenWidth(55),
+        left: getProportionateScreenWidth(20),
         top: getProportionateScreenHeight(40),
       ),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -29,7 +28,9 @@ class TimelineItem extends StatelessWidget {
               return Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: EdgeInsets.symmetric(
+                        horizontal: getProportionateScreenWidth(11),
+                        vertical: getProportionateScreenHeight(11)),
                     child: Text(
                       textAlign: TextAlign.right,
                       dates[index],
@@ -70,23 +71,26 @@ class TimelineItem extends StatelessWidget {
               }
             }),
           ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: List.generate(descriptions.length, (index) {
-              return Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(11.0),
-                    child: Text(
-                      textAlign: TextAlign.right,
-                      descriptions[index],
-                      style: Theme.of(context).textTheme.labelMedium,
+          Flexible(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: List.generate(descriptions.length, (index) {
+                return Column(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: getProportionateScreenWidth(11),
+                          vertical: getProportionateScreenHeight(11)),
+                      child: Text(
+                        textAlign: TextAlign.right,
+                        descriptions[index],
+                        style: Theme.of(context).textTheme.labelMedium,
+                      ),
                     ),
-                  ),
-                ],
-              );
-            }),
+                  ],
+                );
+              }),
+            ),
           ),
         ],
       ),

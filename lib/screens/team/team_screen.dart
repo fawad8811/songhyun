@@ -2,71 +2,88 @@ import 'package:songhyun/screens/widgets/page_head.dart';
 import 'package:songhyun/utils/app_exports.dart';
 
 class TeamScreen extends StatelessWidget {
-  const TeamScreen({Key? key, }) : super(key: key);
+  final bool isMobile;
+  const TeamScreen({Key? key, this.isMobile = false}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
+    return ListView(
+      shrinkWrap: true,
+      padding: EdgeInsets.zero,
       children: [
-        ListView(
-          shrinkWrap: true,
-          padding: EdgeInsets.zero,
-          children: [
-            const PageHead(title: 'Team', image: Assets.imagesBgTopTeam),
-            Padding(
-              padding: EdgeInsets.symmetric(
-                  horizontal: getProportionateScreenWidth(20),
-                  vertical: getProportionateScreenHeight(60)),
-              child: const Column(
-                children: [
-                  Row(
-                    children: [
-                      TypeContaner(
-                        type: 'Management',
-                      ),
-                      TeamContainer(
-                        name: 'John Doe',
-                        position: 'CEO',
-                        image: Assets.imagesteamProfile,
-                      ),
-                    ],
+        const PageHead(title: 'Team', image: Assets.imagesBgTopTeam),
+        SizedBox(height: getProportionateScreenHeight(20)),
+        Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: getProportionateScreenWidth(10),
+            vertical: getProportionateScreenHeight(60),
+          ),
+          child: Column(
+            children: [
+              GridView.count(
+                shrinkWrap: true,
+                crossAxisCount: isMobile ? 2 : 4,
+                mainAxisSpacing: 20,
+                children: const [
+                  TypeContainer(type: 'Management'),
+                  TeamContainer(
+                    name: 'John Doe',
+                    position: 'CEO',
+                    image: Assets.imagesteamProfile,
                   ),
-                  SizedBox(
-                    height: 20,
+                  TeamContainer(
+                    name: 'John Doe',
+                    position: 'CEO',
+                    image: Assets.imagesteamProfile,
                   ),
-                  Row(
-                    children: [
-                      TypeContaner(
-                        type: 'Investment Division',
-                      ),
-                      TeamContainer(
-                        name: 'Rebecca Doe',
-                        position: 'Vice President',
-                        image: Assets.imagesteamProfile,
-                      ),
-                      TeamContainer(
-                        name: 'shock rock',
-                        position: 'Executive Managing',
-                        image: Assets.imagesteamProfile,
-                      ),
-                    ],
+                  TeamContainer(
+                    name: 'John Doe',
+                    position: 'CEO',
+                    image: Assets.imagesteamProfile,
                   ),
                 ],
               ),
-            ),
-            SizedBox(
-              height: getProportionateScreenHeight(40),
-            )
-          ],
+              SizedBox(height: getProportionateScreenHeight(20)),
+              GridView.count(
+                shrinkWrap: true,
+                crossAxisCount: isMobile ? 2 : 4,
+                mainAxisSpacing: 20,
+                children: const [
+                  TypeContainer(type: 'Investment Division'),
+                  TeamContainer(
+                    name: 'Rebecca Doe',
+                    position: 'Vice President',
+                    image: Assets.imagesteamProfile,
+                  ),
+                  TeamContainer(
+                    name: 'Shock Rock',
+                    position: 'Executive Managing',
+                    image: Assets.imagesteamProfile,
+                  ),
+                  TeamContainer(
+                    name: 'Shock Rock',
+                    position: 'Executive Managing',
+                    image: Assets.imagesteamProfile,
+                  ),
+                  TeamContainer(
+                    name: 'Shock Rock',
+                    position: 'Executive Managing',
+                    image: Assets.imagesteamProfile,
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
+        SizedBox(height: getProportionateScreenHeight(40)),
       ],
     );
   }
 }
 
-class TypeContaner extends StatelessWidget {
+class TypeContainer extends StatelessWidget {
   final String type;
-  const TypeContaner({
+  const TypeContainer({
     required this.type,
     super.key,
   });

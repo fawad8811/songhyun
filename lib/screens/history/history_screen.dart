@@ -1,4 +1,4 @@
-import 'package:responsive_config/responsive_config.dart';
+import 'package:flutter/material.dart';
 import 'package:songhyun/screens/history/components/time_line_widget.dart';
 import 'package:songhyun/screens/widgets/page_head.dart';
 import 'package:songhyun/utils/app_exports.dart';
@@ -15,11 +15,7 @@ class HistoryScreen extends StatelessWidget {
       padding: EdgeInsets.zero,
       children: [
         const PageHead(title: 'History', image: Assets.imagesBgTopHistory),
-        Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: getProportionateScreenWidth(20),
-            vertical: getProportionateScreenHeight(30),
-          ),
+        Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,

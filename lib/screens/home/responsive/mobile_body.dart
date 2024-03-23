@@ -52,7 +52,8 @@ class _MobileScaffoldState extends State<MobileScaffold> {
               });
             },
             children: const [
-              HomeTextWidget(),
+              // HomeTextWidget(),
+              TeamScreen(isMobile: true,),
               GreetingsScreen(),
               VisionScreen(
                 isMobile: true,
