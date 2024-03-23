@@ -53,9 +53,7 @@ class _MobileScaffoldState extends State<MobileScaffold> {
               });
             },
             children: const [
-              PortfolioScreen(
-                isMobile: true,
-              ),
+              
               // HomeTextWidget(),
               GreetingsScreen(),
               VisionScreen(
@@ -70,7 +68,9 @@ class _MobileScaffoldState extends State<MobileScaffold> {
               ),
               StrategyScreen(isMobile: true),
               FundScreen(),
-
+              PortfolioScreen(
+                isMobile: true,
+              ),
               // Add other screens here
             ],
           ),

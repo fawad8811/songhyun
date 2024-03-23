@@ -27,8 +27,7 @@ class WebBodyState extends State<WebBody> {
     super.initState();
     _pageController = PageController();
     _pages = [
-      PortfolioScreen(),
-      // const HomeTextWidget(),
+      const HomeTextWidget(),
       const GreetingsScreen(),
       const VisionScreen(),
       const HistoryScreen(),
@@ -36,6 +35,7 @@ class WebBodyState extends State<WebBody> {
       const PhilosophyScreen(),
       const StrategyScreen(),
       const FundScreen(),
+      const PortfolioScreen(),
     ];
   }
 

@@ -1,4 +1,4 @@
-
+import 'package:songhyun/screens/portfolio/portfolio_screen.dart';
 import 'package:songhyun/utils/app_exports.dart';
 
 class MyNavigation {
@@ -21,6 +21,8 @@ class MyNavigation {
         return const StrategyScreen();
       case 7:
         return const FundScreen();
+      case 8:
+        return const PortfolioScreen();
       default:
         return Container();
     }
@@ -40,8 +42,10 @@ class MyNavigation {
       _navigateToPage(pageController, 5);
     } else if (value == 'Strategy') {
       _navigateToPage(pageController, 6);
-    }else if (value == 'Fund') {
+    } else if (value == 'Fund') {
       _navigateToPage(pageController, 7);
+    } else if (value == 'Portfolio') {
+      _navigateToPage(pageController, 8);
     }
   }
 

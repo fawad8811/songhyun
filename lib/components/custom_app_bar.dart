@@ -1,5 +1,3 @@
-
-
 import 'package:songhyun/utils/app_exports.dart';
 
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
@@ -31,7 +29,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
     return AppBar(
       centerTitle: false,
       leading: const SizedBox.shrink(),
-      toolbarHeight: getProportionateScreenHeight(100),
+      toolbarHeight: getProportionateScreenHeight(140),
       backgroundColor: Colors.transparent.withOpacity(0.75),
       elevation: 0,
       actions: [
