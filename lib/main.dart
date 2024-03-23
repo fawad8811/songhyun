@@ -1,3 +1,4 @@
+import 'package:songhyun/screens/portfolio/portfolio_screen.dart';
 import 'package:songhyun/utils/app_exports.dart';
 
 final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
@@ -13,14 +14,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     ResponsiveConfig().init(context);
     return MaterialApp(
-      home: ResponsiveLayout(
-        mobileBody: MobileScaffold(
-          scaffoldKey: scaffoldKey,
-        ),
-        webBody: WebBody(
-          scaffoldKey: scaffoldKey,
-        ),
-      ),
+      home: const PortfolioScreen(),
+      // home: ResponsiveLayout(
+      //   mobileBody: MobileScaffold(
+      //     scaffoldKey: scaffoldKey,
+      //   ),
+      //   webBody: WebBody(
+      //     scaffoldKey: scaffoldKey,
+      //   ),
+      // ),
       theme: MyAppTheme.themeDataLight,
       debugShowCheckedModeBanner: false,
     );
