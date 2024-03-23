@@ -1,4 +1,6 @@
+import 'package:songhyun/components/home_text_widget.dart';
 import 'package:songhyun/screens/history/history_screen.dart';
+import 'package:songhyun/screens/team/team_screen.dart';
 import 'package:songhyun/screens/vision/vision_screen.dart';
 import 'package:songhyun/utils/app_exports.dart';
 
@@ -23,20 +25,25 @@ class WebBodyState extends State<WebBody> {
   late PageController _pageController;
   late List<Widget> _pages;
   int _currentPageIndex = 0;
-
   @override
   void initState() {
     super.initState();
     _pageController = PageController();
     _pages = [
-      const HomeTextWidget(),
+      HomeTextWidget(
+          // scaffoldKey: widget.scaffoldKey,
+          ),
       GreetingsScreen(
         scaffoldKey: widget.scaffoldKey,
       ),
       VisionScreen(
         scaffoldKey: widget.scaffoldKey,
       ),
-      HistoryScreen(scaffoldKey: widget.scaffoldKey)
+      HistoryScreen(scaffoldKey: widget.scaffoldKey),
+      
+      TeamScreen(
+        scaffoldKey: widget.scaffoldKey,
+      ),
     ];
   }
 
