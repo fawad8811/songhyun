@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:songhyun/utils/app_exports.dart';
 
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
@@ -50,7 +51,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
                   Image.asset(Assets.imagesOnlyLogo, width: 50, height: 50),
                   const SizedBox(width: 20),
                   Text(
-                    'Choege Investment\n Private Limited',
+                    'Choege Investment\n Private Limited'.tr(),
                     style: MyAppTheme.textThemeLight.labelLarge!.copyWith(
                       color: AppColors.kWhite,
                     ),

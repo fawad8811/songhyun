@@ -1,5 +1,18 @@
 {
   "hello": "안녕하세요",
   "welcome": "환영합니다",
-  "ENGLISH": "영어"
+  "ENGLISH": "영어",
+  "OVERVIEW": "개요",
+  "INVESTMENT": "투자",
+  "PORTFOLIO": "포트폴리오",
+  "NEWS": "뉴스",
+  "CONTACT": "연락처",
+  "Greeting": "인사",
+  "Vision": "비전",
+  "History": "역사",
+  "Team": "팀",
+  "Philosophy": "철학",
+  "Strategy": "전략",
+  "Fund": "펀드",
+  "Choege Investment\n Private Limited": "최게투자 프라이빗 리미티드"
 }
