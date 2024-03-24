@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:songhyun/screens/widgets/page_head.dart';
 import 'package:songhyun/utils/app_exports.dart';
 
@@ -17,7 +18,7 @@ class NewsScreen extends StatelessWidget {
           color: AppColors.kMainBackgroundColor,
           child: Padding(
             padding: EdgeInsets.symmetric(
-              horizontal: getProportionateScreenWidth(24),
+              horizontal: isMobile ? 0 : getProportionateScreenWidth(24),
               vertical: getProportionateScreenHeight(30),
             ),
             child: Column(
@@ -25,7 +26,7 @@ class NewsScreen extends StatelessWidget {
               children: [
                 NewsCard(
                   isMobile: isMobile,
-                  image: Assets.images1,
+                  image: Assets.imagesNews1,
                   title:
                       'Revenue and operating income of Songhyun Investment for 2015 grew twice as much compared to the same period in 2014, growing steady and strong.',
                   subTitle:
@@ -33,7 +34,7 @@ class NewsScreen extends StatelessWidget {
                 ),
                 NewsCard(
                   isMobile: isMobile,
-                  image: Assets.images1,
+                  image: Assets.imagesNews2,
                   title:
                       'Songhyun Investment established a new 4.7bn won sized-fund called K-Crowd Fund.',
                   subTitle:
@@ -43,7 +44,7 @@ class NewsScreen extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: getProportionateScreenHeight(40)),
+        SizedBox(height: getProportionateScreenHeight(80)),
       ],
     );
   }
@@ -65,60 +66,66 @@ class NewsCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return Container(
+      height: 280,
+      padding: const EdgeInsets.all(8.0),
       color: Colors.transparent,
-      elevation: 0,
-      shadowColor: Colors.transparent,
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Image.asset(
+      // elevation: 0,
+      // shadowColor: Colors.transparent,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            height: 280,
+            width: 280,
+            // height: getProportionateScreenHeight(280),
+            // width: getProportionateScreenWidth(280),
+            child: Image.asset(
               image,
-              fit: BoxFit.cover,
-              height: 280,
-              width: 280,
+              // height: 280,
+              // width: 280,
+              // fit: BoxFit.cover,
             ),
-            const SizedBox(width: 16),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Text(
-                    title,
-                    maxLines: 6,
-                    overflow: TextOverflow.ellipsis,
-                    style: Theme.of(context)
-                        .textTheme
-                        .labelLarge!
-                        .copyWith(color: AppColors.kGreen),
-                  ),
-                  const SizedBox(height: 8),
-                  Text(
-                    subTitle,
-                    maxLines: 3,
-                    overflow: TextOverflow.ellipsis,
-                    style: Theme.of(context).textTheme.labelLarge!.copyWith(
-                          fontSize: 12,
-                        ),
-                  ),
-                  isMobile
-                      ? const SizedBox.shrink()
-                      : SizedBox(height: getProportionateScreenHeight(180)),
-                  Row(
-                    children: [
-                      Image.asset(Assets.images1),
-                      const SizedBox(width: 8),
-                      Image.asset(Assets.images1),
-                    ],
-                  )
-                ],
-              ),
+          ),
+          const SizedBox(width: 16),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  maxLines: 5,
+                  overflow: TextOverflow.ellipsis,
+                  style: Theme.of(context)
+                      .textTheme
+                      .labelLarge!
+                      .copyWith(color: AppColors.kGreen),
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  subTitle,
+                  maxLines: 3,
+                  overflow: TextOverflow.ellipsis,
+                  style: Theme.of(context).textTheme.labelLarge!.copyWith(
+                        fontSize: 12,
+                      ),
+                ),
+                const Spacer(),
+                // isMobile
+                //     ? const SizedBox.shrink()
+                //     : SizedBox(height: getProportionateScreenHeight(180)),
+                Row(
+                  children: [
+                    Image.asset(Assets.imagesNewsFa),
+                    const SizedBox(width: 8),
+                    Image.asset(Assets.imagesNewstwr),
+                  ],
+                )
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
