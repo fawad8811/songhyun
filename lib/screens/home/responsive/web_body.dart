@@ -107,7 +107,7 @@ class WebBodyState extends State<WebBody> {
               ),
               FooterContainer(
                 isMainScreen: true,
-                pageIndex: _currentPageIndex, // Pass current page index
+                pageIndex: _currentPageIndex,
               ),
             ],
           ),
