@@ -1,9 +1,43 @@
 import 'package:songhyun/screens/widgets/page_head.dart';
 import 'package:songhyun/utils/app_exports.dart';
+import 'dart:math';
 
-class TeamScreen extends StatelessWidget {
+class TeamScreen extends StatefulWidget {
   final bool isMobile;
   const TeamScreen({Key? key, this.isMobile = false}) : super(key: key);
+
+  @override
+  State<TeamScreen> createState() => _TeamScreenState();
+}
+
+class _TeamScreenState extends State<TeamScreen> {
+  // Define lists for random data
+  final List<String> names = [
+    'John Doe',
+    'Alice Smith',
+    'Michael Johnson',
+    'Emily Brown',
+    'Daniel Wilson',
+    'Sophia Lee',
+  ];
+
+  final List<String> positions = [
+    'CEO',
+    'Vice President',
+    'Executive Managing',
+    'Director of Marketing',
+    'Chief Financial Officer',
+    'Chief Technology Officer',
+  ];
+
+  final List<String> images = [
+    Assets.imagesTeam1,
+    // Assets.imagesteamProfile2,
+    // Assets.imagesteamProfile3,
+    // Assets.imagesteamProfile4,
+    // Assets.imagesteamProfile5,
+    // Assets.imagesteamProfile6,
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -20,58 +54,9 @@ class TeamScreen extends StatelessWidget {
           ),
           child: Column(
             children: [
-              GridView.count(
-                shrinkWrap: true,
-                crossAxisCount: isMobile ? 2 : 4,
-                mainAxisSpacing: 20,
-                children: const [
-                  TypeContainer(type: 'Management'),
-                  TeamContainer(
-                    name: 'John Doe',
-                    position: 'CEO',
-                    image: Assets.imagesteamProfile,
-                  ),
-                  TeamContainer(
-                    name: 'John Doe',
-                    position: 'CEO',
-                    image: Assets.imagesteamProfile,
-                  ),
-                  TeamContainer(
-                    name: 'John Doe',
-                    position: 'CEO',
-                    image: Assets.imagesteamProfile,
-                  ),
-                ],
-              ),
+              _buildTeamGridView('Management', widget.isMobile),
               SizedBox(height: getProportionateScreenHeight(20)),
-              GridView.count(
-                shrinkWrap: true,
-                crossAxisCount: isMobile ? 2 : 4,
-                mainAxisSpacing: 20,
-                children: const [
-                  TypeContainer(type: 'Investment Division'),
-                  TeamContainer(
-                    name: 'Rebecca Doe',
-                    position: 'Vice President',
-                    image: Assets.imagesteamProfile,
-                  ),
-                  TeamContainer(
-                    name: 'Shock Rock',
-                    position: 'Executive Managing',
-                    image: Assets.imagesteamProfile,
-                  ),
-                  TeamContainer(
-                    name: 'Shock Rock',
-                    position: 'Executive Managing',
-                    image: Assets.imagesteamProfile,
-                  ),
-                  TeamContainer(
-                    name: 'Shock Rock',
-                    position: 'Executive Managing',
-                    image: Assets.imagesteamProfile,
-                  ),
-                ],
-              ),
+              _buildTeamGridView('Investment Division', widget.isMobile),
             ],
           ),
         ),
@@ -79,14 +64,46 @@ class TeamScreen extends StatelessWidget {
       ],
     );
   }
+
+  Widget _buildTeamGridView(String type, bool isMobile) {
+    return GridView.builder(
+      physics: const NeverScrollableScrollPhysics(),
+      shrinkWrap: true,
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: isMobile ? 2 : 4,
+        mainAxisSpacing: 20,
+      ),
+      itemCount: type == 'Management' ? 4 : 5,
+      itemBuilder: (context, index) {
+        if (index == 0) {
+          return TypeContainer(type: type, isMobile: isMobile);
+        } else {
+          // Generate random index for data
+          final random = Random();
+          final nameIndex = random.nextInt(names.length);
+          final positionIndex = random.nextInt(positions.length);
+          final imageIndex = random.nextInt(images.length);
+
+          return TeamContainer(
+            name: names[nameIndex],
+            position: positions[positionIndex],
+            image: images[imageIndex],
+            isMobile: isMobile,
+          );
+        }
+      },
+    );
+  }
 }
 
 class TypeContainer extends StatelessWidget {
+  final bool isMobile;
   final String type;
   const TypeContainer({
     required this.type,
-    super.key,
-  });
+    required this.isMobile,
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -104,7 +121,7 @@ class TypeContainer extends StatelessWidget {
           type,
           style: Theme.of(context).textTheme.titleLarge?.copyWith(
                 color: AppColors.kWhite,
-                fontSize: 40,
+                fontSize: isMobile ? 16 : 40,
               ),
         ),
       ),
@@ -116,13 +133,15 @@ class TeamContainer extends StatelessWidget {
   final String name;
   final String position;
   final String image;
+  final bool isMobile;
 
   const TeamContainer({
     required this.name,
     required this.position,
     required this.image,
-    super.key,
-  });
+    this.isMobile = false,
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -177,7 +196,7 @@ class TeamContainer extends StatelessWidget {
               name,
               style: Theme.of(context).textTheme.titleLarge?.copyWith(
                     color: AppColors.kWhite,
-                    fontSize: 26,
+                    fontSize: isMobile ? 14 : 26,
                   ),
             ),
           ),
@@ -189,7 +208,7 @@ class TeamContainer extends StatelessWidget {
               position,
               style: Theme.of(context).textTheme.titleLarge?.copyWith(
                     color: const Color(0xFFabd58c),
-                    fontSize: 20,
+                    fontSize: isMobile ? 10 : 20,
                   ),
             ),
           ),
