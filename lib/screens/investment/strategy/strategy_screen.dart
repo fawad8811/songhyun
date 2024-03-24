@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:songhyun/screens/widgets/page_head.dart';
 import 'package:songhyun/utils/app_exports.dart';
 
@@ -30,32 +31,28 @@ class StrategyScreen extends StatelessWidget {
 
   List<Widget> _buildwebStategyColumns(BuildContext context) {
     return [
-      _buildStategyColumn(
-          context,
-          Assets.imagesStrategy1,
-          'Investment by stage',
-          'Maximize enterprise value and investment profit for companies in all stages via specially tailored investment funds.',
+      _buildStategyColumn(context, Assets.imagesStrategy1,
+          'Investment by stage', 'maximizeEnterpriseValue'.tr(),
           richtext: true),
       _buildStategyColumn(
         context,
         Assets.imagesStrategy2,
         'Focus on ICT / AI, Bio / Healthcare & Manufacturing',
-        'Distribute funds by industry - ICT/AI Sector (60%) Bio/Healthcare and Manufacturing (40%) - and structure investment portfolio accordingly.',
+        'distributeFundsByIndustry'.tr(),
       ),
       _buildStategyColumn(
           context,
           Assets.imagesStrategy3,
           'Vertical investments into value chains',
-          'We pursue investments into strategic companies in a value chain through hub company, creating synergy and cost- reduction opportunities for our portfolio companies.'),
+          'pursueInvestmentsIntoStrategicCompanies'.tr())
     ];
   }
 
-  Widget _buildStategyColumn(
-      BuildContext context, String imageAsset, String title, String description,
+  Widget _buildStategyColumn(BuildContext context, String imageAsset, String title, String description,
       {bool richtext = false}) {
     return Padding(
       padding:
-          EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
+      EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
       child: Row(
         children: [
           isMobile ? const SizedBox.shrink() : Image.asset(imageAsset),
@@ -82,9 +79,9 @@ class StrategyScreen extends StatelessWidget {
       title,
       textAlign: TextAlign.left,
       style: Theme.of(context).textTheme.labelLarge?.copyWith(
-            color: AppColors.kGreenTextColor,
-            height: 2.0,
-          ),
+        color: AppColors.kGreenTextColor,
+        height: 2.0,
+      ),
     );
   }
 
@@ -93,18 +90,18 @@ class StrategyScreen extends StatelessWidget {
       description,
       textAlign: TextAlign.left,
       style: Theme.of(context).textTheme.labelMedium?.copyWith(
-            color: AppColors.kBlack,
-            height: 1.5,
-          ),
+        color: AppColors.kBlack,
+        height: 1.5,
+      ),
     );
   }
 
   List<Widget> _buildRichTexts(BuildContext context) {
     return [
       richText(context, 'Early : ',
-          'Entrepreneur with creative technology and innovative idea'),
-      richText(context, 'Growth : ', 'Technology orientated growth enterprise'),
-      richText(context, 'PE : ', 'Enterprise which can generate synergy'),
+          'entrepreneurWithCreativeTechnology'.tr()),
+      richText(context, 'Growth : ', 'technologyOrientedGrowthEnterprise'.tr()),
+      richText(context, 'PE : ', 'enterpriseWhichCanGenerateSynergy'.tr()),
     ];
   }
 
@@ -113,16 +110,16 @@ class StrategyScreen extends StatelessWidget {
       TextSpan(
         text: text,
         style: Theme.of(context).textTheme.labelLarge?.copyWith(
-              color: const Color(0xff4c7b2b),
-              height: 1.5,
-              fontSize: 15,
-            ),
+          color: const Color(0xff4c7b2b),
+          height: 1.5,
+          fontSize: 15,
+        ),
         children: [
           TextSpan(
             text: subtext,
             style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                  color: AppColors.kBlack,
-                ),
+              color: AppColors.kBlack,
+            ),
           ),
         ],
       ),
@@ -135,10 +132,10 @@ class StrategyScreen extends StatelessWidget {
       Text(
         'Separate from investment by stage, SongHyun assists in trade sales of individual enterprise’s old shares through secondary fund, and also exit through transaction of fund of portfolio or the fund.',
         style: Theme.of(context).textTheme.labelMedium?.copyWith(
-              color: AppColors.kBlack,
-              height: 1.5,
-              fontSize: 12,
-            ),
+          color: AppColors.kBlack,
+          height: 1.5,
+          fontSize: 12,
+        ),
       ),
     ];
   }

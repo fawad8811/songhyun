@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:songhyun/screens/widgets/page_head.dart';
 import 'package:songhyun/utils/app_exports.dart';
 
@@ -30,19 +31,12 @@ class PhilosophyScreen extends StatelessWidget {
 
   List<Widget> _buildMobileVisionColumns(BuildContext context) {
     return [
-      _buildVisionColumn(
-          context,
-          Assets.imagesPhilosophy2,
-          'Fundamental principles',
-          'Adhere to enduring principles that have guided investment decision and processes including due diligence from our inception.'),
-      _buildVisionColumn(
-        context,
-        Assets.imagesPhilosophy3,
-        'Transparency and ethics',
-        'Commitment to transparent decision making and high ethical standards.',
-      ),
+      _buildVisionColumn(context, Assets.imagesPhilosophy2,
+          'Fundamental principles', 'adhereToPrinciples'.tr()),
+      _buildVisionColumn(context, Assets.imagesPhilosophy3,
+          'Transparency and ethics', 'commitmentToTransparency'.tr()),
       _buildVisionColumn(context, Assets.imagesPhilosophy1, 'Value Creation',
-          'Pursue mutual growth with portfolio companies through value creation.'),
+          'pursueMutualGrowth'.tr()),
     ];
   }
 

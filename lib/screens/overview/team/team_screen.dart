@@ -1,8 +1,10 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:songhyun/screens/widgets/page_head.dart';
 import 'package:songhyun/utils/app_exports.dart';
 
 class TeamScreen extends StatelessWidget {
   final bool isMobile;
+
   const TeamScreen({Key? key, this.isMobile = false}) : super(key: key);
 
   @override
@@ -24,21 +26,21 @@ class TeamScreen extends StatelessWidget {
                 shrinkWrap: true,
                 crossAxisCount: isMobile ? 2 : 4,
                 mainAxisSpacing: 20,
-                children: const [
-                  TypeContainer(type: 'Management'),
+                children: [
+                  TypeContainer(type: 'investmentDivision'.tr()),
                   TeamContainer(
-                    name: 'John Doe',
-                    position: 'CEO',
+                    name: 'rebeccaDoe'.tr(),
+                    position: 'ceo'.tr(),
                     image: Assets.imagesBgTopTeam,
                   ),
                   TeamContainer(
-                    name: 'John Doe',
-                    position: 'CEO',
+                    name: 'johnDoe'.tr(),
+                    position: 'ceo'.tr(),
                     image: Assets.imagesBgTopTeam,
                   ),
                   TeamContainer(
-                    name: 'John Doe',
-                    position: 'CEO',
+                    name: 'johnDoe'.tr(),
+                    position: 'ceo'.tr(),
                     image: Assets.imagesBgTopTeam,
                   ),
                 ],
@@ -48,26 +50,26 @@ class TeamScreen extends StatelessWidget {
                 shrinkWrap: true,
                 crossAxisCount: isMobile ? 2 : 4,
                 mainAxisSpacing: 20,
-                children: const [
-                  TypeContainer(type: 'Investment Division'),
+                children: [
+                  TypeContainer(type: 'investmentDivision'.tr()),
                   TeamContainer(
-                    name: 'Rebecca Doe',
-                    position: 'Vice President',
+                    name: 'rebeccaDoe'.tr(),
+                    position: 'vicePresident'.tr(),
                     image: Assets.imagesBgTopTeam,
                   ),
                   TeamContainer(
-                    name: 'Shock Rock',
-                    position: 'Executive Managing',
+                    name: 'shockRock'.tr(),
+                    position: 'executiveManaging'.tr(),
                     image: Assets.imagesBgTopTeam,
                   ),
                   TeamContainer(
-                    name: 'Shock Rock',
-                    position: 'Executive Managing',
+                    name: 'shockRock'.tr(),
+                    position: 'executiveManaging'.tr(),
                     image: Assets.imagesBgTopTeam,
                   ),
                   TeamContainer(
-                    name: 'Shock Rock',
-                    position: 'Executive Managing',
+                    name: 'shockRock'.tr(),
+                    position: 'executiveManaging'.tr(),
                     image: Assets.imagesBgTopTeam,
                   ),
                 ],
@@ -83,6 +85,7 @@ class TeamScreen extends StatelessWidget {
 
 class TypeContainer extends StatelessWidget {
   final String type;
+
   const TypeContainer({
     required this.type,
     super.key,
@@ -101,7 +104,7 @@ class TypeContainer extends StatelessWidget {
       child: Align(
         alignment: Alignment.bottomCenter,
         child: Text(
-          type,
+          type.tr(),
           style: Theme.of(context).textTheme.titleLarge?.copyWith(
                 color: AppColors.kWhite,
                 fontSize: 40,
@@ -174,7 +177,7 @@ class TeamContainer extends StatelessWidget {
             left: 20,
             right: 20,
             child: Text(
-              name,
+              name.tr(),
               style: Theme.of(context).textTheme.titleLarge?.copyWith(
                     color: AppColors.kWhite,
                     fontSize: 26,
