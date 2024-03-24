@@ -13,100 +13,93 @@ class ContactScreen extends StatelessWidget {
       children: [
         const PageHead(title: 'Contact', image: Assets.imagesBgTopContact),
         SizedBox(height: getProportionateScreenHeight(20)),
-        Padding(
-          padding: EdgeInsets.only(
-              left: getProportionateScreenWidth(30),
-              right: getProportionateScreenWidth(30)),
-          child: Container(
-            color: AppColors.kMainBackgroundColor,
-            child: Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: getProportionateScreenWidth(10),
-                vertical: getProportionateScreenHeight(30),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                      vertical: getProportionateScreenHeight(30),
-                    ),
-                    child: Row(
-                      children: [
-                        Image.asset(Assets.imagesMap1),
-                        const SizedBox(
-                          width: 16,
-                        ),
-                        Text.rich(
-                          TextSpan(
-                            text: '3F, Textile Center\n',
-                            style: Theme.of(context).textTheme.labelLarge,
-                            children: [
-                              TextSpan(
-                                text:
-                                    ' 518, Teheran-ro, Gangnam-gu, Seoul, 135-713, Korea',
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .labelLarge!
-                                    .copyWith(
-                                      fontSize: 12,
-                                      color: const Color(0xFF333333),
-                                    ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
+        Container(
+          color: AppColors.kMainBackgroundColor,
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: getProportionateScreenWidth(24),
+              vertical: getProportionateScreenHeight(30),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                    vertical: getProportionateScreenHeight(30),
                   ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                      vertical: getProportionateScreenHeight(30),
-                    ),
-                    child: Row(
-                      children: [
-                        Image.asset(Assets.imagesMap2),
-                        const SizedBox(
-                          width: 16,
-                        ),
-                        Text(
-                          '82-2-528-3900',
-                          style:
-                              Theme.of(context).textTheme.labelLarge!.copyWith(
+                  child: Row(
+                    children: [
+                      Image.asset(Assets.imagesMap1),
+                      const SizedBox(
+                        width: 16,
+                      ),
+                      Text.rich(
+                        TextSpan(
+                          text: '3F, Textile Center\n',
+                          style: Theme.of(context).textTheme.labelLarge,
+                          children: [
+                            TextSpan(
+                              text:
+                                  ' 518, Teheran-ro, Gangnam-gu, Seoul, 135-713, Korea',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .labelLarge!
+                                  .copyWith(
+                                    fontSize: 12,
                                     color: const Color(0xFF333333),
                                   ),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                      vertical: getProportionateScreenHeight(30),
-                    ),
-                    child: Row(
-                      children: [
-                        Image.asset(Assets.imagesMap3),
-                        const SizedBox(
-                          width: 16,
-                        ),
-                        Text(
-                          '82-2-528-3900',
-                          style:
-                              Theme.of(context).textTheme.labelLarge!.copyWith(
-                                    color: const Color(0xFF333333),
-                                  ),
-                        ),
-                      ],
-                    ),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                    vertical: getProportionateScreenHeight(30),
                   ),
-                  Container(
-                      padding: EdgeInsets.zero,
-                      height: getProportionateScreenHeight(100),
-                      width: getProportionateScreenWidth(100),
-                      color: AppColors.kGreen,
-                      child: Image.asset(Assets.imagesMapBtn2))
-                ],
-              ),
+                  child: Row(
+                    children: [
+                      Image.asset(Assets.imagesMap2),
+                      const SizedBox(
+                        width: 16,
+                      ),
+                      Text(
+                        '82-2-528-3900',
+                        style: Theme.of(context).textTheme.labelLarge!.copyWith(
+                              color: const Color(0xFF333333),
+                            ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                    vertical: getProportionateScreenHeight(30),
+                  ),
+                  child: Row(
+                    children: [
+                      Image.asset(Assets.imagesMap3),
+                      const SizedBox(
+                        width: 16,
+                      ),
+                      Text(
+                        '82-2-528-3900',
+                        style: Theme.of(context).textTheme.labelLarge!.copyWith(
+                              color: const Color(0xFF333333),
+                            ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                    padding: EdgeInsets.zero,
+                    height: getProportionateScreenHeight(100),
+                    width: getProportionateScreenWidth(150),
+                    color: AppColors.kGreen,
+                    child: Image.asset(Assets.imagesMapBtn2)),
+              ],
             ),
           ),
         ),

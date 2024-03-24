@@ -71,7 +71,7 @@ class TimelineItem extends StatelessWidget {
               }
             }),
           ),
-          Flexible(
+          Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: List.generate(descriptions.length, (index) {

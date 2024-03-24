@@ -70,4 +70,9 @@ class Assets {
   static const String imagesMap1 = 'assets/images/map_icon_1.png';
   static const String imagesMap2 = 'assets/images/map_icon_2.png';
   static const String imagesMap3 = 'assets/images/map_icon_3.png';
+  static const String imagesNews1 = 'assets/images/11.jpg';
+  static const String imagesNews2 = 'assets/images/52.png';
+  static const String imagesNewsFa = 'assets/images/news_fa.png';
+  static const String imagesNewstwr = 'assets/images/news_twr.png';
+
 }
