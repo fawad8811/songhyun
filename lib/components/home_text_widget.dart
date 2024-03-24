@@ -27,7 +27,7 @@ class HomeTextWidget extends StatelessWidget {
           child: Center(
             child: Container(
               // height: 10,
-              padding: EdgeInsets.all(getProportionateScreenWidth(20)),
+              padding: EdgeInsets.all(getProportionateScreenWidth(10)),
               color: Colors.transparent.withOpacity(0.5),
               child: SelectableText.rich(
                 TextSpan(

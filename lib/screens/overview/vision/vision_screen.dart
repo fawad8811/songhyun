@@ -19,29 +19,60 @@ class VisionScreen extends StatelessWidget {
           title: 'Vision',
           image: Assets.imagesBgTopVision,
         ),
-        if (isMobile)
-          ..._buildMobileVisionColumns(context)
-        else
-          _buildContent(context),
+        SizedBox(height: getProportionateScreenHeight(20)),
+        Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: getProportionateScreenWidth(20),
+          ),
+          child: isMobile
+              ? _buildMobileVisionColumns(context)
+              : Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: _buildWebVisionColumns(context),
+                ),
+        ),
         SizedBox(height: getProportionateScreenHeight(150)),
       ],
     );
   }
 
-  Widget _buildContent(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(
-        horizontal: getProportionateScreenWidth(20),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: _buildMobileVisionColumns(context),
+  Widget _buildVisionColumn(
+    BuildContext context,
+    String imageAsset,
+    String title,
+    String description,
+  ) {
+    return Expanded(
+      child: Column(
+        children: [
+          Image.asset(imageAsset),
+          Text(
+            title,
+            textAlign: TextAlign.center,
+            style: Theme.of(context)
+                .textTheme
+                .labelLarge
+                ?.copyWith(color: AppColors.kGreenTextColor, height: 2.0),
+          ),
+          SizedBox(height: getProportionateScreenHeight(10)),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Text(
+              description,
+              textAlign: TextAlign.center,
+              style: Theme.of(context)
+                  .textTheme
+                  .labelMedium
+                  ?.copyWith(color: AppColors.kBlack, height: 1.5),
+            ),
+          ),
+        ],
       ),
     );
   }
 
-  List<Widget> _buildMobileVisionColumns(BuildContext context) {
+  List<Widget> _buildWebVisionColumns(BuildContext context) {
     return [
       _buildVisionColumn(
         context,
@@ -64,7 +95,7 @@ class VisionScreen extends StatelessWidget {
     ];
   }
 
-  Widget _buildVisionColumn(
+  Widget _buildVisionMobileColumn(
     BuildContext context,
     String imageAsset,
     String title,
@@ -81,8 +112,9 @@ class VisionScreen extends StatelessWidget {
               .labelLarge
               ?.copyWith(color: AppColors.kGreenTextColor, height: 2.0),
         ),
+        SizedBox(height: getProportionateScreenHeight(10)),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 40),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Text(
             description,
             textAlign: TextAlign.center,
@@ -91,6 +123,33 @@ class VisionScreen extends StatelessWidget {
                 .labelMedium
                 ?.copyWith(color: AppColors.kBlack, height: 1.5),
           ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildMobileVisionColumns(BuildContext context) {
+    return Column(
+      children: [
+        _buildVisionMobileColumn(
+          context,
+          Assets.imagesVision1,
+          'Principle-based management',
+          'SongHyun was built on over 50 years of transparent management philosophy of Hanglas Group and over 40 years of investment experience.',
+        ),
+        SizedBox(height: getProportionateScreenHeight(20)),
+        _buildVisionMobileColumn(
+          context,
+          Assets.imagesVision2,
+          'Mutual Growth',
+          'Management team of SongHyun has helped over 40 portfolio companies to have a successful IPO and achieved strong growth with its managed funds; Through this, the management of Songhyun has been able to return profits to all concerned parties.',
+        ),
+        SizedBox(height: getProportionateScreenHeight(20)),
+        _buildVisionMobileColumn(
+          context,
+          Assets.imagesVision3,
+          'Long-term perspective Horizon',
+          'SongHyun aims to become a world-class investment firm which is committed to a long term investment horizon while strengthening its current growth foundation',
         ),
       ],
     );

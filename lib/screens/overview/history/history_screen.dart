@@ -23,20 +23,20 @@ class HistoryScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                TimelineItem(
+                const TimelineItem(
                   dates: ['2012. 05.', '06.'],
                   descriptions: [
                     'Establish SongHyun Investment (Paid in Capital KRW 20bn)',
                     'Register as Venture Capital (SMBA)',
                   ],
                 ),
-                TimelineItem(
+                const TimelineItem(
                   dates: ['2013. 08.'],
                   descriptions: [
                     'Raise ‘ SongHyun Growth Ladder the 1st Fund’ (KRW 30bn)'
                   ],
                 ),
-                TimelineItem(
+                const TimelineItem(
                   dates: ['2014. 09.', '11.	', '12. ', '13. '],
                   descriptions: [
                     'Raise ‘SongHyun Young Entrepreneur the 1st Fund’ (KRW 24bn)',
@@ -46,7 +46,7 @@ class HistoryScreen extends StatelessWidget {
                   ],
                 ),
                 // Add more TimelineItem widgets as needed
-                SizedBox(height: getProportionateScreenHeight(80)),
+                SizedBox(height: getProportionateScreenHeight(150)),
               ],
             ),
           ),
