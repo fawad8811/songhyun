@@ -26,12 +26,12 @@ class _TeamScreenState extends State<TeamScreen> {
     'Vice President',
     'Executive Managing',
     'Director of Marketing',
-    'Chief Financial Officer',
-    'Chief Technology Officer',
+    'Financial Officer',
+    'Technology Officer',
   ];
 
   final List<String> images = [
-    Assets.imagesTeam1,
+    Assets.imagesteamProfile,
     // Assets.imagesteamProfile2,
     // Assets.imagesteamProfile3,
     // Assets.imagesteamProfile4,
@@ -60,7 +60,7 @@ class _TeamScreenState extends State<TeamScreen> {
             ],
           ),
         ),
-        SizedBox(height: getProportionateScreenHeight(40)),
+        SizedBox(height: getProportionateScreenHeight(70)),
       ],
     );
   }

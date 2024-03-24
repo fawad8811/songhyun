@@ -33,7 +33,7 @@ class Assets {
   static const String imagesMenuMobile = 'assets/images/menu_mobile.png';
   static const String imagesMenuMobileX = 'assets/images/menu_mobile_x.png';
   static const String imagesOnlyLogo = 'assets/images/only_logo.png';
-  static const String imagesLogoWithName = 'assets/images/Choegelogo_01.svg';
+  static const String imagesLogoWithName = 'assets/images/Choegelogo_02.png';
   static const String imagesVision1 = 'assets/images/vision_1.png';
   static const String imagesVision2 = 'assets/images/vision_2.png';
   static const String imagesVision3 = 'assets/images/vision_3.png';

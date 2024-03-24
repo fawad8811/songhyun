@@ -1,6 +1,5 @@
 import 'dart:developer';
 
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:songhyun/utils/app_exports.dart';
 
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
@@ -42,11 +41,15 @@ class _CustomAppBarState extends State<CustomAppBar> {
             onTap: () {
               widget.onLogoTap?.call();
             },
-            child: Container(
-                color: Colors.white,
-                child: SvgPicture.asset(
-                  Assets.imagesLogoWithName,
-                )),
+            child: Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: getProportionateScreenWidth(30),
+                vertical: getProportionateScreenHeight(20),
+              ),
+              child: Image.asset(
+                Assets.imagesLogoWithName,
+              ),
+            ),
           ),
         ),
         if (widget.isMobile) ...{

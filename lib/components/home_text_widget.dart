@@ -27,19 +27,19 @@ class HomeTextWidget extends StatelessWidget {
           child: Center(
             child: Container(
               // height: 10,
-              padding: EdgeInsets.all(getProportionateScreenWidth(10)),
+              padding: EdgeInsets.all(getProportionateScreenWidth(6)),
               color: Colors.transparent.withOpacity(0.5),
               child: SelectableText.rich(
                 TextSpan(
                   style: MyAppTheme.textThemeLight.labelLarge!.copyWith(
                       color: AppColors.kWhite,
                       fontWeight: FontWeight.w400,
-                      fontSize: isMobile ? 20 : 32),
+                      fontSize: isMobile ? 18 : 32),
                   children: <TextSpan>[
                     TextSpan(
                       text: "Choege Investment Private Limited, ",
                       style: MyAppTheme.textThemeLight.labelLarge!
-                          .copyWith(color: AppColors.kGreen, fontSize: 30),
+                          .copyWith(color: Colors.green, fontSize: 30),
                     ),
                     const TextSpan(
                       text:
