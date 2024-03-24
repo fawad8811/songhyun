@@ -40,7 +40,6 @@ dependencies:
       url: https://github.com/awaisfusion/responsive_config.git
       ref: main
   flutter_dash: ^1.0.0
-
 dev_dependencies:
   flutter_test:
     sdk: flutter

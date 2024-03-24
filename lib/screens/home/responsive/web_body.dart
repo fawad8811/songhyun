@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:songhyun/screens/investment/fund/fund_screen.dart';
 import 'package:songhyun/screens/investment/philosophy/philosophy_screen.dart';
 import 'package:songhyun/screens/investment/strategy/strategy_screen.dart';
@@ -70,12 +72,15 @@ class WebBodyState extends State<WebBody> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               CustomAppBar(
+                // pageController:_pageController,
                 scaffoldKey: widget.scaffoldKey,
                 onPageSelected: (index) {
+                  log('index: $index');
                   setState(() {
                     if (index >= 0 && index < _pages.length) {
                       _pages[index] = MyNavigation.getPageByIndex(
-                          index, widget.scaffoldKey);
+                        index,
+                      );
                     }
                   });
                 },
@@ -90,7 +95,9 @@ class WebBodyState extends State<WebBody> {
                 },
                 onSubmenuSelected: (value) {
                   MyNavigation.handleSubmenuSelected(
-                      value, _pageController, widget.scaffoldKey);
+                    value,
+                    _pageController,
+                  );
                 },
               ),
               FooterContainer(

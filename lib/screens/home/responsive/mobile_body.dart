@@ -58,8 +58,7 @@ class _MobileScaffoldState extends State<MobileScaffold> {
               });
             },
             children: const [
-              
-              // HomeTextWidget(),
+              HomeTextWidget(),
               GreetingsScreen(),
               VisionScreen(
                 isMobile: true,
@@ -146,7 +145,6 @@ class _MobileScaffoldState extends State<MobileScaffold> {
                 MyNavigation.handleSubmenuSelected(
                   title,
                   _pageController,
-                  widget.scaffoldKey,
                 );
                 setState(() {
                   _selectedMenu = title;
@@ -174,7 +172,6 @@ class _MobileScaffoldState extends State<MobileScaffold> {
                 MyNavigation.handleSubmenuSelected(
                   title,
                   _pageController,
-                  widget.scaffoldKey,
                 );
               }
             },

@@ -10,7 +10,8 @@ import 'package:songhyun/utils/app_exports.dart';
 
 class MyNavigation {
   static Widget getPageByIndex(
-      int index, GlobalKey<ScaffoldState> scaffoldKey) {
+    int index,
+  ) {
     switch (index) {
       case 0:
         return const HomeTextWidget();
@@ -35,8 +36,10 @@ class MyNavigation {
     }
   }
 
-  static void handleSubmenuSelected(String value, PageController pageController,
-      GlobalKey<ScaffoldState> scaffoldKey) {
+  static void handleSubmenuSelected(
+    String value,
+    PageController pageController,
+  ) {
     if (value == 'Greeting') {
       _navigateToPage(pageController, 1);
     } else if (value == 'Vision') {
@@ -51,7 +54,7 @@ class MyNavigation {
       _navigateToPage(pageController, 6);
     } else if (value == 'Fund') {
       _navigateToPage(pageController, 7);
-    } else if (value == 'Portfolio') {
+    } else if (value == 'PORTFOLIO') {
       _navigateToPage(pageController, 8);
     }
   }

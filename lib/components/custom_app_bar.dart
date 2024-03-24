@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:songhyun/utils/app_exports.dart';
 
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
@@ -91,12 +93,50 @@ class _CustomAppBarState extends State<CustomAppBar> {
     return _buildAppBarButton(title, context, false);
   }
 
-  PopupMenuButton<String> _buildAppBarButton(
+  Widget _buildAppBarButton(
       String title, BuildContext context, bool isSubMenu) {
+    // Check if the submenu items list is empty
+    if (MenuMap.submenuItems[title]!.isEmpty) {
+      return InkWell(
+        onTap: () {
+          log('Selected: $title');
+          // Perform navigation based on the selected title
+          switch (title) {
+            case 'PORTFOLIO':
+              widget.onSubmenuSelected?.call('PORTFOLIO');
+              // Implement navigation to the Portfolio screen
+              break;
+            case 'NEWS':
+              widget.onSubmenuSelected?.call('NEWS');
+              // Implement navigation to the News screen
+              break;
+            case 'CONTACT':
+              widget.onSubmenuSelected?.call('CONTACT');
+              // Implement navigation to the Contact screen
+              break;
+            default:
+              // Handle other cases or do nothing
+              break;
+          }
+        },
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24),
+          child: Text(
+            title.toUpperCase(),
+            style: const TextStyle(fontSize: 14, color: AppColors.kWhite),
+          ),
+        ),
+      );
+    }
+
+    // If submenu items exist, return a PopupMenuButton
     return PopupMenuButton<String>(
       tooltip: '',
+      onSelected: (String result) {
+        log('Selected: $result');
+        widget.onSubmenuSelected?.call(result);
+      },
       color: isSubMenu ? Colors.transparent.withOpacity(0.6) : null,
-      // shadowColor: Colors.transparent.withOpacity(0.2),
       itemBuilder: (context) {
         return MenuMap.submenuItems[title]!.map((item) {
           return PopupMenuItem<String>(
@@ -110,10 +150,6 @@ class _CustomAppBarState extends State<CustomAppBar> {
             ),
           );
         }).toList();
-      },
-      onSelected: (String result) {
-        widget.onSubmenuSelected?.call(result);
-        // Navigator.pop(context); // Close the first menu
       },
       offset: const Offset(0, 50),
       child: Padding(
