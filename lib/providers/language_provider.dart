@@ -6,7 +6,7 @@ class LanguageProvider with ChangeNotifier {
 
   Locale get locale => _locale;
 
-  void setLocale(Locale locale) async {
+  Future<void> setLocale(Locale locale) async {
     _locale = locale;
     notifyListeners();
 
@@ -23,5 +23,13 @@ class LanguageProvider with ChangeNotifier {
     }
 
     notifyListeners();
+  }
+
+  void toggleLocale() async {
+    if (_locale.languageCode == 'en') {
+      await setLocale(const Locale('ko', 'KR'));
+    } else {
+      await setLocale(const Locale('en', 'US'));
+    }
   }
 }

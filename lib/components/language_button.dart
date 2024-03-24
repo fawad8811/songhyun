@@ -12,9 +12,7 @@ class LanguageButton extends StatelessWidget {
 
     return TextButton(
       onPressed: () {
-        final newLocale =
-            isKorean ? const Locale('en', 'US') : const Locale('ko', 'KR');
-        languageProvider.setLocale(newLocale);
+        Provider.of<LanguageProvider>(context, listen: false).toggleLocale();
       },
       style: TextButton.styleFrom(
         backgroundColor: const Color(0xFFababa8),

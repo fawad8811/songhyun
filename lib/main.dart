@@ -8,6 +8,8 @@ final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
+  final languageProvider = LanguageProvider();
+  await languageProvider.loadLocale();
   runApp(ChangeNotifierProvider(
     create: (context) => LanguageProvider()..loadLocale(),
     child: EasyLocalization(
@@ -23,23 +25,26 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final languageProvider = Provider.of<LanguageProvider>(context);
     ResponsiveConfig().init(context);
-    return MaterialApp(
-      localizationsDelegates: context.localizationDelegates,
-      supportedLocales: context.supportedLocales,
-      locale: languageProvider.locale,
-      // home: const PortfolioScreen(),
-      home: ResponsiveLayout(
-        mobileBody: MobileScaffold(
-          scaffoldKey: scaffoldKey,
-        ),
-        webBody: WebBody(
-          scaffoldKey: scaffoldKey,
-        ),
-      ),
-      theme: MyAppTheme.themeDataLight,
-      debugShowCheckedModeBanner: false,
+    return Consumer<LanguageProvider>(
+      builder: (context, languageProvider, child) {
+        return MaterialApp(
+          localizationsDelegates: context.localizationDelegates,
+          supportedLocales: context.supportedLocales,
+          locale: languageProvider.locale,
+          // home: const PortfolioScreen(),
+          home: ResponsiveLayout(
+            mobileBody: MobileScaffold(
+              scaffoldKey: scaffoldKey,
+            ),
+            webBody: WebBody(
+              scaffoldKey: scaffoldKey,
+            ),
+          ),
+          theme: MyAppTheme.themeDataLight,
+          debugShowCheckedModeBanner: false,
+        );
+      },
     );
   }
 }

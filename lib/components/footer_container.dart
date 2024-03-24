@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:songhyun/utils/app_exports.dart';
 
 class FooterContainer extends StatelessWidget {
@@ -34,8 +33,7 @@ class FooterContainer extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Text('hello'.tr()),
-            // buildCopyrightText(context),
+            child: buildCopyrightText(context),
           ),
           const Spacer(),
           const LanguageButton(),
