@@ -1,22 +1,21 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:songhyun/theme/app_colors.dart';
+import 'package:provider/provider.dart';
+import 'package:songhyun/providers/language_provider.dart';
 
-class LanguageButton extends StatefulWidget {
-  const LanguageButton({Key? key}) : super(key: key);
-
-  @override
-  LanguageButtonState createState() => LanguageButtonState();
-}
-
-class LanguageButtonState extends State<LanguageButton> {
-  bool _isKorean = false;
+class LanguageButton extends StatelessWidget {
+  const LanguageButton({super.key});
 
   @override
   Widget build(BuildContext context) {
-    String buttonText = _isKorean ? 'korean' : 'ENGLISH';
+    final languageProvider = Provider.of<LanguageProvider>(context);
+    final isKorean = languageProvider.locale.languageCode == 'ko';
+
     return TextButton(
-      onPressed: _toggleLanguage,
+      onPressed: () {
+        final newLocale =
+            isKorean ? const Locale('en', 'US') : const Locale('ko', 'KR');
+        languageProvider.setLocale(newLocale);
+      },
       style: TextButton.styleFrom(
         backgroundColor: const Color(0xFFababa8),
       ),
@@ -25,22 +24,15 @@ class LanguageButtonState extends State<LanguageButton> {
         children: [
           const Icon(
             Icons.language,
-            color: AppColors.kBlack,
+            color: Colors.black,
           ),
           const SizedBox(width: 10.0),
           Text(
-            buttonText.toUpperCase(),
-            style: Theme.of(context).textTheme.bodyMedium,
+            isKorean ? 'ENGLISH' : 'KOREAN',
+            style: Theme.of(context).textTheme.titleSmall,
           ),
         ],
       ),
     );
-  }
-
-  void _toggleLanguage() {
-    setState(() {
-      _isKorean = !_isKorean;
-      context.setLocale(const Locale('ko', 'KR'));
-    });
   }
 }
