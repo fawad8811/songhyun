@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:songhyun/utils/app_exports.dart';
 
 class FooterContainer extends StatelessWidget {
@@ -86,7 +87,7 @@ class FooterContainer extends StatelessWidget {
       children: [
         Image.asset(Assets.imagesOnlyLogo, width: 30, height: 30),
         const SizedBox(width: 10),
-        Text('Choege Investment\n Private Limited',
+        Text('Choege Investment\n Private Limited'.tr(),
             style: Theme.of(context).textTheme.titleSmall?.copyWith(
                 color: pageIndex == 0 ? AppColors.kWhite : AppColors.kBlack)),
       ],

@@ -51,7 +51,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
                   Image.asset(Assets.imagesOnlyLogo, width: 50, height: 50),
                   const SizedBox(width: 20),
                   Text(
-                    'Choege Investment\n Private Limited'.tr(),
+                    'Choege Investment\n Private Limited',
                     style: MyAppTheme.textThemeLight.labelLarge!.copyWith(
                       color: AppColors.kWhite,
                     ),

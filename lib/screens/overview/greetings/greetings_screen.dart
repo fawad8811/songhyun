@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:songhyun/screens/widgets/page_head.dart';
 import 'package:songhyun/utils/app_exports.dart';
 
@@ -21,7 +22,7 @@ class GreetingsScreen extends StatelessWidget {
                   bottom: getProportionateScreenHeight(20)),
               child: Text(
                 textAlign: TextAlign.center,
-                'Thank you for visiting SongHyun Investment.',
+                'Thank you for visiting SongHyun Investment.'.tr(),
                 style: Theme.of(context).textTheme.labelLarge?.copyWith(
                     color: AppColors.kGreenTextColor,
                     fontWeight: FontWeight.w400),
@@ -32,7 +33,7 @@ class GreetingsScreen extends StatelessWidget {
                   horizontal: getProportionateScreenWidth(50)),
               child: Text(
                 textAlign: TextAlign.center,
-                'We would like to extend our warmest welcome to you.\n We manage a full spectrum of funds specifically dedicated to each phase of development of small and medium-sized companies.\n Our strategy is to expand from early stage venture to growth and private equity investments as evidenced by our first\n private equity fund of KRW 155 billion (USD 135 million) launched in 2015. At the same time, we plan to expand our investment universe beyond Korea into neighboring countries in Asia.\n We are committed to pursuing mutual growth with the invested companies.\n We bring with us a wealth of management and industry expertise.\n We invite you to join us to embark on the next phase of growth in you company.',
+                'welcomeText'.tr(),
                 style: Theme.of(context)
                     .textTheme
                     .labelMedium

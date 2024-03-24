@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_config/responsive_config.dart';
 import 'package:songhyun/theme/app_colors.dart';
@@ -38,7 +39,7 @@ class HomeTextWidget extends StatelessWidget {
                       fontSize: isMobile ? 20 : 32),
                   children: <TextSpan>[
                     TextSpan(
-                      text: "Choege Investment Private Limited, ",
+                      text: "Choege Investment Private Limited".tr(),
                       style: MyAppTheme.textThemeLight.labelLarge!
                           .copyWith(color: AppColors.kGreen, fontSize: 30),
                     ),

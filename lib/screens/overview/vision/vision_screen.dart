@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:songhyun/screens/widgets/page_head.dart';
 import 'package:songhyun/utils/app_exports.dart';
 
@@ -36,7 +37,9 @@ class VisionScreen extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: _buildMobileVisionColumns(context),
+        children: _buildMobileVisionColumns(context)
+            .map((widget) => Flexible(child: widget))
+            .toList(),
       ),
     );
   }
@@ -46,20 +49,20 @@ class VisionScreen extends StatelessWidget {
       _buildVisionColumn(
         context,
         'assets/images/vision_1.png',
-        'Principle-based management',
-        'SongHyun was built on over 50 years of transparent management philosophy of Hanglas Group and over 40 years of investment experience.',
+        'principleBasedManagement',
+        'managementExperience',
       ),
       _buildVisionColumn(
         context,
         'assets/images/vision_2.png',
-        'Mutual Growth',
-        'Management team of SongHyun has helped over 40 portfolio companies to have a successful IPO and achieved strong growth with its managed funds; Through this, the management of Songhyun has been able to return profits to all concerned parties.',
+        'mutualGrowth',
+        'ipoSuccess',
       ),
       _buildVisionColumn(
         context,
         'assets/images/vision_3.png',
-        'Long-term perspective Horizon',
-        'SongHyun aims to become a world-class investment firm which is committed to a long term investment horizon while strengthening its current growth foundation',
+        'longTermPerspective',
+        'worldClassInvestment',
       ),
     ];
   }
@@ -67,14 +70,14 @@ class VisionScreen extends StatelessWidget {
   Widget _buildVisionColumn(
     BuildContext context,
     String imageAsset,
-    String title,
-    String description,
+    String titleKey,
+    String descriptionKey,
   ) {
     return Column(
       children: [
         Image.asset(imageAsset),
         Text(
-          title,
+          titleKey.tr(),
           textAlign: TextAlign.center,
           style: Theme.of(context)
               .textTheme
@@ -84,7 +87,7 @@ class VisionScreen extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 40),
           child: Text(
-            description,
+            descriptionKey.tr(),
             textAlign: TextAlign.center,
             style: Theme.of(context)
                 .textTheme

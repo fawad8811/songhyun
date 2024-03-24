@@ -2,18 +2,14 @@
   "hello": "안녕하세요",
   "welcome": "환영합니다",
   "ENGLISH": "영어",
-  "OVERVIEW": "개요",
-  "INVESTMENT": "투자",
-  "PORTFOLIO": "포트폴리오",
-  "NEWS": "뉴스",
-  "CONTACT": "연락처",
-  "Greeting": "인사",
-  "Vision": "비전",
-  "History": "역사",
-  "Team": "팀",
-  "Philosophy": "철학",
-  "Strategy": "전략",
-  "Fund": "펀드",
-  "Choege Investment" : "최게투자",
-  "Private Limited": "프라이빗 리미티드"
+  "Thank you for visiting SongHyun Investment.": "송현인베스트먼트를 방문해 주셔서 감사합니다.",
+  "Investment Private Limited": "투자 프라이빗 리미티드",
+  "welcomeText": "우리는 당신에게 가장 따뜻한 환영을 드립니다.\n 우리는 작고 중견 기업의 각 개발 단계에 특별히 전념하는 전체 범위의 펀드를 관리합니다.\n 우리의 전략은 초기 스테이지 벤처에서 성장 및 사설 자본 투자로 확장되며, 2015년에 시작된 우리의 첫 번째 사설 자본 펀드인 KRW 1550억 (USD 135000만 달러)에 의해 입증됩니다. 동시에, 우리는 한국을 넘어 아시아의 이웃 국가로 투자 우주를 확장하려고 합니다.\n 우리는 투자된 회사와의 상호 성장을 추구하는 데 약속합니다.\n 우리는 우리가 가지고 있는 관리 및 산업 전문성을 가지고 있습니다.\n 우리는 당신을 초대합니다 우리와 함께 회사의 다음 성장 단계로 떠나는 것을 시작하세요.",
+  "principleBasedManagement": "원칙 기반 관리",
+  "managementExperience": "SongHyun은 Hanglas Group의 50년 이상의 투명한 관리 철학과 40년 이상의 투자 경험에 기반을 두고 구축되었습니다.",
+  "mutualGrowth": "상호 성장",
+  "ipoSuccess": "SongHyun의 관리팀은 40개 이상의 포트폴리오 회사가 성공적인 IPO를 가지고 왔으며, 관리 펀드로 강력한 성장을 이루었습니다; 이를 통해 SongHyun의 관리팀은 모든 관련 당사자에게 이익을 반환할 수 있었습니다.",
+  "longTermPerspective": "장기 시각 수평선",
+  "worldClassInvestment": "SongHyun은 장기 투자 수평선에 약속하면서 현재 성장 기초를 강화하는 세계 급 투자 기관이 되는 것을 목표로 합니다"
+
 }

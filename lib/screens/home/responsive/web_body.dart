@@ -78,7 +78,6 @@ class WebBodyState extends State<WebBody> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               CustomAppBar(
-                // pageController:_pageController,
                 scaffoldKey: widget.scaffoldKey,
                 onPageSelected: (index) {
                   log('index: $index');
