@@ -72,7 +72,7 @@ class FooterContainer extends StatelessWidget {
 
   Widget buildCopyrightText(BuildContext context, [bool isMainScreen = false]) {
     return Text(
-      'COPYRIGHT (C) 2024 Choege Investment ALL RIGHTS RESERVED'.toUpperCase(),
+      'COPYRIGHT (C) 2024 Choege Investment ALL RIGHTS RESERVED hello'.toUpperCase(),
       style: Theme.of(context).textTheme.bodySmall?.copyWith(
             color: pageIndex == 0 ? AppColors.kWhite : AppColors.kBlack,
           ),

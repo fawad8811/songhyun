@@ -5,6 +5,7 @@ import 'package:songhyun/theme/app_theme.dart';
 
 class HomeTextWidget extends StatelessWidget {
   final bool isMobile;
+
   const HomeTextWidget({
     super.key,
     this.isMobile = false,

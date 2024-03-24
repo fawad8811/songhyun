@@ -33,6 +33,7 @@ class WebBodyState extends State<WebBody> {
   late PageController _pageController;
   late List<Widget> _pages;
   int _currentPageIndex = 0;
+
   @override
   void initState() {
     super.initState();
@@ -107,7 +108,7 @@ class WebBodyState extends State<WebBody> {
               ),
               FooterContainer(
                 isMainScreen: true,
-                pageIndex: _currentPageIndex, // Pass current page index
+                pageIndex: _currentPageIndex,
               ),
             ],
           ),
