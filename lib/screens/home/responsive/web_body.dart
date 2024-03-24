@@ -39,7 +39,6 @@ class WebBodyState extends State<WebBody> {
     super.initState();
     _pageController = PageController();
     _pages = [
-      // const NewsScreen(),
       const HomeTextWidget(),
       const GreetingsScreen(),
       const VisionScreen(),

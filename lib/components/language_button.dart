@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:songhyun/providers/language_provider.dart';
 
-class LanguageButton extends StatelessWidget {
+class LanguageButton extends StatefulWidget {
   const LanguageButton({super.key});
 
+  @override
+  State<LanguageButton> createState() => _LanguageButtonState();
+}
+
+class _LanguageButtonState extends State<LanguageButton> {
   @override
   Widget build(BuildContext context) {
     final languageProvider = Provider.of<LanguageProvider>(context);
@@ -12,7 +17,9 @@ class LanguageButton extends StatelessWidget {
 
     return TextButton(
       onPressed: () {
-        Provider.of<LanguageProvider>(context, listen: false).toggleLocale();
+        setState(() {
+          Provider.of<LanguageProvider>(context, listen: false).toggleLocale();
+        });
       },
       style: TextButton.styleFrom(
         backgroundColor: const Color(0xFFababa8),

@@ -39,14 +39,11 @@ class HomeTextWidget extends StatelessWidget {
                       fontSize: isMobile ? 20 : 32),
                   children: <TextSpan>[
                     TextSpan(
-                      text: "Choege Investment Private Limited".tr(),
+                      text: "companyNameOne".tr(),
                       style: MyAppTheme.textThemeLight.labelLarge!
                           .copyWith(color: AppColors.kGreen, fontSize: 30),
                     ),
-                    const TextSpan(
-                      text:
-                          'pursues long-term mutual growth with its portfolio companies through proven investment management principles.',
-                    ),
+                    TextSpan(text: "pursuitStatement".tr()),
                   ],
                 ),
               ),

@@ -31,5 +31,6 @@ class LanguageProvider with ChangeNotifier {
     } else {
       await setLocale(const Locale('en', 'US'));
     }
+    notifyListeners();
   }
 }

@@ -1,9 +1,5 @@
 {
-  "hello": "Hello",
-  "welcome": "Welcome",
-  "ENGLISH": "ENGLISH",
-  "investment private limited" : "Investment Private Limited",
-  "Thank you for visiting SongHyun Investment.": "Thank you for visiting SongHyun Investment.",
+  "pursuitStatement": "pursues long-term mutual growth with its portfolio companies through proven investment management principles.",
   "welcomeText": "We would like to extend our warmest welcome to you.\n We manage a full spectrum of funds specifically dedicated to each phase of development of small and medium-sized companies.\n Our strategy is to expand from early stage venture to growth and private equity investments as evidenced by our first\n private equity fund of KRW 155 billion (USD 135 million) launched in 2015. At the same time, we plan to expand our investment universe beyond Korea into neighboring countries in Asia.\n We are committed to pursuing mutual growth with the invested companies.\n We bring with us a wealth of management and industry expertise.\n We invite you to join us to embark on the next phase of growth in your company.",
   "principleBasedManagement": "Principle-based management",
   "managementExperience": "SongHyun was built on over 50 years of transparent management philosophy of Hanglas Group and over 40 years of investment experience.",
@@ -49,7 +45,9 @@
   "establishedKCrowdFund": "Songhyun Investment established a new 4.7bn won sized-fund called K-Crowd Fund.",
   "newVentureAssociation": "Songhyun Investment formed a new venture association to provide support to early-stage startups and provide more insights about crowdfunding. The Company was selected as a GP to manage the K-Crowd fund by Korea Growth Investment Corp.",
   "address": "3F, Textile Center\n518, Teheran-ro, Gangnam-gu, Seoul, 135-713, Korea",
-  "phoneNumber": "82-2-528-3900"
+  "phoneNumber": "82-2-528-3900",
+  "companyName": "Choege Investment\n Private Limited",
+  "companyNameOne": "Choege Investment Private Limited "
 
 
 }

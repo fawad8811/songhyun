@@ -28,13 +28,13 @@ class NewsScreen extends StatelessWidget {
                 NewsCard(
                     isMobile: isMobile,
                     image: Assets.images1,
-                    title: 'revenueAndOperatingIncome2015'.tr(),
-                    subTitle: 'operatingIncome18bnWon'.tr()),
+                    title: "revenueAndOperatingIncome2015".tr(),
+                    subTitle: "operatingIncome18bnWon".tr()),
                 NewsCard(
                     isMobile: isMobile,
                     image: Assets.images1,
-                    title: 'establishedKCrowdFund'.tr(),
-                    subTitle: 'newVentureAssociation'.tr()),
+                    title: "revenueAndOperatingIncome2015".tr(),
+                    subTitle: "operatingIncome18bnWon".tr()),
               ],
             ),
           ),
@@ -63,56 +63,59 @@ class NewsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Colors.red,
+      color: Colors.transparent,
       elevation: 0,
       shadowColor: Colors.transparent,
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Image.asset(
-            image,
-            fit: BoxFit.cover,
-            height: getProportionateScreenHeight(280),
-            width: getProportionateScreenWidth(280),
-          ),
-          const SizedBox(width: 16),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  maxLines: 6,
-                  overflow: TextOverflow.ellipsis,
-                  style: Theme.of(context)
-                      .textTheme
-                      .labelLarge!
-                      .copyWith(color: AppColors.kGreen),
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  subTitle,
-                  maxLines: 3,
-                  overflow: TextOverflow.ellipsis,
-                  style: Theme.of(context).textTheme.labelLarge!.copyWith(
-                        fontSize: 12,
-                      ),
-                ),
-                isMobile
-                    ? const SizedBox.shrink()
-                    : SizedBox(height: getProportionateScreenHeight(180)),
-                Row(
-                  children: [
-                    Image.asset(Assets.images1),
-                    const SizedBox(width: 8),
-                    Image.asset(Assets.images1),
-                  ],
-                )
-              ],
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Image.asset(
+              image,
+              fit: BoxFit.cover,
+              height: 280,
+              width: 280,
             ),
-          ),
-        ],
+            const SizedBox(width: 16),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    maxLines: 6,
+                    overflow: TextOverflow.ellipsis,
+                    style: Theme.of(context)
+                        .textTheme
+                        .labelLarge!
+                        .copyWith(color: AppColors.kGreen),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    subTitle,
+                    maxLines: 3,
+                    overflow: TextOverflow.ellipsis,
+                    style: Theme.of(context).textTheme.labelLarge!.copyWith(
+                          fontSize: 12,
+                        ),
+                  ),
+                  isMobile
+                      ? const SizedBox.shrink()
+                      : SizedBox(height: getProportionateScreenHeight(150)),
+                  Row(
+                    children: [
+                      Image.asset('assets/images/news_fa.png'),
+                      const SizedBox(width: 2),
+                      Image.asset('assets/images/news_twr.png'),
+                    ],
+                  )
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
