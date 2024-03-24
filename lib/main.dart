@@ -1,4 +1,3 @@
-import 'package:songhyun/screens/portfolio/portfolio_screen.dart';
 import 'package:songhyun/utils/app_exports.dart';
 
 final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();

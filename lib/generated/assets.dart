@@ -66,4 +66,8 @@ class Assets {
   static const String imagesBtnPort2 = 'assets/images/btn_port2.png';
   static const String imagesBtnPort3 = 'assets/images/btn_port3.png';
   static const String imagesBtnPort4 = 'assets/images/btn_port4.png';
+  static const String imagesMapBtn2 = 'assets/images/map_btn2_en.png';
+  static const String imagesMap1 = 'assets/images/map_icon_1.png';
+  static const String imagesMap2 = 'assets/images/map_icon_2.png';
+  static const String imagesMap3 = 'assets/images/map_icon_3.png';
 }

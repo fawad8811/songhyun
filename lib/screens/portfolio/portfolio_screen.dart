@@ -11,6 +11,7 @@ class PortfolioScreen extends StatelessWidget {
       Assets.imagesCop1,
       Assets.imagesCop2,
       Assets.imagesCop3,
+      
       Assets.imagesCop4,
       Assets.imagesCop1,
       Assets.imagesCop2,

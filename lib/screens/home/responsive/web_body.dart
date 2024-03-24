@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:songhyun/screens/contact/contact_screen.dart';
 import 'package:songhyun/screens/investment/fund/fund_screen.dart';
 import 'package:songhyun/screens/investment/philosophy/philosophy_screen.dart';
 import 'package:songhyun/screens/investment/strategy/strategy_screen.dart';
@@ -36,6 +37,7 @@ class WebBodyState extends State<WebBody> {
     super.initState();
     _pageController = PageController();
     _pages = [
+      const ContactScreen(),
       const HomeTextWidget(),
       const GreetingsScreen(),
       const VisionScreen(),
