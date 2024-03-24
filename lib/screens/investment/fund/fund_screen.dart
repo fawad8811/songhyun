@@ -27,7 +27,7 @@ class FundScreen extends StatelessWidget {
               EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
           child: Column(
             children: [
-              Image.asset(Assets.imagesfund1),
+              Image.asset(Assets.imagesFund1En),
               Padding(
                 padding: EdgeInsets.symmetric(
                   horizontal: getProportionateScreenWidth(5),
@@ -39,7 +39,7 @@ class FundScreen extends StatelessWidget {
                       height: 2.0, color: AppColors.kBlack, fontSize: 20),
                 ),
               ),
-              Image.asset(Assets.imagesfund2),
+              Image.asset(Assets.imagesFund2En),
             ],
           ),
         ),

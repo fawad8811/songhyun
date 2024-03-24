@@ -1,4 +1,4 @@
-
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:songhyun/theme/app_colors.dart';
 
@@ -40,6 +40,7 @@ class LanguageButtonState extends State<LanguageButton> {
   void _toggleLanguage() {
     setState(() {
       _isKorean = !_isKorean;
+      context.setLocale(const Locale('ko', 'KR'));
     });
   }
 }
