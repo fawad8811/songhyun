@@ -25,7 +25,7 @@ class NewsScreen extends StatelessWidget {
               children: [
                 NewsCard(
                   isMobile: isMobile,
-                  image: Assets.imagesNews1,
+                  image: Assets.images1,
                   title:
                       'Revenue and operating income of Songhyun Investment for 2015 grew twice as much compared to the same period in 2014, growing steady and strong.',
                   subTitle:
@@ -33,7 +33,7 @@ class NewsScreen extends StatelessWidget {
                 ),
                 NewsCard(
                   isMobile: isMobile,
-                  image: Assets.imagesNews2,
+                  image: Assets.images1,
                   title:
                       'Songhyun Investment established a new 4.7bn won sized-fund called K-Crowd Fund.',
                   subTitle:
@@ -109,9 +109,9 @@ class NewsCard extends StatelessWidget {
                       : SizedBox(height: getProportionateScreenHeight(180)),
                   Row(
                     children: [
-                      Image.asset(Assets.imagesNewsFa),
+                      Image.asset(Assets.images1),
                       const SizedBox(width: 8),
-                      Image.asset(Assets.imagesNewstwr),
+                      Image.asset(Assets.images1),
                     ],
                   )
                 ],

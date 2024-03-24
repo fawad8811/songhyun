@@ -45,19 +45,19 @@ class VisionScreen extends StatelessWidget {
     return [
       _buildVisionColumn(
         context,
-        Assets.imagesVision1,
+        'assets/images/vision_1.png',
         'Principle-based management',
         'SongHyun was built on over 50 years of transparent management philosophy of Hanglas Group and over 40 years of investment experience.',
       ),
       _buildVisionColumn(
         context,
-        Assets.imagesVision2,
+        'assets/images/vision_2.png',
         'Mutual Growth',
         'Management team of SongHyun has helped over 40 portfolio companies to have a successful IPO and achieved strong growth with its managed funds; Through this, the management of Songhyun has been able to return profits to all concerned parties.',
       ),
       _buildVisionColumn(
         context,
-        Assets.imagesVision3,
+        'assets/images/vision_3.png',
         'Long-term perspective Horizon',
         'SongHyun aims to become a world-class investment firm which is committed to a long term investment horizon while strengthening its current growth foundation',
       ),

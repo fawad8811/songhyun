@@ -29,17 +29,17 @@ class TeamScreen extends StatelessWidget {
                   TeamContainer(
                     name: 'John Doe',
                     position: 'CEO',
-                    image: Assets.imagesTeamImage,
+                    image: Assets.imagesBgTopTeam,
                   ),
                   TeamContainer(
                     name: 'John Doe',
                     position: 'CEO',
-                    image: Assets.imagesTeamImage,
+                    image: Assets.imagesBgTopTeam,
                   ),
                   TeamContainer(
                     name: 'John Doe',
                     position: 'CEO',
-                    image: Assets.imagesTeamImage,
+                    image: Assets.imagesBgTopTeam,
                   ),
                 ],
               ),
@@ -53,22 +53,22 @@ class TeamScreen extends StatelessWidget {
                   TeamContainer(
                     name: 'Rebecca Doe',
                     position: 'Vice President',
-                    image: Assets.imagesTeamImage,
+                    image: Assets.imagesBgTopTeam,
                   ),
                   TeamContainer(
                     name: 'Shock Rock',
                     position: 'Executive Managing',
-                    image: Assets.imagesTeamImage,
+                    image: Assets.imagesBgTopTeam,
                   ),
                   TeamContainer(
                     name: 'Shock Rock',
                     position: 'Executive Managing',
-                    image: Assets.imagesTeamImage,
+                    image: Assets.imagesBgTopTeam,
                   ),
                   TeamContainer(
                     name: 'Shock Rock',
                     position: 'Executive Managing',
-                    image: Assets.imagesTeamImage,
+                    image: Assets.imagesBgTopTeam,
                   ),
                 ],
               ),
