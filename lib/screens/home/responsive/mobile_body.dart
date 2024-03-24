@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'package:songhyun/screens/contact/contact_screen.dart';
 import 'package:songhyun/screens/investment/fund/fund_screen.dart';
 import 'package:songhyun/screens/investment/philosophy/philosophy_screen.dart';
 import 'package:songhyun/screens/investment/strategy/strategy_screen.dart';
@@ -76,7 +77,10 @@ class _MobileScaffoldState extends State<MobileScaffold> {
               PortfolioScreen(
                 isMobile: true,
               ),
-              NewsScreen()
+              NewsScreen(
+                isMobile: true,
+              ),
+              ContactScreen(),
               // Add other screens here
             ],
           ),

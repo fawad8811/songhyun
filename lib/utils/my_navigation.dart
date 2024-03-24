@@ -1,6 +1,8 @@
+import 'package:songhyun/screens/contact/contact_screen.dart';
 import 'package:songhyun/screens/investment/fund/fund_screen.dart';
 import 'package:songhyun/screens/investment/philosophy/philosophy_screen.dart';
 import 'package:songhyun/screens/investment/strategy/strategy_screen.dart';
+import 'package:songhyun/screens/news/news_screen.dart';
 import 'package:songhyun/screens/overview/greetings/greetings_screen.dart';
 import 'package:songhyun/screens/overview/history/history_screen.dart';
 import 'package:songhyun/screens/overview/team/team_screen.dart';
@@ -31,6 +33,10 @@ class MyNavigation {
         return const FundScreen();
       case 8:
         return const PortfolioScreen();
+      case 9:
+        return const NewsScreen();
+      case 10:
+        return const ContactScreen();
       default:
         return Container();
     }
@@ -56,6 +62,10 @@ class MyNavigation {
       _navigateToPage(pageController, 7);
     } else if (value == 'PORTFOLIO') {
       _navigateToPage(pageController, 8);
+    } else if (value == 'NEWS') {
+      _navigateToPage(pageController, 9);
+    } else if (value == 'CONTACT') {
+      _navigateToPage(pageController, 10);
     }
   }
 

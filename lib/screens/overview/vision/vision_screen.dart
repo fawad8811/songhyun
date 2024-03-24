@@ -1,4 +1,3 @@
-
 import 'package:songhyun/screens/widgets/page_head.dart';
 import 'package:songhyun/utils/app_exports.dart';
 
@@ -29,6 +28,19 @@ class VisionScreen extends StatelessWidget {
     );
   }
 
+  Widget _buildContent(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(
+        horizontal: getProportionateScreenWidth(20),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: _buildMobileVisionColumns(context),
+      ),
+    );
+  }
+
   List<Widget> _buildMobileVisionColumns(BuildContext context) {
     return [
       _buildVisionColumn(
@@ -52,50 +64,35 @@ class VisionScreen extends StatelessWidget {
     ];
   }
 
-  Widget _buildContent(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(
-        horizontal: getProportionateScreenWidth(20),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: _buildMobileVisionColumns(context),
-      ),
-    );
-  }
-
   Widget _buildVisionColumn(
     BuildContext context,
     String imageAsset,
     String title,
     String description,
   ) {
-    return Expanded(
-      child: Column(
-        children: [
-          Image.asset(imageAsset),
-          Text(
-            title,
+    return Column(
+      children: [
+        Image.asset(imageAsset),
+        Text(
+          title,
+          textAlign: TextAlign.center,
+          style: Theme.of(context)
+              .textTheme
+              .labelLarge
+              ?.copyWith(color: AppColors.kGreenTextColor, height: 2.0),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 40),
+          child: Text(
+            description,
             textAlign: TextAlign.center,
             style: Theme.of(context)
                 .textTheme
-                .labelLarge
-                ?.copyWith(color: AppColors.kGreenTextColor, height: 2.0),
+                .labelMedium
+                ?.copyWith(color: AppColors.kBlack, height: 1.5),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 40),
-            child: Text(
-              description,
-              textAlign: TextAlign.center,
-              style: Theme.of(context)
-                  .textTheme
-                  .labelMedium
-                  ?.copyWith(color: AppColors.kBlack, height: 1.5),
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

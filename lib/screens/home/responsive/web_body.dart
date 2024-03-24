@@ -38,7 +38,7 @@ class WebBodyState extends State<WebBody> {
     super.initState();
     _pageController = PageController();
     _pages = [
-      const ContactScreen(),
+      // const NewsScreen(),
       const HomeTextWidget(),
       const GreetingsScreen(),
       const VisionScreen(),
@@ -48,7 +48,8 @@ class WebBodyState extends State<WebBody> {
       const StrategyScreen(),
       const FundScreen(),
       const PortfolioScreen(),
-      const NewsScreen()
+      const NewsScreen(),
+      const ContactScreen(),
     ];
   }
 
