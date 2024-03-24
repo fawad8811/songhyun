@@ -4,6 +4,7 @@ import 'package:songhyun/screens/contact/contact_screen.dart';
 import 'package:songhyun/screens/investment/fund/fund_screen.dart';
 import 'package:songhyun/screens/investment/philosophy/philosophy_screen.dart';
 import 'package:songhyun/screens/investment/strategy/strategy_screen.dart';
+import 'package:songhyun/screens/news/news_screen.dart';
 import 'package:songhyun/screens/overview/greetings/greetings_screen.dart';
 import 'package:songhyun/screens/overview/history/history_screen.dart';
 import 'package:songhyun/screens/overview/team/team_screen.dart';
@@ -47,6 +48,7 @@ class WebBodyState extends State<WebBody> {
       const StrategyScreen(),
       const FundScreen(),
       const PortfolioScreen(),
+      const NewsScreen()
     ];
   }
 
@@ -104,7 +106,7 @@ class WebBodyState extends State<WebBody> {
               ),
               FooterContainer(
                 isMainScreen: true,
-                pageIndex: _currentPageIndex, // Pass current page index
+                pageIndex: _currentPageIndex,
               ),
             ],
           ),

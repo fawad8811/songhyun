@@ -3,6 +3,7 @@ import 'package:songhyun/utils/app_exports.dart';
 
 class PortfolioScreen extends StatelessWidget {
   final bool isMobile;
+
   const PortfolioScreen({Key? key, this.isMobile = false}) : super(key: key);
 
   @override
@@ -44,8 +45,7 @@ class PortfolioScreen extends StatelessWidget {
         Padding(
           padding: EdgeInsets.only(
               left: getProportionateScreenWidth(30),
-              right: getProportionateScreenWidth(30)
-          ),
+              right: getProportionateScreenWidth(30)),
           child: Container(
             color: AppColors.kMainBackgroundColor,
             child: Padding(
@@ -99,6 +99,7 @@ class PortfolioScreen extends StatelessWidget {
 
 class TypeContainer extends StatelessWidget {
   final String image;
+
   const TypeContainer({
     required this.image,
     super.key,
@@ -107,21 +108,22 @@ class TypeContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: getProportionateScreenHeight(275),
-        width: getProportionateScreenWidth(275),
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-        margin: const EdgeInsets.only(right: 20),
-        decoration: const BoxDecoration(
-          color: AppColors.kWhite,
-          border: Border.fromBorderSide(
-            BorderSide(
-              color: Color(0xFFcccccc),
-              width: 1,
-            ),
+      height: getProportionateScreenHeight(275),
+      width: getProportionateScreenWidth(275),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+      margin: const EdgeInsets.only(right: 20),
+      decoration: const BoxDecoration(
+        color: AppColors.kWhite,
+        border: Border.fromBorderSide(
+          BorderSide(
+            color: Color(0xFFcccccc),
+            width: 1,
           ),
         ),
-        child: Center(
-          child: Image.asset(image),
-        ));
+      ),
+      child: Center(
+        child: Image.asset(image),
+      ),
+    );
   }
 }

@@ -40,6 +40,7 @@ dependencies:
       url: https://github.com/awaisfusion/responsive_config.git
       ref: main
   flutter_dash: ^1.0.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -64,8 +65,8 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/
     - assets/fonts/
+    - assets/images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -78,11 +79,18 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
+  fonts:
+    - family: noto
+      fonts:
+        - asset: assets/fonts/NotoSansKR-Black.ttf
+        - asset: assets/fonts/NotoSansKR-Bold.ttf
+        - asset: assets/fonts/NotoSansKR-ExtraBold.ttf
+        - asset: assets/fonts/NotoSansKR-ExtraLight.ttf
+        - asset: assets/fonts/NotoSansKR-Light.ttf
+        - asset: assets/fonts/NotoSansKR-Medium.ttf
+        - asset: assets/fonts/NotoSansKR-Regular.ttf
+        - asset: assets/fonts/NotoSansKR-SemiBold.ttf
+        - asset: assets/fonts/NotoSansKR-Thin.ttf
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:
