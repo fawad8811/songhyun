@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:songhyun/screens/widgets/page_head.dart';
 import 'package:songhyun/utils/app_exports.dart';
 import 'dart:math';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class TeamScreen extends StatefulWidget {
   final bool isMobile;

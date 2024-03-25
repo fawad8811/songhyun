@@ -1,6 +1,6 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:songhyun/screens/widgets/page_head.dart';
 import 'package:songhyun/utils/app_exports.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class FundScreen extends StatelessWidget {
   final bool isMobile;
@@ -33,7 +33,7 @@ class FundScreen extends StatelessWidget {
                   vertical: getProportionateScreenHeight(40),
                 ),
                 child: Text(
-                  'fundDescription'.tr(),
+                  AppLocalizations.of(context)!.fundDescription,
                   style: Theme.of(context).textTheme.labelMedium?.copyWith(
                       height: 2.0, color: AppColors.kBlack, fontSize: 20),
                 ),

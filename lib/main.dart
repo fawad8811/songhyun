@@ -1,7 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:provider/provider.dart';
+import 'package:songhyun/l10n/l10n.dart';
 import 'package:songhyun/providers/language_provider.dart';
 import 'package:songhyun/utils/app_exports.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -12,11 +15,7 @@ Future<void> main() async {
   await languageProvider.loadLocale();
   runApp(ChangeNotifierProvider(
     create: (context) => LanguageProvider()..loadLocale(),
-    child: EasyLocalization(
-        supportedLocales: const [Locale('en', 'US'), Locale('ko', 'KR')],
-        fallbackLocale: const Locale('en', 'US'),
-        path: 'assets/translations',
-        child: const MyApp()),
+    child: const MyApp(),
   ));
 }
 
@@ -29,8 +28,13 @@ class MyApp extends StatelessWidget {
     return Consumer<LanguageProvider>(
       builder: (context, languageProvider, child) {
         return MaterialApp(
-          localizationsDelegates: context.localizationDelegates,
-          supportedLocales: context.supportedLocales,
+          localizationsDelegates: const [
+            AppLocalizations.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate
+          ],
+          supportedLocales: L10n.supportedLocales,
           locale: languageProvider.locale,
           // home: const PortfolioScreen(),
           home: ResponsiveLayout(

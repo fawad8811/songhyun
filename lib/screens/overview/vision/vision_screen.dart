@@ -1,6 +1,7 @@
-import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/material.dart';
 import 'package:songhyun/screens/widgets/page_head.dart';
 import 'package:songhyun/utils/app_exports.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class VisionScreen extends StatelessWidget {
   final bool isMobile;
@@ -77,21 +78,21 @@ class VisionScreen extends StatelessWidget {
     return [
       _buildVisionColumn(
         context,
-        Assets.imagesVision1,
-        'principleBasedManagement'.tr(),
-        'managementExperience'.tr(),
+        'assets/images/vision_1.png',
+        AppLocalizations.of(context)!.principleBasedManagement,
+        AppLocalizations.of(context)!.managementExperience,
       ),
       _buildVisionColumn(
         context,
-        Assets.imagesVision2,
-        'mutualGrowth'.tr(),
-        'ipoSuccess'.tr(),
+        'assets/images/vision_2.png',
+        AppLocalizations.of(context)!.mutualGrowth,
+        AppLocalizations.of(context)!.ipoSuccess,
       ),
       _buildVisionColumn(
         context,
-        Assets.imagesVision3,
-        'longTermPerspective'.tr(),
-        'worldClassInvestment'.tr(),
+        'assets/images/vision_3.png',
+        AppLocalizations.of(context)!.longTermPerspective,
+        AppLocalizations.of(context)!.worldClassInvestment,
       ),
     ];
   }
@@ -106,7 +107,7 @@ class VisionScreen extends StatelessWidget {
       children: [
         Image.asset(imageAsset),
         Text(
-          titleKey.tr(),
+          titleKey,
           textAlign: TextAlign.center,
           style: Theme.of(context)
               .textTheme
@@ -117,7 +118,7 @@ class VisionScreen extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Text(
-            descriptionKey.tr(),
+            descriptionKey,
             textAlign: TextAlign.center,
             style: Theme.of(context)
                 .textTheme
@@ -135,20 +136,20 @@ class VisionScreen extends StatelessWidget {
         _buildVisionMobileColumn(
           context,
           Assets.imagesVision1,
-          'principleBasedManagement'.tr(),
-          'managementExperience'.tr(),
-        ),
+         AppLocalizations.of(context)!.principleBasedManagement,
+        AppLocalizations.of(context)!.managementExperience,
+      ),
         _buildVisionMobileColumn(
           context,
           Assets.imagesVision2,
-          'mutualGrowth'.tr(),
-          'ipoSuccess'.tr(),
+          AppLocalizations.of(context)!.mutualGrowth,
+        AppLocalizations.of(context)!.ipoSuccess,
         ),
         _buildVisionMobileColumn(
           context,
           Assets.imagesVision3,
-          'longTermPerspective'.tr(),
-          'worldClassInvestment'.tr(),
+           AppLocalizations.of(context)!.longTermPerspective,
+        AppLocalizations.of(context)!.worldClassInvestment,
         ),
       ],
     );

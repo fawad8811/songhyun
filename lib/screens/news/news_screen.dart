@@ -1,5 +1,6 @@
 import 'package:songhyun/screens/widgets/page_head.dart';
 import 'package:songhyun/utils/app_exports.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class NewsScreen extends StatelessWidget {
   final bool isMobile;
@@ -25,21 +26,15 @@ class NewsScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 NewsCard(
-                  isMobile: isMobile,
-                  image: Assets.imagesNews1,
-                  title:
-                      'Revenue and operating income of Songhyun Investment for 2015 grew twice as much compared to the same period in 2014, growing steady and strong.',
-                  subTitle:
-                      'Songhyun Investment recorded 1.8bn won in operating income, marking an increase of 198.4% compared with the prior year. Operating revenue and profit for the year recorded 4.2bn won (60.1% YoY), 1.5bn won (55.8% YoY) respectively.',
-                ),
+                    isMobile: isMobile,
+                    image: Assets.images1,
+                    title: AppLocalizations.of(context)!.revenueAndOperatingIncome2015,
+                    subTitle: AppLocalizations.of(context)!.operatingIncome18bnWon),
                 NewsCard(
-                  isMobile: isMobile,
-                  image: Assets.imagesNews2,
-                  title:
-                      'Songhyun Investment established a new 4.7bn won sized-fund called K-Crowd Fund.',
-                  subTitle:
-                      'Songhyun Investment formed a new venture association to provide support to early-stage startups and provide more insights about crowdfunding. The Company was selected as a GP to manage the K-Crowd fund by Korea Growth Investment Corp.',
-                ),
+                    isMobile: isMobile,
+                    image: Assets.images1,
+                    title: AppLocalizations.of(context)!.revenueAndOperatingIncome2015,
+                    subTitle: AppLocalizations.of(context)!.operatingIncome18bnWon),
               ],
             ),
           ),

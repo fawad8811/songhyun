@@ -1,4 +1,5 @@
 import 'package:songhyun/utils/app_exports.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class FooterContainer extends StatelessWidget {
   final bool isMainScreen;

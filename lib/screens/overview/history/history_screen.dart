@@ -1,3 +1,4 @@
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:songhyun/screens/overview/history/components/time_line_widget.dart';
 import 'package:songhyun/screens/widgets/page_head.dart';
 import 'package:songhyun/utils/app_exports.dart';
@@ -23,26 +24,27 @@ class HistoryScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const TimelineItem(
-                  dates: ['2012. 05.', '06.'],
+                TimelineItem(
+                  dates: const ['2012. 05.', '06.'],
                   descriptions: [
-                    'establishSongHyun',
-                    'registerVentureCapital',
+                    AppLocalizations.of(context)!.establishSongHyun,
+                    AppLocalizations.of(context)!.establishSongHyun,
+                    AppLocalizations.of(context)!.registerVentureCapital,
                   ],
                 ),
-                const TimelineItem(
-                  dates: ['2013. 08.'],
+                TimelineItem(
+                  dates: const ['2013. 08.'],
                   descriptions: [
-                    'raiseFirstFund',
+                    AppLocalizations.of(context)!.raiseFirstFund,
                   ],
                 ),
-                const TimelineItem(
-                  dates: ['2014. 09.', '11.	', '12. ', '13. '],
+                TimelineItem(
+                  dates: const ['2014. 09.', '11.', '12.', '13.'],
                   descriptions: [
-                    'raiseYoungEntrepreneurFund',
-                    'raiseGrowthLadderSecondFund',
-                    'raiseKeystoneSongHyunFund',
-                    'acquireInstitutionalRating',
+                    AppLocalizations.of(context)!.raiseGrowthLadderSecondFund,
+                    AppLocalizations.of(context)!.raiseGrowthLadderSecondFund,
+                    AppLocalizations.of(context)!.raiseKeystoneSongHyunFund,
+                    AppLocalizations.of(context)!.acquireInstitutionalRating,
                   ],
                 ),
                 // Add more TimelineItem widgets as needed

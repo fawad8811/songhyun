@@ -1,6 +1,6 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:songhyun/screens/widgets/page_head.dart';
 import 'package:songhyun/utils/app_exports.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class PhilosophyScreen extends StatelessWidget {
   final bool isMobile;
@@ -26,7 +26,8 @@ class PhilosophyScreen extends StatelessWidget {
             horizontal: getProportionateScreenWidth(20),
           ),
           child: isMobile
-              ? _buildMobileVisionColumns(context)
+              ? _buildVisionMobileColumn(context, Assets.imagesPhilosophy2,
+                  'Fundamental principles', AppLocalizations.of(context)!.adhereToPrinciples)
               : Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,6 +38,30 @@ class PhilosophyScreen extends StatelessWidget {
       ],
     );
   }
+
+  // List<Widget> _buildMobileVisionColumns(BuildContext context) {
+  //   return [
+  //     _buildVisionColumn(context, Assets.imagesPhilosophy2,
+  //         'Fundamental principles', AppLocalizations.of(context)!.adhereToPrinciples),
+  //     _buildVisionColumn(context, Assets.imagesPhilosophy3,
+  //         'Transparency and ethics', AppLocalizations.of(context)!.commitmentToTransparency),
+  //     _buildVisionColumn(context, Assets.imagesPhilosophy1, 'Value Creation',
+  //         AppLocalizations.of(context)!.pursueMutualGrowth),
+  //   ];
+  // }
+
+  // Widget _buildContent(BuildContext context) {
+  //   return Padding(
+  //     padding: EdgeInsets.symmetric(
+  //       horizontal: getProportionateScreenWidth(20),
+  //     ),
+  //     child: Row(
+  //       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+  //       crossAxisAlignment: CrossAxisAlignment.start,
+  //       children: _buildMobileVisionColumns(context),
+  //     ),
+  //   );
+  // }
 
   Widget _buildVisionColumn(
     BuildContext context,
@@ -75,13 +100,13 @@ class PhilosophyScreen extends StatelessWidget {
 
   List<Widget> _buildWebVisionColumns(BuildContext context) {
     return [
-      _buildVisionColumn(context, Assets.imagesPhilosophy2,
-          'Fundamental principles', 'adhereToPrinciples'.tr()),
+     _buildVisionColumn(context, Assets.imagesPhilosophy2,
+          'Fundamental principles', AppLocalizations.of(context)!.adhereToPrinciples),
       _buildVisionColumn(context, Assets.imagesPhilosophy3,
-          'Transparency and ethics', 'commitmentToTransparency'.tr()),
+          'Transparency and ethics', AppLocalizations.of(context)!.commitmentToTransparency),
       _buildVisionColumn(context, Assets.imagesPhilosophy1, 'Value Creation',
-          'pursueMutualGrowth'.tr()),
-    ];
+          AppLocalizations.of(context)!.pursueMutualGrowth),
+];
   }
 
   Widget _buildVisionMobileColumn(
@@ -117,16 +142,16 @@ class PhilosophyScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildMobileVisionColumns(BuildContext context) {
-    return Column(
-      children: [
-        _buildVisionMobileColumn(context, Assets.imagesPhilosophy2,
-            'Fundamental principles', 'adhereToPrinciples'.tr()),
-        _buildVisionMobileColumn(context, Assets.imagesPhilosophy3,
-            'Transparency and ethics', 'commitmentToTransparency'.tr()),
-        _buildVisionMobileColumn(context, Assets.imagesPhilosophy1,
-            'Value Creation', 'pursueMutualGrowth'.tr()),
-      ],
-    );
-  }
+  // Widget _buildMobileVisionColumns(BuildContext context) {
+  //   return Column(
+  //     children: [
+  //       _buildVisionMobileColumn(context, Assets.imagesPhilosophy2,
+  //         'Fundamental principles', AppLocalizations.of(context)!.adhereToPrinciples),
+  //     _buildVisionMobileColumn(context, Assets.imagesPhilosophy3,
+  //         'Transparency and ethics', AppLocalizations.of(context)!.commitmentToTransparency),
+  //     _buildVisionMobileColumn(context, Assets.imagesPhilosophy1, 'Value Creation',
+  //         AppLocalizations.of(context)!.pursueMutualGrowth),
+  //     ],
+  //   );
+  // }
 }
