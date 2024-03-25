@@ -37,12 +37,11 @@ class ContactScreen extends StatelessWidget {
                       ),
                       Text.rich(
                         TextSpan(
-                          text: 'address'.tr(),
+                          text: 'Daegu Office Space: Daegu Trade Centre,\n',
                           style: Theme.of(context).textTheme.labelLarge,
                           children: [
                             TextSpan(
-                              text:
-                                  ' 518, Teheran-ro, Gangnam-gu, Seoul, 135-713, Korea',
+                              text: '489 Dongdaegu-ro, 8/F., Dong-gu',
                               style: Theme.of(context)
                                   .textTheme
                                   .labelLarge!
@@ -98,14 +97,14 @@ class ContactScreen extends StatelessWidget {
                 Container(
                     padding: EdgeInsets.zero,
                     height: getProportionateScreenHeight(100),
-                    width: getProportionateScreenWidth(150),
+                    width: getProportionateScreenWidth(200),
                     color: AppColors.kGreen,
                     child: Image.asset(Assets.imagesMapBtn2)),
               ],
             ),
           ),
         ),
-        SizedBox(height: getProportionateScreenHeight(40)),
+        SizedBox(height: getProportionateScreenHeight(80)),
       ],
     );
   }

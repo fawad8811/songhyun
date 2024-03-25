@@ -75,19 +75,12 @@ class PhilosophyScreen extends StatelessWidget {
 
   List<Widget> _buildWebVisionColumns(BuildContext context) {
     return [
-      _buildVisionColumn(
-          context,
-          Assets.imagesPhilosophy2,
-          'Fundamental principles',
-          'Adhere to enduring principles that have guided investment decision and processes including due diligence from our inception.'),
-      _buildVisionColumn(
-        context,
-        Assets.imagesPhilosophy3,
-        'Transparency and ethics',
-        'Commitment to transparent decision making and high ethical standards.',
-      ),
+      _buildVisionColumn(context, Assets.imagesPhilosophy2,
+          'Fundamental principles', 'adhereToPrinciples'.tr()),
+      _buildVisionColumn(context, Assets.imagesPhilosophy3,
+          'Transparency and ethics', 'commitmentToTransparency'.tr()),
       _buildVisionColumn(context, Assets.imagesPhilosophy1, 'Value Creation',
-          'Pursue mutual growth with portfolio companies through value creation.'),
+          'pursueMutualGrowth'.tr()),
     ];
   }
 
@@ -127,22 +120,12 @@ class PhilosophyScreen extends StatelessWidget {
   Widget _buildMobileVisionColumns(BuildContext context) {
     return Column(
       children: [
-        _buildVisionMobileColumn(
-            context,
-            Assets.imagesPhilosophy2,
-            'Fundamental principles',
-            'Adhere to enduring principles that have guided investment decision and processes including due diligence from our inception.'),
-        _buildVisionMobileColumn(
-          context,
-          Assets.imagesPhilosophy3,
-          'Transparency and ethics',
-          'Commitment to transparent decision making and high ethical standards.',
-        ),
-        _buildVisionMobileColumn(
-            context,
-            Assets.imagesPhilosophy1,
-            'Value Creation',
-            'Pursue mutual growth with portfolio companies through value creation.'),
+        _buildVisionMobileColumn(context, Assets.imagesPhilosophy2,
+            'Fundamental principles', 'adhereToPrinciples'.tr()),
+        _buildVisionMobileColumn(context, Assets.imagesPhilosophy3,
+            'Transparency and ethics', 'commitmentToTransparency'.tr()),
+        _buildVisionMobileColumn(context, Assets.imagesPhilosophy1,
+            'Value Creation', 'pursueMutualGrowth'.tr()),
       ],
     );
   }
