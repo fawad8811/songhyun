@@ -35,23 +35,14 @@ class ContactScreen extends StatelessWidget {
                       const SizedBox(
                         width: 16,
                       ),
-                      Text.rich(
-                        TextSpan(
-                          text: AppLocalizations.of(context)!.address,
-                          style: Theme.of(context).textTheme.labelLarge,
-                          children: [
-                            TextSpan(
-                              text: '489 Dongdaegu-ro, 8/F., Dong-gu',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .labelLarge!
-                                  .copyWith(
-                                    fontSize: 12,
-                                    color: const Color(0xFF333333),
-                                  ),
-                            ),
-                          ],
-                        ),
+                      Text(
+                        maxLines: 3,
+                        AppLocalizations.of(context)!.addressOne,
+                        style:
+                            Theme.of(context).textTheme.labelMedium!.copyWith(
+                                  color: const Color(0xFF333333),
+                                  fontSize: isMobile ? 10 : 14,
+                                ),
                       ),
                     ],
                   ),
@@ -70,6 +61,7 @@ class ContactScreen extends StatelessWidget {
                         AppLocalizations.of(context)!.phoneNumber,
                         style: Theme.of(context).textTheme.labelLarge!.copyWith(
                               color: const Color(0xFF333333),
+                              fontSize: isMobile ? 10 : 14,
                             ),
                       ),
                     ],
@@ -89,6 +81,7 @@ class ContactScreen extends StatelessWidget {
                         AppLocalizations.of(context)!.phoneNumber,
                         style: Theme.of(context).textTheme.labelLarge!.copyWith(
                               color: const Color(0xFF333333),
+                              fontSize: isMobile ? 10 : 14,
                             ),
                       ),
                     ],

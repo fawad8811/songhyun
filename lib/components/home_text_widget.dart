@@ -25,25 +25,24 @@ class HomeTextWidget extends StatelessWidget {
             // vertical: getProportionateScreenHeight(10),
           ),
           child: Center(
-            child: Container(
-              // height: 10,
-              padding: EdgeInsets.all(getProportionateScreenWidth(20)),
-              color: Colors.transparent.withOpacity(0.5),
-              child: SelectableText.rich(
-                TextSpan(
-                  style: MyAppTheme.textThemeLight.labelLarge!.copyWith(
-                      color: AppColors.kWhite,
-                      fontWeight: FontWeight.w400,
-                      fontSize: isMobile ? 20 : 32),
-                  children: <TextSpan>[
-                    TextSpan(
-                      text: AppLocalizations.of(context)!.companyNameOne,
-                      style: MyAppTheme.textThemeLight.labelLarge!
-                          .copyWith(color: AppColors.kGreen, fontSize: 30),
-                    ),
-                    TextSpan(text: AppLocalizations.of(context)!.pursuitStatement),
-                  ],
-                ),
+            child: SelectableText.rich(
+              TextSpan(
+                style: Theme.of(context).textTheme.labelLarge!.copyWith(
+                    color: AppColors.kWhite,
+                    fontWeight: FontWeight.w100,
+                    fontSize: isMobile ? 16 : 28),
+                children: <TextSpan>[
+                  TextSpan(
+                    text: AppLocalizations.of(context)!.companyNameOne,
+                    style: Theme.of(context).textTheme.labelLarge!.copyWith(
+                          color: AppColors.kGreen,
+                          fontSize: isMobile ? 16 : 28,
+                          fontWeight: FontWeight.w100,
+                        ),
+                  ),
+                  TextSpan(
+                      text: AppLocalizations.of(context)!.pursuitStatement),
+                ],
               ),
             ),
           ),

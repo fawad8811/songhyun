@@ -27,14 +27,18 @@ class NewsScreen extends StatelessWidget {
               children: [
                 NewsCard(
                     isMobile: isMobile,
-                    image: Assets.images1,
-                    title: AppLocalizations.of(context)!.revenueAndOperatingIncome2015,
-                    subTitle: AppLocalizations.of(context)!.operatingIncome18bnWon),
+                    image: Assets.imagesNews1,
+                    title: AppLocalizations.of(context)!
+                        .revenueAndOperatingIncome2015,
+                    subTitle:
+                        AppLocalizations.of(context)!.operatingIncome18bnWon),
                 NewsCard(
                     isMobile: isMobile,
-                    image: Assets.images1,
-                    title: AppLocalizations.of(context)!.revenueAndOperatingIncome2015,
-                    subTitle: AppLocalizations.of(context)!.operatingIncome18bnWon),
+                    image: Assets.imagesNews2,
+                    title: AppLocalizations.of(context)!
+                        .revenueAndOperatingIncome2015,
+                    subTitle:
+                        AppLocalizations.of(context)!.operatingIncome18bnWon),
               ],
             ),
           ),

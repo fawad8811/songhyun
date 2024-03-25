@@ -26,8 +26,7 @@ class PhilosophyScreen extends StatelessWidget {
             horizontal: getProportionateScreenWidth(20),
           ),
           child: isMobile
-              ? _buildVisionMobileColumn(context, Assets.imagesPhilosophy2,
-                  'Fundamental principles', AppLocalizations.of(context)!.adhereToPrinciples)
+              ? _buildMobileVisionColumns(context)
               : Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -100,13 +99,19 @@ class PhilosophyScreen extends StatelessWidget {
 
   List<Widget> _buildWebVisionColumns(BuildContext context) {
     return [
-     _buildVisionColumn(context, Assets.imagesPhilosophy2,
-          'Fundamental principles', AppLocalizations.of(context)!.adhereToPrinciples),
-      _buildVisionColumn(context, Assets.imagesPhilosophy3,
-          'Transparency and ethics', AppLocalizations.of(context)!.commitmentToTransparency),
+      _buildVisionColumn(
+          context,
+          Assets.imagesPhilosophy2,
+          'Fundamental principles',
+          AppLocalizations.of(context)!.adhereToPrinciples),
+      _buildVisionColumn(
+          context,
+          Assets.imagesPhilosophy3,
+          'Transparency and ethics',
+          AppLocalizations.of(context)!.commitmentToTransparency),
       _buildVisionColumn(context, Assets.imagesPhilosophy1, 'Value Creation',
           AppLocalizations.of(context)!.pursueMutualGrowth),
-];
+    ];
   }
 
   Widget _buildVisionMobileColumn(
@@ -142,16 +147,22 @@ class PhilosophyScreen extends StatelessWidget {
     );
   }
 
-  // Widget _buildMobileVisionColumns(BuildContext context) {
-  //   return Column(
-  //     children: [
-  //       _buildVisionMobileColumn(context, Assets.imagesPhilosophy2,
-  //         'Fundamental principles', AppLocalizations.of(context)!.adhereToPrinciples),
-  //     _buildVisionMobileColumn(context, Assets.imagesPhilosophy3,
-  //         'Transparency and ethics', AppLocalizations.of(context)!.commitmentToTransparency),
-  //     _buildVisionMobileColumn(context, Assets.imagesPhilosophy1, 'Value Creation',
-  //         AppLocalizations.of(context)!.pursueMutualGrowth),
-  //     ],
-  //   );
-  // }
+  Widget _buildMobileVisionColumns(BuildContext context) {
+    return Column(
+      children: [
+        _buildVisionMobileColumn(
+            context,
+            Assets.imagesPhilosophy2,
+            'Fundamental principles',
+            AppLocalizations.of(context)!.adhereToPrinciples),
+        _buildVisionMobileColumn(
+            context,
+            Assets.imagesPhilosophy3,
+            'Transparency and ethics',
+            AppLocalizations.of(context)!.commitmentToTransparency),
+        _buildVisionMobileColumn(context, Assets.imagesPhilosophy1,
+            'Value Creation', AppLocalizations.of(context)!.pursueMutualGrowth),
+      ],
+    );
+  }
 }
