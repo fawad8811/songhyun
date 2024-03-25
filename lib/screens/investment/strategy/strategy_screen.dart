@@ -135,12 +135,12 @@ class StrategyScreen extends StatelessWidget {
     return [
       SizedBox(height: getProportionateScreenHeight(20)),
       Text(
-        'Separate from investment by stage, SongHyun assists in trade sales of individual enterprise’s old shares through secondary fund, and also exit through transaction of fund of portfolio or the fund.',
+        AppLocalizations.of(context)!.assistInTradeSales,
         style: Theme.of(context).textTheme.labelMedium?.copyWith(
-          color: AppColors.kBlack,
-          height: 1.5,
-          fontSize: 12,
-        ),
+              color: AppColors.kBlack,
+              height: 1.5,
+              fontSize: 12,
+            ),
       ),
     ];
   }

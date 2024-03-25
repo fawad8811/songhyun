@@ -1,6 +1,6 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:songhyun/screens/widgets/page_head.dart';
 import 'package:songhyun/utils/app_exports.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ContactScreen extends StatelessWidget {
   final bool isMobile;
@@ -37,7 +37,7 @@ class ContactScreen extends StatelessWidget {
                       ),
                       Text.rich(
                         TextSpan(
-                          text: 'address'.tr(),
+                          text: AppLocalizations.of(context)!.address,
                           style: Theme.of(context).textTheme.labelLarge,
                           children: [
                             TextSpan(
@@ -68,7 +68,7 @@ class ContactScreen extends StatelessWidget {
                         width: 16,
                       ),
                       Text(
-                        'phoneNumber'.tr(),
+                        AppLocalizations.of(context)!.phoneNumber,
                         style: Theme.of(context).textTheme.labelLarge!.copyWith(
                               color: const Color(0xFF333333),
                             ),
@@ -87,7 +87,7 @@ class ContactScreen extends StatelessWidget {
                         width: 16,
                       ),
                       Text(
-                        'phoneNumber'.tr(),
+                        AppLocalizations.of(context)!.phoneNumber,
                         style: Theme.of(context).textTheme.labelLarge!.copyWith(
                               color: const Color(0xFF333333),
                             ),

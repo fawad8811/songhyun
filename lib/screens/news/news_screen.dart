@@ -1,6 +1,6 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:songhyun/screens/widgets/page_head.dart';
 import 'package:songhyun/utils/app_exports.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class NewsScreen extends StatelessWidget {
   final bool isMobile;
@@ -28,13 +28,13 @@ class NewsScreen extends StatelessWidget {
                 NewsCard(
                     isMobile: isMobile,
                     image: Assets.images1,
-                    title: "revenueAndOperatingIncome2015".tr(),
-                    subTitle: "operatingIncome18bnWon".tr()),
+                    title: AppLocalizations.of(context)!.revenueAndOperatingIncome2015,
+                    subTitle: AppLocalizations.of(context)!.operatingIncome18bnWon),
                 NewsCard(
                     isMobile: isMobile,
                     image: Assets.images1,
-                    title: "revenueAndOperatingIncome2015".tr(),
-                    subTitle: "operatingIncome18bnWon".tr()),
+                    title: AppLocalizations.of(context)!.revenueAndOperatingIncome2015,
+                    subTitle: AppLocalizations.of(context)!.operatingIncome18bnWon),
               ],
             ),
           ),
