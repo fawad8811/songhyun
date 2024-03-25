@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_config/responsive_config.dart';
 import 'package:songhyun/theme/app_colors.dart';
@@ -38,14 +39,11 @@ class HomeTextWidget extends StatelessWidget {
                       fontSize: isMobile ? 18 : 32),
                   children: <TextSpan>[
                     TextSpan(
-                      text: "Choege Investment Private Limited, ",
+                      text: "companyNameOne".tr(),
                       style: MyAppTheme.textThemeLight.labelLarge!
                           .copyWith(color: Colors.green, fontSize: 30),
                     ),
-                    const TextSpan(
-                      text:
-                          'pursues long-term mutual growth with its portfolio companies through proven investment management principles.',
-                    ),
+                    TextSpan(text: "pursuitStatement".tr()),
                   ],
                 ),
               ),

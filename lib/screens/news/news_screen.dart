@@ -1,9 +1,9 @@
-import 'package:flutter/material.dart';
 import 'package:songhyun/screens/widgets/page_head.dart';
 import 'package:songhyun/utils/app_exports.dart';
 
 class NewsScreen extends StatelessWidget {
   final bool isMobile;
+
   const NewsScreen({Key? key, this.isMobile = false}) : super(key: key);
 
   @override
@@ -54,6 +54,7 @@ class NewsCard extends StatelessWidget {
   final String image;
   final String title;
   final String subTitle;
+
   const NewsCard({
     super.key,
     required this.isMobile,
@@ -75,7 +76,7 @@ class NewsCard extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
+          SizedBox(
             height: 280,
             width: 280,
             // height: getProportionateScreenHeight(280),

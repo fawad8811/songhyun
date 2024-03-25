@@ -1,8 +1,10 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:songhyun/screens/widgets/page_head.dart';
 import 'package:songhyun/utils/app_exports.dart';
 
 class ContactScreen extends StatelessWidget {
   final bool isMobile;
+
   const ContactScreen({Key? key, this.isMobile = false}) : super(key: key);
 
   @override
@@ -35,7 +37,7 @@ class ContactScreen extends StatelessWidget {
                       ),
                       Text.rich(
                         TextSpan(
-                          text: '3F, Textile Center\n',
+                          text: 'address'.tr(),
                           style: Theme.of(context).textTheme.labelLarge,
                           children: [
                             TextSpan(
@@ -66,7 +68,7 @@ class ContactScreen extends StatelessWidget {
                         width: 16,
                       ),
                       Text(
-                        '82-2-528-3900',
+                        'phoneNumber'.tr(),
                         style: Theme.of(context).textTheme.labelLarge!.copyWith(
                               color: const Color(0xFF333333),
                             ),
@@ -85,7 +87,7 @@ class ContactScreen extends StatelessWidget {
                         width: 16,
                       ),
                       Text(
-                        '82-2-528-3900',
+                        'phoneNumber'.tr(),
                         style: Theme.of(context).textTheme.labelLarge!.copyWith(
                               color: const Color(0xFF333333),
                             ),
@@ -111,6 +113,7 @@ class ContactScreen extends StatelessWidget {
 
 class TypeContainer extends StatelessWidget {
   final String image;
+
   const TypeContainer({
     required this.image,
     super.key,

@@ -1,9 +1,11 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:songhyun/screens/widgets/page_head.dart';
 import 'package:songhyun/utils/app_exports.dart';
 import 'dart:math';
 
 class TeamScreen extends StatefulWidget {
   final bool isMobile;
+
   const TeamScreen({Key? key, this.isMobile = false}) : super(key: key);
 
   @override
@@ -99,6 +101,7 @@ class _TeamScreenState extends State<TeamScreen> {
 class TypeContainer extends StatelessWidget {
   final bool isMobile;
   final String type;
+
   const TypeContainer({
     required this.type,
     required this.isMobile,
@@ -118,7 +121,7 @@ class TypeContainer extends StatelessWidget {
       child: Align(
         alignment: Alignment.bottomCenter,
         child: Text(
-          type,
+          type.tr(),
           style: Theme.of(context).textTheme.titleLarge?.copyWith(
                 color: AppColors.kWhite,
                 fontSize: isMobile ? 16 : 40,
@@ -193,7 +196,7 @@ class TeamContainer extends StatelessWidget {
             left: 20,
             right: 20,
             child: Text(
-              name,
+              name.tr(),
               style: Theme.of(context).textTheme.titleLarge?.copyWith(
                     color: AppColors.kWhite,
                     fontSize: isMobile ? 14 : 26,

@@ -39,7 +39,6 @@ class WebBodyState extends State<WebBody> {
     super.initState();
     _pageController = PageController();
     _pages = [
-      // const NewsScreen(),
       const HomeTextWidget(),
       const GreetingsScreen(),
       const VisionScreen(),
@@ -78,7 +77,6 @@ class WebBodyState extends State<WebBody> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               CustomAppBar(
-                // pageController:_pageController,
                 scaffoldKey: widget.scaffoldKey,
                 onPageSelected: (index) {
                   log('index: $index');

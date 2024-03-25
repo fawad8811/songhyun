@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:songhyun/utils/app_exports.dart';
 
 class FooterContainer extends StatelessWidget {
@@ -72,7 +73,7 @@ class FooterContainer extends StatelessWidget {
 
   Widget buildCopyrightText(BuildContext context, [bool isMainScreen = false]) {
     return Text(
-      'COPYRIGHT (C) 2024 Choege Investment ALL RIGHTS RESERVED hello'.toUpperCase(),
+      'COPYRIGHT (C) 2024 Choege Investment ALL RIGHTS RESERVED'.toUpperCase(),
       style: Theme.of(context).textTheme.bodySmall?.copyWith(
             color: pageIndex == 0 ? AppColors.kWhite : AppColors.kBlack,
           ),
@@ -86,7 +87,7 @@ class FooterContainer extends StatelessWidget {
       children: [
         Image.asset(Assets.imagesOnlyLogo, width: 30, height: 30),
         const SizedBox(width: 10),
-        Text('Choege Investment\n Private Limited',
+        Text('companyName'.tr(),
             style: Theme.of(context).textTheme.titleSmall?.copyWith(
                 color: pageIndex == 0 ? AppColors.kWhite : AppColors.kBlack)),
       ],

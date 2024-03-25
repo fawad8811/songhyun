@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_dash/flutter_dash.dart';
 import 'package:songhyun/utils/app_exports.dart';
 
@@ -83,7 +84,7 @@ class TimelineItem extends StatelessWidget {
                           vertical: getProportionateScreenHeight(11)),
                       child: Text(
                         textAlign: TextAlign.right,
-                        descriptions[index],
+                        descriptions[index].tr(),
                         style: Theme.of(context).textTheme.labelMedium,
                       ),
                     ),
