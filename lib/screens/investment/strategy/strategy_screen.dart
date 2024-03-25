@@ -1,4 +1,4 @@
-import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:songhyun/screens/widgets/page_head.dart';
 import 'package:songhyun/utils/app_exports.dart';
 
@@ -31,20 +31,23 @@ class StrategyScreen extends StatelessWidget {
 
   List<Widget> _buildwebStategyColumns(BuildContext context) {
     return [
-      _buildStategyColumn(context, Assets.imagesStrategy1,
-          'Investment by stage', 'maximizeEnterpriseValue'.tr(),
+      _buildStategyColumn(
+          context,
+          Assets.imagesStrategy1,
+          'Investment by stage',
+          AppLocalizations.of(context)!.maximizeEnterpriseValue,
           richtext: true),
       _buildStategyColumn(
         context,
         Assets.imagesStrategy2,
         'Focus on ICT / AI, Bio / Healthcare & Manufacturing',
-        'distributeFundsByIndustry'.tr(),
+        AppLocalizations.of(context)!.distributeFundsByIndustry,
       ),
       _buildStategyColumn(
           context,
           Assets.imagesStrategy3,
           'Vertical investments into value chains',
-          'pursueInvestmentsIntoStrategicCompanies'.tr())
+          AppLocalizations.of(context)!.pursueInvestmentsIntoStrategicCompanies)
     ];
   }
 
@@ -99,9 +102,11 @@ class StrategyScreen extends StatelessWidget {
   List<Widget> _buildRichTexts(BuildContext context) {
     return [
       richText(context, 'Early : ',
-          'entrepreneurWithCreativeTechnology'.tr()),
-      richText(context, 'Growth : ', 'technologyOrientedGrowthEnterprise'.tr()),
-      richText(context, 'PE : ', 'enterpriseWhichCanGenerateSynergy'.tr()),
+          AppLocalizations.of(context)!.entrepreneurWithCreativeTechnology),
+      richText(context, 'Growth : ',
+          AppLocalizations.of(context)!.technologyOrientedGrowthEnterprise),
+      richText(context, 'PE : ',
+          AppLocalizations.of(context)!.enterpriseWhichCanGenerateSynergy),
     ];
   }
 

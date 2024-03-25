@@ -1,5 +1,5 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:songhyun/utils/app_exports.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class FooterContainer extends StatelessWidget {
   final bool isMainScreen;
@@ -87,7 +87,7 @@ class FooterContainer extends StatelessWidget {
       children: [
         Image.asset(Assets.imagesOnlyLogo, width: 30, height: 30),
         const SizedBox(width: 10),
-        Text('companyName'.tr(),
+        Text(AppLocalizations.of(context)!.companyName,
             style: Theme.of(context).textTheme.titleSmall?.copyWith(
                 color: pageIndex == 0 ? AppColors.kWhite : AppColors.kBlack)),
       ],

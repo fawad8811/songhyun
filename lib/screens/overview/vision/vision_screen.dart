@@ -1,6 +1,7 @@
-import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/material.dart';
 import 'package:songhyun/screens/widgets/page_head.dart';
 import 'package:songhyun/utils/app_exports.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class VisionScreen extends StatelessWidget {
   final bool isMobile;
@@ -49,35 +50,35 @@ class VisionScreen extends StatelessWidget {
       _buildVisionColumn(
         context,
         'assets/images/vision_1.png',
-        'principleBasedManagement',
-        'managementExperience',
+        AppLocalizations.of(context)!.principleBasedManagement,
+        AppLocalizations.of(context)!.managementExperience,
       ),
       _buildVisionColumn(
         context,
         'assets/images/vision_2.png',
-        'mutualGrowth',
-        'ipoSuccess',
+        AppLocalizations.of(context)!.mutualGrowth,
+        AppLocalizations.of(context)!.ipoSuccess,
       ),
       _buildVisionColumn(
         context,
         'assets/images/vision_3.png',
-        'longTermPerspective',
-        'worldClassInvestment',
+        AppLocalizations.of(context)!.longTermPerspective,
+        AppLocalizations.of(context)!.worldClassInvestment,
       ),
     ];
   }
 
   Widget _buildVisionColumn(
-    BuildContext context,
-    String imageAsset,
-    String titleKey,
-    String descriptionKey,
-  ) {
+      BuildContext context,
+      String imageAsset,
+      String title,
+      String description,
+      ) {
     return Column(
       children: [
         Image.asset(imageAsset),
         Text(
-          titleKey.tr(),
+          title,
           textAlign: TextAlign.center,
           style: Theme.of(context)
               .textTheme
@@ -87,7 +88,7 @@ class VisionScreen extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 40),
           child: Text(
-            descriptionKey.tr(),
+            description,
             textAlign: TextAlign.center,
             style: Theme.of(context)
                 .textTheme

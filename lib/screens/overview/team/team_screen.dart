@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:songhyun/screens/widgets/page_head.dart';
 import 'package:songhyun/utils/app_exports.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class TeamScreen extends StatelessWidget {
   final bool isMobile;
@@ -27,20 +28,20 @@ class TeamScreen extends StatelessWidget {
                 crossAxisCount: isMobile ? 2 : 4,
                 mainAxisSpacing: 20,
                 children: [
-                  TypeContainer(type: 'investmentDivision'.tr()),
+                  TypeContainer(type: AppLocalizations.of(context)!.investmentDivision),
                   TeamContainer(
-                    name: 'rebeccaDoe'.tr(),
-                    position: 'ceo'.tr(),
+                    name: AppLocalizations.of(context)!.rebeccaDoe,
+                    position: AppLocalizations.of(context)!.ceo,
                     image: Assets.imagesBgTopTeam,
                   ),
                   TeamContainer(
-                    name: 'johnDoe'.tr(),
-                    position: 'ceo'.tr(),
+                    name: AppLocalizations.of(context)!.johnDoe,
+                    position: AppLocalizations.of(context)!.ceo,
                     image: Assets.imagesBgTopTeam,
                   ),
                   TeamContainer(
-                    name: 'johnDoe'.tr(),
-                    position: 'ceo'.tr(),
+                    name: AppLocalizations.of(context)!.johnDoe,
+                    position: AppLocalizations.of(context)!.ceo,
                     image: Assets.imagesBgTopTeam,
                   ),
                 ],
@@ -51,25 +52,25 @@ class TeamScreen extends StatelessWidget {
                 crossAxisCount: isMobile ? 2 : 4,
                 mainAxisSpacing: 20,
                 children: [
-                  TypeContainer(type: 'investmentDivision'.tr()),
+                  TypeContainer(type: AppLocalizations.of(context)!.investmentDivision),
                   TeamContainer(
-                    name: 'rebeccaDoe'.tr(),
-                    position: 'vicePresident'.tr(),
+                    name: AppLocalizations.of(context)!.rebeccaDoe,
+                    position: AppLocalizations.of(context)!.vicePresident,
                     image: Assets.imagesBgTopTeam,
                   ),
                   TeamContainer(
-                    name: 'shockRock'.tr(),
-                    position: 'executiveManaging'.tr(),
+                    name: AppLocalizations.of(context)!.shockRock,
+                    position: AppLocalizations.of(context)!.executiveManaging,
                     image: Assets.imagesBgTopTeam,
                   ),
                   TeamContainer(
-                    name: 'shockRock'.tr(),
-                    position: 'executiveManaging'.tr(),
+                    name: AppLocalizations.of(context)!.shockRock,
+                    position: AppLocalizations.of(context)!.shockRock,
                     image: Assets.imagesBgTopTeam,
                   ),
                   TeamContainer(
-                    name: 'shockRock'.tr(),
-                    position: 'executiveManaging'.tr(),
+                    name: AppLocalizations.of(context)!.shockRock,
+                    position: AppLocalizations.of(context)!.executiveManaging,
                     image: Assets.imagesBgTopTeam,
                   ),
                 ],

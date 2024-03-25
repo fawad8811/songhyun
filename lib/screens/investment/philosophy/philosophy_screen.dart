@@ -1,6 +1,6 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:songhyun/screens/widgets/page_head.dart';
 import 'package:songhyun/utils/app_exports.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class PhilosophyScreen extends StatelessWidget {
   final bool isMobile;
@@ -32,11 +32,11 @@ class PhilosophyScreen extends StatelessWidget {
   List<Widget> _buildMobileVisionColumns(BuildContext context) {
     return [
       _buildVisionColumn(context, Assets.imagesPhilosophy2,
-          'Fundamental principles', 'adhereToPrinciples'.tr()),
+          'Fundamental principles', AppLocalizations.of(context)!.adhereToPrinciples),
       _buildVisionColumn(context, Assets.imagesPhilosophy3,
-          'Transparency and ethics', 'commitmentToTransparency'.tr()),
+          'Transparency and ethics', AppLocalizations.of(context)!.commitmentToTransparency),
       _buildVisionColumn(context, Assets.imagesPhilosophy1, 'Value Creation',
-          'pursueMutualGrowth'.tr()),
+          AppLocalizations.of(context)!.pursueMutualGrowth),
     ];
   }
 
