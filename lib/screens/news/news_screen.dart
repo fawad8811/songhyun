@@ -71,22 +71,15 @@ class NewsCard extends StatelessWidget {
       height: 280,
       padding: const EdgeInsets.all(8.0),
       color: Colors.transparent,
-      // elevation: 0,
-      // shadowColor: Colors.transparent,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
             height: isMobile ? 150 : 280,
             width: isMobile ? 150 : 280,
-            // height: getProportionateScreenHeight(280),
-            // width: getProportionateScreenWidth(280),
             child: Expanded(
               child: Image.asset(
                 image,
-                // height: 280,
-                // width: 280,
-                // fit: BoxFit.cover,
               ),
             ),
           ),
@@ -115,9 +108,6 @@ class NewsCard extends StatelessWidget {
                       ),
                 ),
                 const Spacer(),
-                // isMobile
-                //     ? const SizedBox.shrink()
-                //     : SizedBox(height: getProportionateScreenHeight(180)),
                 Row(
                   children: [
                     Image.asset(Assets.imagesNewsFa),
