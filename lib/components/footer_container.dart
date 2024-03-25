@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:songhyun/utils/app_exports.dart';
 
 class FooterContainer extends StatelessWidget {
@@ -22,22 +21,24 @@ class FooterContainer extends StatelessWidget {
 
   Widget buildMobileFooter(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(
-        horizontal: getProportionateScreenWidth(60),
-      ),
-      height: getProportionateScreenHeight(130),
+      // padding: EdgeInsets.symmetric(
+      //   horizontal: getProportionateScreenWidth(60),
+      // ),
+      height: getProportionateScreenHeight(100),
       color: pageIndex == 0
           ? Colors.transparent.withOpacity(0.75)
           : AppColors.kWhite,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: buildCopyrightText(context),
           ),
           const Spacer(),
-          const LanguageButton(),
+          const LanguageButton(
+            isMobile: true,
+          ),
           SizedBox(height: getProportionateScreenHeight(10)),
         ],
       ),
@@ -72,24 +73,28 @@ class FooterContainer extends StatelessWidget {
   }
 
   Widget buildCopyrightText(BuildContext context, [bool isMainScreen = false]) {
-    return Text(
-      'COPYRIGHT (C) 2024 Choege Investment ALL RIGHTS RESERVED'.toUpperCase(),
-      style: Theme.of(context).textTheme.bodySmall?.copyWith(
-            color: pageIndex == 0 ? AppColors.kWhite : AppColors.kBlack,
-          ),
-      maxLines: 3,
-      textAlign: TextAlign.center,
+    return Expanded(
+      child: Text(
+        'COPYRIGHT (C) 2024 Choege Investment ALL RIGHTS RESERVED'
+            .toUpperCase(),
+        overflow: TextOverflow.ellipsis,
+        style: Theme.of(context).textTheme.bodySmall?.copyWith(
+              color: pageIndex == 0 ? AppColors.kWhite : AppColors.kBlack,
+              fontSize: isMobile ? 6 : 12,
+            ),
+        textAlign: TextAlign.center,
+      ),
     );
   }
 
   Widget buildLogoAndCompanyName(BuildContext context, bool isMainScreen) {
     return Row(
       children: [
-        Image.asset(Assets.imagesOnlyLogo, width: 30, height: 30),
-        const SizedBox(width: 10),
-        Text('companyName'.tr(),
-            style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                color: pageIndex == 0 ? AppColors.kWhite : AppColors.kBlack)),
+        Image.asset(Assets.imagesChoegeLogoRemovebg, width: 100, height: 100),
+        // const SizedBox(width: 10),
+        // Text('companyName'.tr(),
+        //     style: Theme.of(context).textTheme.titleSmall?.copyWith(
+        //         color: pageIndex == 0 ? AppColors.kWhite : AppColors.kBlack)),
       ],
     );
   }

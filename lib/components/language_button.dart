@@ -3,7 +3,8 @@ import 'package:provider/provider.dart';
 import 'package:songhyun/providers/language_provider.dart';
 
 class LanguageButton extends StatefulWidget {
-  const LanguageButton({super.key});
+  final bool isMobile;
+  const LanguageButton({super.key, this.isMobile = false});
 
   @override
   State<LanguageButton> createState() => _LanguageButtonState();
@@ -30,11 +31,14 @@ class _LanguageButtonState extends State<LanguageButton> {
           const Icon(
             Icons.language,
             color: Colors.black,
+            size: 12,
           ),
-          const SizedBox(width: 10.0),
+          const SizedBox(width: 8.0),
           Text(
             isKorean ? 'ENGLISH' : 'KOREAN',
-            style: Theme.of(context).textTheme.titleSmall,
+            style: Theme.of(context).textTheme.labelMedium!.copyWith(
+                fontSize: widget.isMobile ? 10 : 14,
+                fontWeight: FontWeight.w400),
           ),
         ],
       ),

@@ -45,8 +45,16 @@ class _CustomAppBarState extends State<CustomAppBar> {
                 horizontal: getProportionateScreenWidth(10),
                 vertical: getProportionateScreenHeight(20),
               ),
-              child: Image.asset(
-                Assets.imagesLogoWithName,
+              child:
+                  // SvgPicture.asset(
+                  //   Assets.imagesChoegeLogo,
+                  //   color: Colors.blue[400],
+                  // ),
+
+                  Image.asset(
+                Assets.imagesChoegeLogoRemovebg,
+                height: 200,
+                width: 200,
               ),
             ),
           ),
@@ -135,9 +143,9 @@ class _CustomAppBarState extends State<CustomAppBar> {
             value: item,
             child: Text(
               item.toUpperCase(),
-              style: MyAppTheme.textThemeLight.bodySmall!.copyWith(
-                color: AppColors.kWhite,
-              ),
+              style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                    color: AppColors.kWhite,
+                  ),
             ),
           );
         }).toList();

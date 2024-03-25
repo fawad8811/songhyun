@@ -77,15 +77,17 @@ class NewsCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
-            height: 280,
-            width: 280,
+            height: isMobile ? 150 : 280,
+            width: isMobile ? 150 : 280,
             // height: getProportionateScreenHeight(280),
             // width: getProportionateScreenWidth(280),
-            child: Image.asset(
-              image,
-              // height: 280,
-              // width: 280,
-              // fit: BoxFit.cover,
+            child: Expanded(
+              child: Image.asset(
+                image,
+                // height: 280,
+                // width: 280,
+                // fit: BoxFit.cover,
+              ),
             ),
           ),
           const SizedBox(width: 16),
