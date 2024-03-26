@@ -1,5 +1,4 @@
 import 'package:songhyun/utils/app_exports.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class FooterContainer extends StatelessWidget {
   final bool isMainScreen;
@@ -63,7 +62,7 @@ class FooterContainer extends StatelessWidget {
             child: buildCopyrightText(context, isMainScreen),
           ),
           const Spacer(),
-          buildLogoAndCompanyName(context, isMainScreen),
+          Image.asset(Assets.imagesChoegeLogoRemovebg, width: 100, height: 100),
           SizedBox(
             width: getProportionateScreenWidth(20),
           ),
@@ -74,29 +73,25 @@ class FooterContainer extends StatelessWidget {
   }
 
   Widget buildCopyrightText(BuildContext context, [bool isMainScreen = false]) {
-    return Expanded(
-      child: Text(
-        'COPYRIGHT (C) 2024 Choege Investment ALL RIGHTS RESERVED'
-            .toUpperCase(),
-        overflow: TextOverflow.ellipsis,
-        style: Theme.of(context).textTheme.bodySmall?.copyWith(
-              color: pageIndex == 0 ? AppColors.kWhite : AppColors.kBlack,
-              fontSize: isMobile ? 6 : 12,
-            ),
-        textAlign: TextAlign.center,
-      ),
+    return Text(
+      'COPYRIGHT (C) 2024 Choege Investment ALL RIGHTS RESERVED'.toUpperCase(),
+      overflow: TextOverflow.ellipsis,
+      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+            color: pageIndex == 0 ? AppColors.kWhite : AppColors.kBlack,
+            fontSize: isMobile ? 6 : 12,
+          ),
+      textAlign: TextAlign.center,
     );
   }
 
-  Widget buildLogoAndCompanyName(BuildContext context, bool isMainScreen) {
-    return Row(
-      children: [
-        Image.asset(Assets.imagesChoegeLogoRemovebg, width: 100, height: 100),
-        // const SizedBox(width: 10),
-        // Text('companyName'.tr(),
-        //     style: Theme.of(context).textTheme.titleSmall?.copyWith(
-        //         color: pageIndex == 0 ? AppColors.kWhite : AppColors.kBlack)),
-      ],
-    );
-  }
+  // Widget buildLogoAndCompanyName(BuildContext context, bool isMainScreen) {
+  //   return Row(
+  //     children: [
+  //       // const SizedBox(width: 10),
+  //       // Text('companyName'.tr(),
+  //       //     style: Theme.of(context).textTheme.titleSmall?.copyWith(
+  //       //         color: pageIndex == 0 ? AppColors.kWhite : AppColors.kBlack)),
+  //     ],
+  //   );
+  // }
 }
