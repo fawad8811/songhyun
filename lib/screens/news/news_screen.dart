@@ -27,14 +27,14 @@ class NewsScreen extends StatelessWidget {
               children: [
                 NewsCard(
                     isMobile: isMobile,
-                    image: Assets.imagesNews1,
+                    image: Assets.images1,
                     title: AppLocalizations.of(context)!
                         .revenueAndOperatingIncome2015,
                     subTitle:
                         AppLocalizations.of(context)!.operatingIncome18bnWon),
                 NewsCard(
                     isMobile: isMobile,
-                    image: Assets.imagesNews2,
+                    image: Assets.images1,
                     title: AppLocalizations.of(context)!
                         .revenueAndOperatingIncome2015,
                     subTitle:
@@ -111,7 +111,7 @@ class NewsCard extends StatelessWidget {
                   children: [
                     Image.asset(Assets.imagesNewsFa),
                     const SizedBox(width: 8),
-                    Image.asset(Assets.imagesNewstwr),
+                    Image.asset(Assets.imagesNewsTwr),
                   ],
                 )
               ],

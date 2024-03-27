@@ -31,7 +31,7 @@ class ContactScreen extends StatelessWidget {
                   ),
                   child: Row(
                     children: [
-                      Image.asset(Assets.imagesMap1),
+                      Image.asset(Assets.imagesMapIcon1),
                       const SizedBox(
                         width: 16,
                       ),
@@ -53,7 +53,7 @@ class ContactScreen extends StatelessWidget {
                   ),
                   child: Row(
                     children: [
-                      Image.asset(Assets.imagesMap2),
+                      Image.asset(Assets.imagesMapIcon2),
                       const SizedBox(
                         width: 16,
                       ),
@@ -73,7 +73,7 @@ class ContactScreen extends StatelessWidget {
                   ),
                   child: Row(
                     children: [
-                      Image.asset(Assets.imagesMap3),
+                      Image.asset(Assets.imagesMapIcon3),
                       const SizedBox(
                         width: 16,
                       ),
@@ -92,7 +92,7 @@ class ContactScreen extends StatelessWidget {
                     height: getProportionateScreenHeight(100),
                     width: getProportionateScreenWidth(200),
                     color: AppColors.kGreen,
-                    child: Image.asset(Assets.imagesMapBtn2)),
+                    child: Image.asset(Assets.imagesMapIcon2)),
               ],
             ),
           ),

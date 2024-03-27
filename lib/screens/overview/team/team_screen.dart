@@ -33,7 +33,7 @@ class _TeamScreenState extends State<TeamScreen> {
   ];
 
   final List<String> images = [
-    Assets.imagesteamProfile,
+    Assets.imagesTeamImage,
     // Assets.imagesteamProfile2,
     // Assets.imagesteamProfile3,
     // Assets.imagesteamProfile4,
