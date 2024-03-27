@@ -76,10 +76,8 @@ class NewsCard extends StatelessWidget {
           SizedBox(
             height: isMobile ? 150 : 280,
             width: isMobile ? 150 : 280,
-            child: Expanded(
-              child: Image.asset(
-                image,
-              ),
+            child: Image.asset(
+              image,
             ),
           ),
           const SizedBox(width: 16),

@@ -21,7 +21,7 @@ class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
   State<CustomAppBar> createState() => _CustomAppBarState();
 
   @override
-  Size get preferredSize => const Size.fromHeight(120);
+  Size get preferredSize => const Size.fromHeight(100);
 }
 
 class _CustomAppBarState extends State<CustomAppBar> {
@@ -30,7 +30,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
     return AppBar(
       centerTitle: false,
       leading: const SizedBox.shrink(),
-      toolbarHeight: getProportionateScreenHeight(140),
+      toolbarHeight: getProportionateScreenHeight(110),
       backgroundColor: Colors.transparent.withOpacity(0.75),
       elevation: 0,
       actions: [
@@ -40,22 +40,10 @@ class _CustomAppBarState extends State<CustomAppBar> {
             onTap: () {
               widget.onLogoTap?.call();
             },
-            child: Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: getProportionateScreenWidth(10),
-                vertical: getProportionateScreenHeight(20),
-              ),
-              child:
-                  // SvgPicture.asset(
-                  //   Assets.imagesChoegeLogo,
-                  //   color: Colors.blue[400],
-                  // ),
-
-                  Image.asset(
-                Assets.imagesChoegeLogoRemovebg,
-                height: 200,
-                width: 200,
-              ),
+            child: Image.asset(
+              Assets.imagesChoegelogofinal,
+              // height: 200,
+              // width: 200,
             ),
           ),
         ),

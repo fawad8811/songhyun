@@ -127,15 +127,15 @@ class PortfolioScreen extends StatelessWidget {
                       children: [
                         Image.asset(Assets.imagesBtnPort1),
                         const SizedBox(
-                          width: 10,
+                          width: 6,
                         ),
                         Image.asset(Assets.imagesBtnPort2),
                         const SizedBox(
-                          width: 10,
+                          width: 6,
                         ),
                         Image.asset(Assets.imagesBtnPort3),
                         const SizedBox(
-                          width: 10,
+                          width: 6,
                         ),
                         Image.asset(Assets.imagesBtnPort4),
                       ],

@@ -62,6 +62,7 @@ class MyNavigation {
       _navigateToPage(pageController, 7);
     } else if (value == 'PORTFOLIO') {
       _navigateToPage(pageController, 8);
+      
     } else if (value == 'NEWS') {
       _navigateToPage(pageController, 9);
     } else if (value == 'CONTACT') {
