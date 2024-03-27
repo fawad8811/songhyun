@@ -22,32 +22,34 @@ class HomeTextWidget extends StatelessWidget {
         Padding(
           padding:
               EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
-          child: Column(
-            children: [
-              SizedBox(
-                height: getProportionateScreenHeight(180),
-              ),
-              SelectableText.rich(
-                TextSpan(
-                  style: Theme.of(context).textTheme.labelLarge!.copyWith(
-                      color: AppColors.kWhite,
-                      fontWeight: FontWeight.w100,
-                      fontSize: isMobile ? 16 : 28),
-                  children: <TextSpan>[
-                    TextSpan(
-                      text: AppLocalizations.of(context)!.companyNameOne,
-                      style: Theme.of(context).textTheme.labelLarge!.copyWith(
-                            color: AppColors.kGreen,
-                            fontSize: isMobile ? 16 : 28,
-                            fontWeight: FontWeight.w100,
-                          ),
-                    ),
-                    TextSpan(
-                        text: AppLocalizations.of(context)!.pursuitStatement),
-                  ],
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                SizedBox(
+                  height: getProportionateScreenHeight(180),
                 ),
-              ),
-            ],
+                SelectableText.rich(
+                  TextSpan(
+                    style: Theme.of(context).textTheme.labelLarge!.copyWith(
+                        color: AppColors.kWhite,
+                        fontWeight: FontWeight.w100,
+                        fontSize: isMobile ? 16 : 28),
+                    children: <TextSpan>[
+                      TextSpan(
+                        text: AppLocalizations.of(context)!.companyNameOne,
+                        style: Theme.of(context).textTheme.labelLarge!.copyWith(
+                              color: AppColors.kGreen,
+                              fontSize: isMobile ? 16 : 28,
+                              fontWeight: FontWeight.w100,
+                            ),
+                      ),
+                      TextSpan(
+                          text: AppLocalizations.of(context)!.pursuitStatement),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ],

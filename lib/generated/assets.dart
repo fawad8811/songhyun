@@ -2,14 +2,21 @@
 class Assets {
   Assets._();
 
-  static const String fontsNotoSansKRBlack = 'assets/fonts/NotoSansKR-Black.ttf';
+  static const String fontsNotoSansKRBlack =
+      'assets/fonts/NotoSansKR-Black.ttf';
   static const String fontsNotoSansKRBold = 'assets/fonts/NotoSansKR-Bold.ttf';
-  static const String fontsNotoSansKRExtraBold = 'assets/fonts/NotoSansKR-ExtraBold.ttf';
-  static const String fontsNotoSansKRExtraLight = 'assets/fonts/NotoSansKR-ExtraLight.ttf';
-  static const String fontsNotoSansKRLight = 'assets/fonts/NotoSansKR-Light.ttf';
-  static const String fontsNotoSansKRMedium = 'assets/fonts/NotoSansKR-Medium.ttf';
-  static const String fontsNotoSansKRRegular = 'assets/fonts/NotoSansKR-Regular.ttf';
-  static const String fontsNotoSansKRSemiBold = 'assets/fonts/NotoSansKR-SemiBold.ttf';
+  static const String fontsNotoSansKRExtraBold =
+      'assets/fonts/NotoSansKR-ExtraBold.ttf';
+  static const String fontsNotoSansKRExtraLight =
+      'assets/fonts/NotoSansKR-ExtraLight.ttf';
+  static const String fontsNotoSansKRLight =
+      'assets/fonts/NotoSansKR-Light.ttf';
+  static const String fontsNotoSansKRMedium =
+      'assets/fonts/NotoSansKR-Medium.ttf';
+  static const String fontsNotoSansKRRegular =
+      'assets/fonts/NotoSansKR-Regular.ttf';
+  static const String fontsNotoSansKRSemiBold =
+      'assets/fonts/NotoSansKR-SemiBold.ttf';
   static const String fontsNotoSansKRThin = 'assets/fonts/NotoSansKR-Thin.ttf';
   static const String images1 = 'assets/images/1.jpg';
   static const String images11 = 'assets/images/11.jpg';
@@ -18,7 +25,8 @@ class Assets {
   static const String images4 = 'assets/images/4.jpg';
   static const String images52 = 'assets/images/52.png';
   static const String imagesAIMT = 'assets/images/AIMT.jpg';
-  static const String imagesAcetechnologies = 'assets/images/acetechnologies.png';
+  static const String imagesAcetechnologies =
+      'assets/images/acetechnologies.png';
   static const String imagesAcross = 'assets/images/across.jpg';
   static const String imagesAirpoint = 'assets/images/airpoint.jpg';
   static const String imagesAkiiiclassic = 'assets/images/akiiiclassic.jpg';
@@ -31,8 +39,13 @@ class Assets {
   static const String imagesBgTopGreeting = 'assets/images/bg_top_greeting.png';
   static const String imagesBgTopHistory = 'assets/images/bg_top_history.png';
   static const String imagesBgTopNews = 'assets/images/bg_top_news.png';
-  static const String imagesBgTopPhilosophy = 'assets/images/bg_top_philosophy.png';
-  static const String imagesBgTopPortfolio = 'assets/images/bg_top_portfolio.png';
+  static const String imagesNews2 = 'assets/images/52.png';
+  static const String imagesNews1 = 'assets/images/11.jpg';
+  static const String imagessubmet = 'assets/images/map_btn2_en.png';
+  static const String imagesBgTopPhilosophy =
+      'assets/images/bg_top_philosophy.png';
+  static const String imagesBgTopPortfolio =
+      'assets/images/bg_top_portfolio.png';
   static const String imagesBgTopStrategy = 'assets/images/bg_top_strategy.png';
   static const String imagesBgTopTeam = 'assets/images/bg_top_team.png';
   static const String imagesBgTopVision = 'assets/images/bg_top_vision.png';
@@ -47,19 +60,23 @@ class Assets {
   static const String imagesCevo = 'assets/images/cevo.png';
   static const String imagesChoegeLogo = 'assets/images/choege_logo.png';
   static const String imagesChoegeLogo03 = 'assets/images/ChoegeLogo03.svg';
-  static const String imagesChoegeLogoRemovebg = 'assets/images/choege_logo_removebg.png';
-  static const String imagesChoegeLogoOneRemovebg = 'assets/images/Choege_logo_one_removebg.png';
+  static const String imagesChoegeLogoRemovebg =
+      'assets/images/choege_logo_removebg.png';
+  static const String imagesChoegeLogoOneRemovebg =
+      'assets/images/Choege_logo_one_removebg.png';
   static const String imagesChoegelogo01 = 'assets/images/Choegelogo01.svg';
   static const String imagesChoegeSvg = 'assets/images/Choege_logo_svg.svg';
   static const String imagesChoegelogo02 = 'assets/images/Choegelogo_02.png';
-  static const String imagesChoegelogofinal = 'assets/images/Choege_logo_final.png';
+  static const String imagesChoegelogofinal =
+      'assets/images/Choege_logo_final.png';
   static const String imagesChunbo = 'assets/images/chunbo.jpg';
   static const String imagesCiel = 'assets/images/ciel.jpg';
   static const String imagesClio = 'assets/images/clio.jpg';
   static const String imagesClo = 'assets/images/clo.jpg';
   static const String imagesCorechips = 'assets/images/corechips.jpg';
   static const String imagesCremotech = 'assets/images/cremotech.png';
-  static const String imagesCrusialmachines = 'assets/images/crusialmachines.jpg';
+  static const String imagesCrusialmachines =
+      'assets/images/crusialmachines.jpg';
   static const String imagesDaewongsi = 'assets/images/daewongsi.jpg';
   static const String imagesDanbi = 'assets/images/danbi.jpg';
   static const String imagesDeardahlia = 'assets/images/deardahlia.jpg';
@@ -93,11 +110,13 @@ class Assets {
   static const String imagesIvwprks = 'assets/images/ivwprks.jpg';
   static const String imagesJaanh = 'assets/images/jaanh.jpg';
   static const String imagesKaratica = 'assets/images/karatica.jpg';
-  static const String imagesKoreantwogreentree = 'assets/images/koreantwogreentree.png';
+  static const String imagesKoreantwogreentree =
+      'assets/images/koreantwogreentree.png';
   static const String imagesKps = 'assets/images/kps.jpg';
   static const String imagesLakematerials = 'assets/images/lakematerials.jpg';
   static const String imagesLogoFooterEng = 'assets/images/logo_footer_eng.png';
-  static const String imagesLogoLauncherIcon = 'assets/images/logo_launcher_icon.png';
+  static const String imagesLogoLauncherIcon =
+      'assets/images/logo_launcher_icon.png';
   static const String imagesMainLogo = 'assets/images/main_logo.png';
   static const String imagesMapBtn2En = 'assets/images/map_btn2_en.png';
   static const String imagesMapIcon1 = 'assets/images/map_icon_1.png';
@@ -143,7 +162,8 @@ class Assets {
   static const String imagesSeohaegreen = 'assets/images/seohaegreen.png';
   static const String imagesSeoulstore = 'assets/images/seoulstore.jpg';
   static const String imagesSeowontech = 'assets/images/seowontech.jpg';
-  static const String imagesSiliconworkstwo = 'assets/images/siliconworkstwo.jpg';
+  static const String imagesSiliconworkstwo =
+      'assets/images/siliconworkstwo.jpg';
   static const String imagesSocar = 'assets/images/socar.jpg';
   static const String imagesSolueta = 'assets/images/solueta.jpg';
   static const String imagesSpotlight = 'assets/images/spotlight.jpg';
@@ -165,5 +185,4 @@ class Assets {
   static const String imagesYas = 'assets/images/yas.jpg';
   static const String translationsEnUS = 'assets/translations/en-US.json';
   static const String translationsKoKR = 'assets/translations/ko-KR.json';
-
 }

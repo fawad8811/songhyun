@@ -92,7 +92,7 @@ class ContactScreen extends StatelessWidget {
                     height: getProportionateScreenHeight(100),
                     width: getProportionateScreenWidth(200),
                     color: AppColors.kGreen,
-                    child: Image.asset(Assets.imagesMapIcon2)),
+                    child: Image.asset(Assets.imagessubmet)),
               ],
             ),
           ),
