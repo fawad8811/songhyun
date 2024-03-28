@@ -48,12 +48,12 @@ class Assets {
   static const String imagesCevo = 'assets/images/cevo.png';
   static const String imagesChoegeLogo = 'assets/images/choege_logo.png';
   static const String imagesChoegeLogo03 = 'assets/images/ChoegeLogo03.svg';
-  static const String imagesChoegeLogoRemovebg = 'assets/images/choege_logo_removebg.png';
+  static const String imagesChoegeLogoFinal = 'assets/images/Choege_logo_final.png';
   static const String imagesChoegeLogoOneRemovebg = 'assets/images/Choege_logo_one_removebg.png';
+  static const String imagesChoegeLogoRemovebg = 'assets/images/choege_logo_removebg.png';
   static const String imagesChoegelogo01 = 'assets/images/Choegelogo01.svg';
-  static const String imagesChoegeSvg = 'assets/images/Choege_logo_svg.svg';
   static const String imagesChoegelogo02 = 'assets/images/Choegelogo_02.png';
-  static const String imagesChoegelogofinal = 'assets/images/Choege_logo_final.png';
+  static const String imagesChoegelogoSpace = 'assets/images/Choegelogo_space.svg';
   static const String imagesChunbo = 'assets/images/chunbo.jpg';
   static const String imagesCiel = 'assets/images/ciel.jpg';
   static const String imagesClio = 'assets/images/clio.jpg';
@@ -160,6 +160,7 @@ class Assets {
   static const String imagesSocar = 'assets/images/socar.jpg';
   static const String imagesSolueta = 'assets/images/solueta.jpg';
   static const String imagesSpotlight = 'assets/images/spotlight.jpg';
+  static const String imagesStckImage = 'assets/images/stck_image.png';
   static const String imagesStrategy1 = 'assets/images/Strategy_1.png';
   static const String imagesStrategy2 = 'assets/images/Strategy_2.png';
   static const String imagesStrategy3 = 'assets/images/Strategy_3.png';

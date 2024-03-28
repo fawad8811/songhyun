@@ -73,11 +73,17 @@ class FooterContainer extends StatelessWidget {
             width: getProportionateScreenWidth(20),
             height: getProportionateScreenHeight(50),
             color: Colors.transparent,
-            child: Image.asset(
-              Assets.imagesHomemainlogo,
-              fit: BoxFit.cover,
-              color: isMainScreen ? AppColors.kWhite : AppColors.kBlack,
-            ),
+            child: pageIndex == 0
+                ? Image.asset(
+                    Assets.imagesHomemainlogo,
+                    fit: BoxFit.cover,
+                  )
+                : Image.asset(
+                    Assets.imagesChoegeLogo,
+                    height: getProportionateScreenHeight(20),
+                    width: getProportionateScreenWidth(50),
+                    fit: BoxFit.scaleDown,
+                  ),
           ),
           SizedBox(
             width: getProportionateScreenWidth(5),

@@ -1,7 +1,6 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:songhyun/screens/widgets/page_head.dart';
 import 'package:songhyun/utils/app_exports.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class VisionScreen extends StatelessWidget {
   final bool isMobile;
@@ -48,7 +47,11 @@ class VisionScreen extends StatelessWidget {
     return Expanded(
       child: Column(
         children: [
-          Image.asset(imageAsset),
+          Image.asset(
+            imageAsset,
+            width: getProportionateScreenWidth(250),
+            height: getProportionateScreenHeight(250),
+          ),
           Text(
             title,
             textAlign: TextAlign.center,
@@ -84,7 +87,7 @@ class VisionScreen extends StatelessWidget {
       ),
       _buildVisionColumn(
         context,
-        'assets/images/vision_2.png',
+        Assets.imagesStckImage,
         AppLocalizations.of(context)!.mutualGrowth,
         AppLocalizations.of(context)!.ipoSuccess,
       ),
@@ -141,9 +144,9 @@ class VisionScreen extends StatelessWidget {
       ),
         _buildVisionMobileColumn(
           context,
-          Assets.imagesVision2,
+          Assets.imagesStckImage,
           AppLocalizations.of(context)!.mutualGrowth,
-        AppLocalizations.of(context)!.ipoSuccess,
+          AppLocalizations.of(context)!.ipoSuccess,
         ),
         _buildVisionMobileColumn(
           context,
