@@ -179,6 +179,11 @@ class _MobileScaffoldState extends State<MobileScaffold> {
                   title,
                   _pageController,
                 );
+                if (title == 'PORTFOLIO' ||
+                    title == 'NEWS' ||
+                    title == 'CONTACT') {
+                  Navigator.pop(context);
+                }
               }
             },
           );

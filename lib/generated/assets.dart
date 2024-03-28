@@ -49,8 +49,11 @@ class Assets {
   static const String imagesChoegeLogo = 'assets/images/choege_logo.png';
   static const String imagesChoegeLogo03 = 'assets/images/ChoegeLogo03.svg';
   static const String imagesChoegeLogoRemovebg = 'assets/images/choege_logo_removebg.png';
+  static const String imagesChoegeLogoOneRemovebg = 'assets/images/Choege_logo_one_removebg.png';
   static const String imagesChoegelogo01 = 'assets/images/Choegelogo01.svg';
+  static const String imagesChoegeSvg = 'assets/images/Choege_logo_svg.svg';
   static const String imagesChoegelogo02 = 'assets/images/Choegelogo_02.png';
+  static const String imagesChoegelogofinal = 'assets/images/Choege_logo_final.png';
   static const String imagesChunbo = 'assets/images/chunbo.jpg';
   static const String imagesCiel = 'assets/images/ciel.jpg';
   static const String imagesClio = 'assets/images/clio.jpg';
