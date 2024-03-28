@@ -18,7 +18,7 @@ class FundScreen extends StatelessWidget {
       children: [
         const PageHead(
           title: 'Fund',
-          image: Assets.imagesBgTopFund,
+          image: Assets.imagesHomebgthree,
         ),
         SizedBox(height: getProportionateScreenHeight(100)),
         Padding(

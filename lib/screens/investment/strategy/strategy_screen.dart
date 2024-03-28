@@ -18,7 +18,7 @@ class StrategyScreen extends StatelessWidget {
       children: [
         const PageHead(
           title: 'Strategy',
-          image: Assets.imagesBgTopStrategy,
+          image: Assets.imagesHomebgone,
         ),
         SizedBox(height: getProportionateScreenHeight(50)),
         ..._buildwebStategyColumns(context),

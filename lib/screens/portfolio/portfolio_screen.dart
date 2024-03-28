@@ -106,7 +106,7 @@ class PortfolioScreen extends StatelessWidget {
       shrinkWrap: true,
       padding: EdgeInsets.zero,
       children: [
-        const PageHead(title: 'Portfolio', image: Assets.imagesBgTopPortfolio),
+        const PageHead(title: 'Portfolio', image: Assets.imagesHomebgthree),
         SizedBox(height: getProportionateScreenHeight(20)),
         Padding(
           padding: EdgeInsets.only(

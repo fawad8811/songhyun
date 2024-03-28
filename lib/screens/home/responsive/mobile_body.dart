@@ -59,28 +59,28 @@ class _MobileScaffoldState extends State<MobileScaffold> {
                 _currentPageIndex = index;
               });
             },
-            children: const [
-              HomeTextWidget(),
-              GreetingsScreen(),
-              VisionScreen(
+            children: [
+              const HomeTextWidget(),
+              const GreetingsScreen(),
+              const VisionScreen(
                 isMobile: true,
               ),
-              HistoryScreen(),
+              const HistoryScreen(),
               TeamScreen(
                 isMobile: true,
               ),
-              PhilosophyScreen(
+              const PhilosophyScreen(
                 isMobile: true,
               ),
-              StrategyScreen(isMobile: true),
-              FundScreen(),
-              PortfolioScreen(
+              const StrategyScreen(isMobile: true),
+              const FundScreen(),
+              const PortfolioScreen(
                 isMobile: true,
               ),
-              NewsScreen(
+              const NewsScreen(
                 isMobile: true,
               ),
-              ContactScreen(),
+              const ContactScreen(),
               // Add other screens here
             ],
           ),

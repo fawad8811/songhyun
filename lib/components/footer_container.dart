@@ -24,7 +24,7 @@ class FooterContainer extends StatelessWidget {
       // padding: EdgeInsets.symmetric(
       //   horizontal: getProportionateScreenWidth(60),
       // ),
-      height: getProportionateScreenHeight(100),
+      height: getProportionateScreenHeight(80),
       color: pageIndex == 0
           ? Colors.transparent.withOpacity(0.75)
           : AppColors.kWhite,
@@ -36,10 +36,17 @@ class FooterContainer extends StatelessWidget {
             child: buildCopyrightText(context),
           ),
           const Spacer(),
+          // Container(
+          //   width: getProportionateScreenWidth(40),
+          //   height: getProportionateScreenHeight(50),
+          //   color: Colors.red,
+          //   child: Image.asset(Assets.imagesHomemainlogo,
+          //     fit: BoxFit.cover,),
+          // ),
+          // SizedBox(height: getProportionateScreenHeight(10)),
           const LanguageButton(
             isMobile: true,
           ),
-          SizedBox(height: getProportionateScreenHeight(10)),
         ],
       ),
     );
@@ -62,9 +69,18 @@ class FooterContainer extends StatelessWidget {
             child: buildCopyrightText(context, isMainScreen),
           ),
           const Spacer(),
-          Image.asset(Assets.imagesChoegeLogoRemovebg, width: 100, height: 100),
-          SizedBox(
+          Container(
             width: getProportionateScreenWidth(20),
+            height: getProportionateScreenHeight(50),
+            color: Colors.transparent,
+            child: Image.asset(
+              Assets.imagesHomemainlogo,
+              fit: BoxFit.cover,
+              color: isMainScreen ? AppColors.kWhite : AppColors.kBlack,
+            ),
+          ),
+          SizedBox(
+            width: getProportionateScreenWidth(5),
           ),
           const LanguageButton(),
         ],
@@ -84,14 +100,14 @@ class FooterContainer extends StatelessWidget {
     );
   }
 
-  // Widget buildLogoAndCompanyName(BuildContext context, bool isMainScreen) {
-  //   return Row(
-  //     children: [
-  //       // const SizedBox(width: 10),
-  //       // Text('companyName'.tr(),
-  //       //     style: Theme.of(context).textTheme.titleSmall?.copyWith(
-  //       //         color: pageIndex == 0 ? AppColors.kWhite : AppColors.kBlack)),
-  //     ],
-  //   );
-  // }
+// Widget buildLogoAndCompanyName(BuildContext context, bool isMainScreen) {
+//   return Row(
+//     children: [
+//       // const SizedBox(width: 10),
+//       // Text('companyName'.tr(),
+//       //     style: Theme.of(context).textTheme.titleSmall?.copyWith(
+//       //         color: pageIndex == 0 ? AppColors.kWhite : AppColors.kBlack)),
+//     ],
+//   );
+// }
 }

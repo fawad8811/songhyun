@@ -24,7 +24,7 @@ class MyNavigation {
       case 3:
         return const HistoryScreen();
       case 4:
-        return const TeamScreen();
+        return TeamScreen();
       case 5:
         return const PhilosophyScreen();
       case 6:

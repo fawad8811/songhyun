@@ -13,7 +13,7 @@ class NewsScreen extends StatelessWidget {
       shrinkWrap: true,
       padding: EdgeInsets.zero,
       children: [
-        const PageHead(title: 'News', image: Assets.imagesBgTopNews),
+        const PageHead(title: 'News', image: Assets.imagesHomebgfour),
         SizedBox(height: getProportionateScreenHeight(20)),
         Container(
           color: AppColors.kMainBackgroundColor,

@@ -18,7 +18,7 @@ class PhilosophyScreen extends StatelessWidget {
       children: [
         const PageHead(
           title: 'Philosophy',
-          image: Assets.imagesBgTopVision,
+          image: Assets.imagesHomebgfive,
         ),
         SizedBox(height: getProportionateScreenHeight(20)),
         Padding(

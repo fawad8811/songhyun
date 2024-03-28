@@ -14,7 +14,7 @@ class HistoryScreen extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const PageHead(title: 'History', image: Assets.imagesBgTopHistory),
+          const PageHead(title: 'History', image: Assets.imagesHomebgthree),
           SizedBox(height: getProportionateScreenHeight(20)),
           Padding(
             padding: EdgeInsets.symmetric(

@@ -43,7 +43,7 @@ class WebBodyState extends State<WebBody> {
       const GreetingsScreen(),
       const VisionScreen(),
       const HistoryScreen(),
-      const TeamScreen(),
+      TeamScreen(),
       const PhilosophyScreen(),
       const StrategyScreen(),
       const FundScreen(),

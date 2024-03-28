@@ -14,7 +14,7 @@ class GreetingsScreen extends StatelessWidget {
           shrinkWrap: true,
           padding: EdgeInsets.zero,
           children: [
-            const PageHead(title: 'Greetings', image: Assets.imagesBgTopGreeting),
+            const PageHead(title: 'Greetings', image: Assets.imagesHomebgone),
             Padding(
               padding: EdgeInsets.only(
                 top: getProportionateScreenHeight(50),

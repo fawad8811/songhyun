@@ -1,44 +1,50 @@
-import 'package:easy_localization/easy_localization.dart';
-import 'package:songhyun/screens/widgets/page_head.dart';
-import 'package:songhyun/utils/app_exports.dart';
 import 'dart:math';
 
-class TeamScreen extends StatefulWidget {
+import 'package:flutter/material.dart';
+import 'package:responsive_config/responsive_config.dart';
+import 'package:songhyun/generated/assets.dart';
+import 'package:songhyun/screens/widgets/page_head.dart';
+
+class TeamScreen extends StatelessWidget {
   final bool isMobile;
 
-  const TeamScreen({Key? key, this.isMobile = false}) : super(key: key);
+  TeamScreen({Key? key, this.isMobile = false}) : super(key: key);
 
-  @override
-  State<TeamScreen> createState() => _TeamScreenState();
-}
-
-class _TeamScreenState extends State<TeamScreen> {
-  // Define lists for random data
-  final List<String> names = [
-    'John Doe',
-    'Alice Smith',
-    'Michael Johnson',
-    'Emily Brown',
-    'Daniel Wilson',
-    'Sophia Lee',
+  final List<TeamMember> managementTeam = [
+    TeamMember(
+        name: 'Changseok Oh', position: 'Chairman', image: Assets.imagesCeoOne),
+    TeamMember(
+        name: 'Changseok Oh',
+        position: 'Chairman',
+        image: Assets.imagesManagementSix),
+    TeamMember(
+        name: 'Kiseung Nam',
+        position: 'President',
+        image: Assets.imagesManagementSeven),
   ];
 
-  final List<String> positions = [
-    'CEO',
-    'Vice President',
-    'Executive Managing',
-    'Director of Marketing',
-    'Financial Officer',
-    'Technology Officer',
-  ];
-
-  final List<String> images = [
-    Assets.imagesTeamImage,
-    // Assets.imagesteamProfile2,
-    // Assets.imagesteamProfile3,
-    // Assets.imagesteamProfile4,
-    // Assets.imagesteamProfile5,
-    // Assets.imagesteamProfile6,
+  final List<TeamMember> investmentDivisionTeam = [
+    TeamMember(
+      name: 'James Kisung Jung',
+      position: 'Executive Managing Director',
+      image: Assets.imagesCeoOne,
+    ),
+    TeamMember(
+      name: 'John Doe',
+      position: 'CEO',
+      image: Assets.imagesManagementTwo,
+    ),
+    TeamMember(
+      name: 'Alice Smith',
+      position: 'Vice President',
+      image: Assets.imagesManagementThree,
+    ),
+    TeamMember(
+      name: 'Alice Smith',
+      position: 'Vice President',
+      image: Assets.imagesManagementFour,
+    ),
+    // Add more members as needed
   ];
 
   @override
@@ -47,7 +53,7 @@ class _TeamScreenState extends State<TeamScreen> {
       shrinkWrap: true,
       padding: EdgeInsets.zero,
       children: [
-        const PageHead(title: 'Team', image: Assets.imagesBgTopTeam),
+        const PageHead(title: 'Team', image: Assets.imagesHomebgfour),
         SizedBox(height: getProportionateScreenHeight(20)),
         Padding(
           padding: EdgeInsets.symmetric(
@@ -56,9 +62,9 @@ class _TeamScreenState extends State<TeamScreen> {
           ),
           child: Column(
             children: [
-              _buildTeamGridView('Management', widget.isMobile),
+              _buildTeamGridView('Management', managementTeam),
               SizedBox(height: getProportionateScreenHeight(20)),
-              _buildTeamGridView('Investment Division', widget.isMobile),
+              _buildTeamGridView('Investment Division', investmentDivisionTeam),
             ],
           ),
         ),
@@ -67,7 +73,7 @@ class _TeamScreenState extends State<TeamScreen> {
     );
   }
 
-  Widget _buildTeamGridView(String type, bool isMobile) {
+  Widget _buildTeamGridView(String type, List<TeamMember> team) {
     return GridView.builder(
       physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
@@ -75,27 +81,47 @@ class _TeamScreenState extends State<TeamScreen> {
         crossAxisCount: isMobile ? 2 : 4,
         mainAxisSpacing: 20,
       ),
-      itemCount: type == 'Management' ? 4 : 5,
+      itemCount:
+          type == 'Management' ? min(4, team.length) : min(5, team.length + 1),
       itemBuilder: (context, index) {
         if (index == 0) {
           return TypeContainer(type: type, isMobile: isMobile);
-        } else {
-          // Generate random index for data
-          final random = Random();
-          final nameIndex = random.nextInt(names.length);
-          final positionIndex = random.nextInt(positions.length);
-          final imageIndex = random.nextInt(images.length);
-
+        } else if (index <= min(3, team.length)) {
+          final member = team[index - 1];
           return TeamContainer(
-            name: names[nameIndex],
-            position: positions[positionIndex],
-            image: images[imageIndex],
+            name: member.name,
+            position: member.position,
+            image: member.image,
             isMobile: isMobile,
           );
+        } else if (index == 4 &&
+            type == 'Investment Division' &&
+            team.length >= 4) {
+          final member = team[index - 1];
+          return TeamContainer(
+            name: member.name,
+            position: member.position,
+            image: member.image,
+            isMobile: isMobile,
+          );
+        } else {
+          return const SizedBox(); // Return empty SizedBox for additional items
         }
       },
     );
   }
+}
+
+class TeamMember {
+  final String name;
+  final String position;
+  final String image;
+
+  TeamMember({
+    required this.name,
+    required this.position,
+    required this.image,
+  });
 }
 
 class TypeContainer extends StatelessWidget {
@@ -116,14 +142,15 @@ class TypeContainer extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
       margin: const EdgeInsets.only(right: 20),
       decoration: const BoxDecoration(
-        color: AppColors.kGreen,
+        color: Colors.green, // Use your desired color
       ),
       child: Align(
         alignment: Alignment.bottomCenter,
         child: Text(
-          type.tr(),
-          style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                color: AppColors.kWhite,
+          type,
+          style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                fontWeight: FontWeight.w100,
+                color: Colors.white, // Use your desired color
                 fontSize: isMobile ? 16 : 40,
               ),
         ),
@@ -154,7 +181,6 @@ class TeamContainer extends StatelessWidget {
       margin: const EdgeInsets.only(right: 20),
       child: Stack(
         children: [
-          // Image
           Positioned.fill(
             child: Container(
               decoration: BoxDecoration(
@@ -171,7 +197,6 @@ class TeamContainer extends StatelessWidget {
               ),
             ),
           ),
-          // Shadow
           Positioned(
             bottom: 0,
             left: 0,
@@ -183,22 +208,23 @@ class TeamContainer extends StatelessWidget {
                   begin: Alignment.bottomCenter,
                   end: Alignment.topCenter,
                   colors: [
-                    AppColors.kBlack.withOpacity(0.7),
+                    Colors.black.withOpacity(0.7),
                     Colors.transparent,
                   ],
                 ),
               ),
             ),
           ),
-          // Text
           Positioned(
             bottom: 40,
             left: 20,
             right: 20,
             child: Text(
-              name.tr(),
-              style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                    color: AppColors.kWhite,
+              name,
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w100,
+                    // Use your desired color
                     fontSize: isMobile ? 14 : 26,
                   ),
             ),
@@ -209,8 +235,9 @@ class TeamContainer extends StatelessWidget {
             right: 20,
             child: Text(
               position,
-              style: Theme.of(context).textTheme.titleLarge?.copyWith(
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
                     color: const Color(0xFFabd58c),
+                    fontWeight: FontWeight.w100,
                     fontSize: isMobile ? 10 : 20,
                   ),
             ),

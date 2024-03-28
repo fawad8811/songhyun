@@ -13,7 +13,7 @@ class ContactScreen extends StatelessWidget {
       shrinkWrap: true,
       padding: EdgeInsets.zero,
       children: [
-        const PageHead(title: 'Contact', image: Assets.imagesBgTopContact),
+        const PageHead(title: 'Contact', image: Assets.imagesHomebgfive),
         SizedBox(height: getProportionateScreenHeight(20)),
         Container(
           color: AppColors.kMainBackgroundColor,

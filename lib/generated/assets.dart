@@ -44,6 +44,7 @@ class Assets {
   static const String imagesBtnPort3 = 'assets/images/btn_port3.png';
   static const String imagesBtnPort4 = 'assets/images/btn_port4.png';
   static const String imagesCIS = 'assets/images/CIS.jpg';
+  static const String imagesCeoOne = 'assets/images/ceo_one.jpeg';
   static const String imagesCevo = 'assets/images/cevo.png';
   static const String imagesChoegeLogo = 'assets/images/choege_logo.png';
   static const String imagesChoegeLogo03 = 'assets/images/ChoegeLogo03.svg';
@@ -80,6 +81,12 @@ class Assets {
   static const String imagesHavit = 'assets/images/havit.jpg';
   static const String imagesHileben = 'assets/images/hileben.jpg';
   static const String imagesHomeBg = 'assets/images/home_bg.png';
+  static const String imagesHomebgfive = 'assets/images/homebgfive.png';
+  static const String imagesHomebgfour = 'assets/images/homebgfour.png';
+  static const String imagesHomebgone = 'assets/images/homebgone.png';
+  static const String imagesHomebgthree = 'assets/images/homebgthree.png';
+  static const String imagesHomebgtwo = 'assets/images/homebgtwo.png';
+  static const String imagesHomemainlogo = 'assets/images/homemainlogo.png';
   static const String imagesHycore = 'assets/images/hycore.jpg';
   static const String imagesImageRemovebg = 'assets/images/image_removebg.png';
   static const String imagesImt = 'assets/images/imt.jpg';
@@ -96,6 +103,12 @@ class Assets {
   static const String imagesLogoFooterEng = 'assets/images/logo_footer_eng.png';
   static const String imagesLogoLauncherIcon = 'assets/images/logo_launcher_icon.png';
   static const String imagesMainLogo = 'assets/images/main_logo.png';
+  static const String imagesManagementFive = 'assets/images/management_five.jpeg';
+  static const String imagesManagementFour = 'assets/images/management_four.jpeg';
+  static const String imagesManagementSeven = 'assets/images/management_seven.jpeg';
+  static const String imagesManagementSix = 'assets/images/management_six.jpeg';
+  static const String imagesManagementThree = 'assets/images/management_three.jpeg';
+  static const String imagesManagementTwo = 'assets/images/management_two.jpeg';
   static const String imagesMapBtn2En = 'assets/images/map_btn2_en.png';
   static const String imagesMapIcon1 = 'assets/images/map_icon_1.png';
   static const String imagesMapIcon2 = 'assets/images/map_icon_2.png';

@@ -34,31 +34,52 @@ class _CustomAppBarState extends State<CustomAppBar> {
       backgroundColor: Colors.transparent.withOpacity(0.75),
       elevation: 0,
       actions: [
-        MouseRegion(
-          cursor: SystemMouseCursors.click,
-          child: GestureDetector(
-            onTap: () {
-              widget.onLogoTap?.call();
-            },
-            child: Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: getProportionateScreenWidth(10),
-                vertical: getProportionateScreenHeight(20),
+        widget.isMobile
+            ? MouseRegion(
+                cursor: SystemMouseCursors.click,
+                child: GestureDetector(
+                  onTap: () {
+                    widget.onLogoTap?.call();
+                  },
+                  child: Padding(
+                    padding:
+                        EdgeInsets.only(left: getProportionateScreenWidth(10)),
+                    child: Container(
+                      height: getProportionateScreenHeight(120),
+                      width: getProportionateScreenWidth(90),
+                      color: Colors.transparent,
+                      child: Image.asset(
+                        Assets.imagesHomemainlogo,
+                        fit: BoxFit.cover,
+                        // height: getProportionateScreenHeight(200),
+                        // width: getProportionateScreenWidth(100),
+                      ),
+                    ),
+                  ),
+                ),
+              )
+            : Padding(
+                padding: EdgeInsets.only(left: getProportionateScreenWidth(20)),
+                child: MouseRegion(
+                  cursor: SystemMouseCursors.click,
+                  child: GestureDetector(
+                    onTap: () {
+                      widget.onLogoTap?.call();
+                    },
+                    child: Container(
+                      height: getProportionateScreenHeight(120),
+                      width: getProportionateScreenWidth(90),
+                      color: Colors.transparent,
+                      child: Image.asset(
+                        Assets.imagesHomemainlogo,
+                        fit: BoxFit.cover,
+                        // height: getProportionateScreenHeight(200),
+                        // width: getProportionateScreenWidth(100),
+                      ),
+                    ),
+                  ),
+                ),
               ),
-              child:
-                  // SvgPicture.asset(
-                  //   Assets.imagesChoegeLogo,
-                  //   color: Colors.blue[400],
-                  // ),
-
-                  Image.asset(
-                Assets.imagesChoegeLogoRemovebg,
-                height: 200,
-                width: 200,
-              ),
-            ),
-          ),
-        ),
         if (widget.isMobile) ...{
           const Spacer(),
           IconButton(

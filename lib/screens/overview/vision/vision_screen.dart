@@ -19,7 +19,7 @@ class VisionScreen extends StatelessWidget {
       children: [
         const PageHead(
           title: 'Vision',
-          image: Assets.imagesBgTopVision,
+          image: Assets.imagesHomebgtwo,
         ),
         SizedBox(height: getProportionateScreenHeight(20)),
         Padding(
