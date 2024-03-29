@@ -45,34 +45,40 @@ class VisionScreen extends StatelessWidget {
     String description,
   ) {
     return Expanded(
-      child: Column(
-        children: [
-          Image.asset(
-            imageAsset,
-            width: getProportionateScreenWidth(250),
-            height: getProportionateScreenHeight(250),
-          ),
-          Text(
-            title,
-            textAlign: TextAlign.center,
-            style: Theme.of(context)
-                .textTheme
-                .labelLarge
-                ?.copyWith(color: AppColors.kGreenTextColor, height: 2.0),
-          ),
-          SizedBox(height: getProportionateScreenHeight(10)),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Text(
-              description,
+      child: Padding(
+        padding: EdgeInsets.only(
+          top: getProportionateScreenHeight(50)
+        ),
+        child: Column(
+          children: [
+            Image.asset(
+              imageAsset,
+              fit: BoxFit.scaleDown,
+              width: getProportionateScreenWidth(150),
+              height: getProportionateScreenHeight(150),
+            ),
+            Text(
+              title,
               textAlign: TextAlign.center,
               style: Theme.of(context)
                   .textTheme
-                  .labelMedium
-                  ?.copyWith(color: AppColors.kBlack, height: 1.5),
+                  .labelLarge
+                  ?.copyWith(color: AppColors.kGreenTextColor, height: 2.0),
             ),
-          ),
-        ],
+            SizedBox(height: getProportionateScreenHeight(10)),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Text(
+                description,
+                textAlign: TextAlign.center,
+                style: Theme.of(context)
+                    .textTheme
+                    .labelMedium
+                    ?.copyWith(color: AppColors.kBlack, height: 1.5),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -81,19 +87,19 @@ class VisionScreen extends StatelessWidget {
     return [
       _buildVisionColumn(
         context,
-        'assets/images/vision_1.png',
+        Assets.imagesMoney,
         AppLocalizations.of(context)!.principleBasedManagement,
         AppLocalizations.of(context)!.managementExperience,
       ),
       _buildVisionColumn(
         context,
-        Assets.imagesStckImage,
+        Assets.imagesMutualGrowth,
         AppLocalizations.of(context)!.mutualGrowth,
         AppLocalizations.of(context)!.ipoSuccess,
       ),
       _buildVisionColumn(
         context,
-        'assets/images/vision_3.png',
+        Assets.imagesMoreMoney,
         AppLocalizations.of(context)!.longTermPerspective,
         AppLocalizations.of(context)!.worldClassInvestment,
       ),
@@ -108,7 +114,16 @@ class VisionScreen extends StatelessWidget {
   ) {
     return Column(
       children: [
-        Image.asset(imageAsset),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: SizedBox(
+            height: getProportionateScreenHeight(100),
+            width: getProportionateScreenWidth(100),
+            child: Image.asset(
+                fit: BoxFit.cover,
+                imageAsset),
+          ),
+        ),
         Text(
           titleKey,
           textAlign: TextAlign.center,
@@ -138,19 +153,19 @@ class VisionScreen extends StatelessWidget {
       children: [
         _buildVisionMobileColumn(
           context,
-          Assets.imagesVision1,
+          Assets.imagesMoney,
          AppLocalizations.of(context)!.principleBasedManagement,
         AppLocalizations.of(context)!.managementExperience,
       ),
         _buildVisionMobileColumn(
           context,
-          Assets.imagesStckImage,
+          Assets.imagesMutualGrowth,
           AppLocalizations.of(context)!.mutualGrowth,
           AppLocalizations.of(context)!.ipoSuccess,
         ),
         _buildVisionMobileColumn(
           context,
-          Assets.imagesVision3,
+          Assets.imagesMoreMoney,
            AppLocalizations.of(context)!.longTermPerspective,
         AppLocalizations.of(context)!.worldClassInvestment,
         ),

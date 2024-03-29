@@ -12,35 +12,37 @@ class TeamScreen extends StatelessWidget {
 
   final List<TeamMember> managementTeam = [
     TeamMember(
-        name: 'Changseok Oh', position: 'Chairman', image: Assets.imagesCeoOne),
-    TeamMember(
-        name: 'Changseok Oh',
+        name: 'Beom seok',
         position: 'Chairman',
+        image: Assets.imagesManagementEight),
+    TeamMember(
+        name: 'Baek hyeon',
+        position: 'Vice Chairman',
         image: Assets.imagesManagementSix),
     TeamMember(
-        name: 'Kiseung Nam',
+        name: 'Bong',
         position: 'President',
         image: Assets.imagesManagementSeven),
   ];
 
   final List<TeamMember> investmentDivisionTeam = [
     TeamMember(
-      name: 'James Kisung Jung',
+      name: 'Do-Yoon',
       position: 'Executive Managing Director',
       image: Assets.imagesCeoOne,
     ),
     TeamMember(
-      name: 'John Doe',
+      name: 'Min joon',
       position: 'CEO',
       image: Assets.imagesManagementTwo,
     ),
     TeamMember(
-      name: 'Alice Smith',
+      name: 'Kyubok',
       position: 'Vice President',
       image: Assets.imagesManagementThree,
     ),
     TeamMember(
-      name: 'Alice Smith',
+      name: 'Seong-Ho',
       position: 'Vice President',
       image: Assets.imagesManagementFour,
     ),

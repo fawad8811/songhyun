@@ -46,7 +46,7 @@ class MyNavigation {
     String value,
     PageController pageController,
   ) {
-    if (value == 'Greeting') {
+    if (value == 'Overview') {
       _navigateToPage(pageController, 1);
     } else if (value == 'Vision') {
       _navigateToPage(pageController, 2);
@@ -62,7 +62,6 @@ class MyNavigation {
       _navigateToPage(pageController, 7);
     } else if (value == 'PORTFOLIO') {
       _navigateToPage(pageController, 8);
-      
     } else if (value == 'NEWS') {
       _navigateToPage(pageController, 9);
     } else if (value == 'CONTACT') {

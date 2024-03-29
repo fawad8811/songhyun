@@ -25,7 +25,7 @@ class HistoryScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 TimelineItem(
-                  dates: const ['2012. 05.', '06.'],
+                  dates: const ['2017. 05.', '06.'],
                   descriptions: [
                     AppLocalizations.of(context)!.establishSongHyun,
                     AppLocalizations.of(context)!.establishSongHyun,
@@ -33,13 +33,13 @@ class HistoryScreen extends StatelessWidget {
                   ],
                 ),
                 TimelineItem(
-                  dates: const ['2013. 08.'],
+                  dates: const ['2016. 08.'],
                   descriptions: [
                     AppLocalizations.of(context)!.raiseFirstFund,
                   ],
                 ),
                 TimelineItem(
-                  dates: const ['2014. 09.', '11.', '12.', '13.'],
+                  dates: const ['2015. 09.', '11.', '12.', '13.'],
                   descriptions: [
                     AppLocalizations.of(context)!.raiseGrowthLadderSecondFund,
                     AppLocalizations.of(context)!.raiseGrowthLadderSecondFund,

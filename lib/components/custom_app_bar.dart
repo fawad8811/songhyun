@@ -30,7 +30,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
     return AppBar(
       centerTitle: false,
       leading: const SizedBox.shrink(),
-      toolbarHeight: getProportionateScreenHeight(140),
+      toolbarHeight: getProportionateScreenHeight(110),
       backgroundColor: Colors.transparent.withOpacity(0.75),
       elevation: 0,
       actions: [
@@ -67,8 +67,8 @@ class _CustomAppBarState extends State<CustomAppBar> {
                       widget.onLogoTap?.call();
                     },
                     child: Container(
-                      height: getProportionateScreenHeight(120),
-                      width: getProportionateScreenWidth(90),
+                      height: getProportionateScreenHeight(90),
+                      width: getProportionateScreenWidth(70),
                       color: Colors.transparent,
                       child: Image.asset(
                         Assets.imagesHomemainlogo,
