@@ -17,34 +17,37 @@ class TeamScreen extends StatelessWidget {
         image: Assets.imagesManagementEight),
     TeamMember(
         name: 'Baek hyeon',
-        position: 'Vice Chairman',
-        image: Assets.imagesManagementSix),
-    TeamMember(
-        name: 'Bong',
         position: 'President',
-        image: Assets.imagesManagementSeven),
+        image: Assets.imagesManagementSix),
   ];
-
   final List<TeamMember> investmentDivisionTeam = [
     TeamMember(
       name: 'Do-Yoon',
-      position: 'Executive Managing Director',
+      position: 'Vice President',
       image: Assets.imagesCeoOne,
     ),
     TeamMember(
       name: 'Min joon',
-      position: 'CEO',
+      position: 'Executive Managing Director',
       image: Assets.imagesManagementTwo,
     ),
     TeamMember(
       name: 'Kyubok',
-      position: 'Vice President',
+      position: 'Director',
       image: Assets.imagesManagementThree,
     ),
     TeamMember(
       name: 'Seong-Ho',
-      position: 'Vice President',
+      position: 'Team Manager',
       image: Assets.imagesManagementFour,
+    ),
+    // Add more members as needed
+  ];
+  final List<TeamMember> managementSupportTeam = [
+    TeamMember(
+      name: 'Do-Yoon',
+      position: 'Team Manager',
+      image: Assets.imagesManagementFive,
     ),
     // Add more members as needed
   ];
@@ -67,6 +70,8 @@ class TeamScreen extends StatelessWidget {
               _buildTeamGridView('Management', managementTeam),
               SizedBox(height: getProportionateScreenHeight(20)),
               _buildTeamGridView('Investment Division', investmentDivisionTeam),
+              SizedBox(height: getProportionateScreenHeight(20)),
+              _buildTeamGridView('Management Support', managementSupportTeam),
             ],
           ),
         ),
@@ -76,6 +81,15 @@ class TeamScreen extends StatelessWidget {
   }
 
   Widget _buildTeamGridView(String type, List<TeamMember> team) {
+    int itemCount;
+    if (type == 'Management') {
+      itemCount = 4;
+    } else if (type == 'Investment Division') {
+      itemCount = 5;
+    } else {
+      itemCount = 2;
+    }
+
     return GridView.builder(
       physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
@@ -83,8 +97,7 @@ class TeamScreen extends StatelessWidget {
         crossAxisCount: isMobile ? 2 : 4,
         mainAxisSpacing: 20,
       ),
-      itemCount:
-          type == 'Management' ? min(4, team.length) : min(5, team.length + 1),
+      itemCount: itemCount,
       itemBuilder: (context, index) {
         if (index == 0) {
           return TypeContainer(type: type, isMobile: isMobile);
@@ -107,7 +120,7 @@ class TeamScreen extends StatelessWidget {
             isMobile: isMobile,
           );
         } else {
-          return const SizedBox(); // Return empty SizedBox for additional items
+          return const SizedBox();
         }
       },
     );
@@ -139,8 +152,8 @@ class TypeContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 275,
-      width: 275,
+      height: getProportionateScreenHeight(275),
+      width: getProportionateScreenWidth(275),
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
       margin: const EdgeInsets.only(right: 20),
       decoration: const BoxDecoration(
@@ -178,8 +191,8 @@ class TeamContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 275,
-      width: 275,
+      height: getProportionateScreenHeight(275),
+      width: getProportionateScreenWidth(275),
       margin: const EdgeInsets.only(right: 20),
       child: Stack(
         children: [

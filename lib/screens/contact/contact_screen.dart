@@ -41,7 +41,7 @@ class ContactScreen extends StatelessWidget {
                         style:
                             Theme.of(context).textTheme.labelMedium!.copyWith(
                                   color: const Color(0xFF333333),
-                                  fontSize: isMobile ? 10 : 14,
+                                  fontSize: isMobile ? 12 : 14,
                                 ),
                       ),
                     ],
@@ -89,10 +89,33 @@ class ContactScreen extends StatelessWidget {
                 ),
                 Container(
                     padding: EdgeInsets.zero,
-                    height: getProportionateScreenHeight(100),
-                    width: getProportionateScreenWidth(200),
+                    // height: getProportionateScreenHeight(100),
+                    width: isMobile ? double.infinity : getProportionateScreenWidth(150),
                     color: AppColors.kGreen,
-                    child: Image.asset(Assets.imagesMapIcon2)),
+                    child: Row(
+                      children: [
+                        const Icon(
+                          Icons.mail_outline_outlined,
+                          size: 50,
+                          grade: 10,
+                          color: AppColors.kWhite,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                              left: getProportionateScreenWidth(2)),
+                          child: Text(
+                            'Submit Business Plan',
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleMedium
+                                ?.copyWith(
+                              fontSize: 25,
+                                    color: AppColors.kWhite,
+                                    fontWeight: FontWeight.w100),
+                          ),
+                        )
+                      ],
+                    )),
               ],
             ),
           ),

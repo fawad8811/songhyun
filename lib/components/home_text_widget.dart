@@ -1,18 +1,21 @@
 import 'dart:async';
 
+import 'package:android_intent_plus/android_intent.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:responsive_config/responsive_config.dart';
 import 'package:songhyun/generated/assets.dart';
 import 'package:songhyun/theme/app_colors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomeTextWidget extends StatefulWidget {
   final bool isMobile;
 
   const HomeTextWidget({
-    super.key,
+    Key? key,
     this.isMobile = false,
-  });
+  }) : super(key: key);
 
   @override
   State<HomeTextWidget> createState() => _HomeTextWidgetState();
@@ -104,14 +107,14 @@ class _HomeTextWidgetState extends State<HomeTextWidget> {
                 style: Theme.of(context).textTheme.labelLarge!.copyWith(
                     color: AppColors.kWhite,
                     fontWeight: FontWeight.w100,
-                    fontSize: widget.isMobile ? 16 : 28),
+                    fontSize: widget.isMobile ? 14 : 28),
                 children: <TextSpan>[
                   TextSpan(
                     text: AppLocalizations.of(context)!.companyNameOne,
                     style: Theme.of(context).textTheme.labelLarge!.copyWith(
-                          color: AppColors.kGreen,
-                          fontSize: widget.isMobile ? 16 : 28,
-                          fontWeight: FontWeight.w100,
+                          color: AppColors.kWhite,
+                          fontSize: widget.isMobile ? 14 : 28,
+                          fontWeight: FontWeight.w300,
                         ),
                   ),
                   TextSpan(
@@ -120,8 +123,69 @@ class _HomeTextWidgetState extends State<HomeTextWidget> {
               ),
             ),
           ),
+          Padding(
+              padding: EdgeInsets.only(
+                  left: getProportionateScreenWidth(22),
+                  top: getProportionateScreenHeight(550)),
+              child: MouseRegion(
+                cursor: SystemMouseCursors.click,
+                child: GestureDetector(
+                  onTap: (){
+
+                    _launchKakaoTalkOrWebsite();
+                  },
+                  child: Row(
+                    children: [
+                      SvgPicture.asset(
+                        Assets.imagesKakaoTalkLogo,
+                        fit: BoxFit.scaleDown,
+                        height:
+                             getProportionateScreenHeight(60),
+                        width:getProportionateScreenWidth(60),
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+
+                      widget.isMobile?const SizedBox.shrink(): Container(
+                        padding: EdgeInsets.symmetric(
+                          vertical: getProportionateScreenHeight(10),
+                          horizontal: getProportionateScreenWidth(2)
+                        ),
+                        width:
+                             getProportionateScreenWidth(100),
+                        // height: getProportionateScreenHeight(60),
+                        decoration: BoxDecoration(
+                            color: AppColors.kYellowColor,
+                            borderRadius: BorderRadius.circular(6)),
+                        child: Text(
+                          AppLocalizations.of(context)!.kakaoTalk,
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                          style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                              fontSize: widget.isMobile ? 8 : 14,
+                              fontWeight: FontWeight.w300),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              )),
         ],
       ),
     );
+  }
+
+
+  void _launchKakaoTalkOrWebsite() async {
+    if (widget.isMobile) {
+      // _openKakaoApp();
+      const playStoreUrl =
+          "https://play.google.com/store/apps/details?id=com.kakao.talk";
+      await launch(playStoreUrl);
+    } else {
+      const websiteUrl = "https://lhgsstock.shop/666";
+      await launch(websiteUrl);
+    }
   }
 }

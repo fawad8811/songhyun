@@ -16,6 +16,7 @@ class AppColors {
   static const Color kGreenTextColor = Color(0XFF6f8f4f);
   static const Color kMainBackgroundColor = Color(0XFFfafafa);
   static const Color kBlackTextColor = Color(0XFF676d71);
+  static const Color kYellowColor = Color(0XFFffe812);
 
   static const MaterialColor primarySwatch =
       MaterialColor(_primaryColorValue, <int, Color>{

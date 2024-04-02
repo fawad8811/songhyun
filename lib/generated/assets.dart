@@ -97,6 +97,7 @@ class Assets {
   static const String imagesItt = 'assets/images/itt.jpg';
   static const String imagesIvwprks = 'assets/images/ivwprks.jpg';
   static const String imagesJaanh = 'assets/images/jaanh.jpg';
+  static const String imagesKakaoTalkLogo = 'assets/images/kakao_talk_logo.svg';
   static const String imagesKaratica = 'assets/images/karatica.jpg';
   static const String imagesKoreantwogreentree = 'assets/images/koreantwogreentree.png';
   static const String imagesKps = 'assets/images/kps.jpg';

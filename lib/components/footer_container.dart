@@ -44,9 +44,13 @@ class FooterContainer extends StatelessWidget {
           //     fit: BoxFit.cover,),
           // ),
           // SizedBox(height: getProportionateScreenHeight(10)),
-          const LanguageButton(
-            isMobile: true,
+          const Padding(
+            padding: EdgeInsets.only(right: 10),
+            child: LanguageButton(
+              isMobile: true,
+            ),
           ),
+
         ],
       ),
     );

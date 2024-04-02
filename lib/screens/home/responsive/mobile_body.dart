@@ -23,7 +23,7 @@ class MobileScaffold extends StatefulWidget {
 class _MobileScaffoldState extends State<MobileScaffold> {
   late PageController _pageController;
   int _currentPageIndex = 0;
-  String? _selectedMenu; // Define _selectedMenu here
+  String? _selectedMenu;
 
   @override
   void initState() {
@@ -60,7 +60,7 @@ class _MobileScaffoldState extends State<MobileScaffold> {
               });
             },
             children: [
-              const HomeTextWidget(),
+              const HomeTextWidget(isMobile: true,),
               const GreetingsScreen(),
               const VisionScreen(
                 isMobile: true,
@@ -80,7 +80,7 @@ class _MobileScaffoldState extends State<MobileScaffold> {
               const NewsScreen(
                 isMobile: true,
               ),
-              const ContactScreen(),
+              const ContactScreen(isMobile: true,),
               // Add other screens here
             ],
           ),
