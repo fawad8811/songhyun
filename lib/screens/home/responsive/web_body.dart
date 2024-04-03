@@ -60,6 +60,7 @@ class WebBodyState extends State<WebBody> {
       body: Stack(
         children: [
           PageView.builder(
+            
             physics: const NeverScrollableScrollPhysics(),
             controller: _pageController,
             itemCount: _pages.length,

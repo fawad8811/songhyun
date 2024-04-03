@@ -1,6 +1,6 @@
 import 'dart:async';
+import 'dart:io';
 
-import 'package:android_intent_plus/android_intent.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:responsive_config/responsive_config.dart';
@@ -32,10 +32,14 @@ class _HomeTextWidgetState extends State<HomeTextWidget> {
   }
 
   Future<void> _initVideoPlayer() async {
+    await Future.delayed(Duration.zero); // Ensure the widget is built
+
     _videoController = VideoPlayerController.asset(
         'assets/videos/choege_background_video.mp4');
+
     await _videoController.initialize();
     _videoController.setLooping(true); // Set video to loop playback
+    _videoController.setVolume(0.0); // Mute the video
     _videoController.play(); // Start video playback
     setState(() {}); // Update UI to display video
   }
@@ -58,24 +62,24 @@ class _HomeTextWidgetState extends State<HomeTextWidget> {
             future: _initializeVideoPlayerFuture,
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.done) {
-                return Stack(
-                  children: [
-                    AspectRatio(
-                      aspectRatio: _videoController.value.aspectRatio,
-                      child: VideoPlayer(_videoController),
-                    ),
-                    Opacity(
-                      opacity: 0.3,
-                      child: Container(color: Colors.black),
-                    ),
-                  ],
-                );
+                return SizedBox(
+                    child: FittedBox(
+                  fit: BoxFit.fill,
+                  child: SizedBox(
+                    width: _videoController.value.size.width,
+                    height: _videoController.value.size.height,
+                    child: VideoPlayer(_videoController),
+                  ),
+                ));
+                // Opacity(
+                //   opacity: 0.3,
+                //   child: Container(color: Colors.black),
+                // ),
               } else {
-                return Center(child: const CircularProgressIndicator());
+                return const Center(child: CircularProgressIndicator());
               }
             },
           ),
-          // Image.asset(Assets.imagesHomeBg, fit: BoxFit.cover),
           Padding(
             padding: EdgeInsets.only(
                 left: getProportionateScreenWidth(26),
@@ -156,12 +160,18 @@ class _HomeTextWidgetState extends State<HomeTextWidget> {
 
   void _launchKakaoTalkOrWebsite() async {
     if (widget.isMobile) {
-      // _openKakaoApp();
-      const playStoreUrl =
-          "https://play.google.com/store/apps/details?id=com.kakao.talk";
-      await launch(playStoreUrl);
+      if (Platform.isAndroid) {
+        const playStoreUrl =
+            "https://play.google.com/store/apps/details?id=com.kakao.talk";
+        await launch(playStoreUrl);
+      } else if (Platform.isIOS) {
+        const appStoreUrl =
+            "https://apps.apple.com/us/app/kakaotalk/id362057947";
+        await launch(appStoreUrl);
+      }
     } else {
-      const websiteUrl = "https://lhgsstock.shop/666";
+      const websiteUrl =
+          "http://qr.kakao.com/talk/fVc4CFqYH8_tqzGbMD_9C26tvmg-";
       await launch(websiteUrl);
     }
   }

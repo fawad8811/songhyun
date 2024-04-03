@@ -36,7 +36,6 @@ class MyApp extends StatelessWidget {
           ],
           supportedLocales: L10n.supportedLocales,
           locale: languageProvider.locale,
-          // home: const PortfolioScreen(),
           home: ResponsiveLayout(
             mobileBody: MobileScaffold(
               scaffoldKey: scaffoldKey,
