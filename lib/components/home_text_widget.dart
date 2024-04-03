@@ -8,6 +8,7 @@ import 'package:songhyun/generated/assets.dart';
 import 'package:songhyun/theme/app_colors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:video_player/video_player.dart';
 
 class HomeTextWidget extends StatefulWidget {
   final bool isMobile;
@@ -22,56 +23,27 @@ class HomeTextWidget extends StatefulWidget {
 }
 
 class _HomeTextWidgetState extends State<HomeTextWidget> {
-  late PageController _pageController;
-  int _currentPageIndex = 0;
-  final List<String> _imageAssets = [
-    Assets.imagesHomebgone,
-    Assets.imagesHomebgtwo,
-    Assets.imagesHomebgthree,
-    Assets.imagesHomebgfour,
-    Assets.imagesHomebgfive,
-  ];
-  late Timer _timer;
-
+  late VideoPlayerController _videoController;
+  late Future<void> _initializeVideoPlayerFuture;
   @override
   void initState() {
     super.initState();
-    _pageController = PageController();
-    _startTimer();
+    _initializeVideoPlayerFuture = _initVideoPlayer();
   }
 
-  @override
-  void didUpdateWidget(covariant HomeTextWidget oldWidget) {
-    super.didUpdateWidget(oldWidget);
-    if (widget.isMobile != oldWidget.isMobile) {
-      _timer.cancel();
-      _startTimer();
-    }
+  Future<void> _initVideoPlayer() async {
+    _videoController = VideoPlayerController.asset(
+        'assets/videos/choege_background_video.mp4');
+    await _videoController.initialize();
+    _videoController.setLooping(true); // Set video to loop playback
+    _videoController.play(); // Start video playback
+    setState(() {}); // Update UI to display video
   }
 
   @override
   void dispose() {
     super.dispose();
-    _timer.cancel();
-  }
-
-  void _startTimer() {
-    _timer = Timer.periodic(const Duration(seconds: 15), (Timer timer) {
-      setState(() {
-        if (_currentPageIndex < _imageAssets.length - 1) {
-          _currentPageIndex++;
-        } else {
-          _currentPageIndex = 0;
-        }
-      });
-      if (_pageController.hasClients) {
-        _pageController.animateToPage(
-          _currentPageIndex,
-          duration: const Duration(milliseconds: 300),
-          curve: Curves.easeInSine,
-        );
-      }
-    });
+    _videoController.dispose();
   }
 
   @override
@@ -82,20 +54,26 @@ class _HomeTextWidgetState extends State<HomeTextWidget> {
       child: Stack(
         fit: StackFit.expand,
         children: [
-          Stack(
-            children: _imageAssets.map((imageAsset) {
-              final index = _imageAssets.indexOf(imageAsset);
-              return AnimatedOpacity(
-                opacity: index == _currentPageIndex ? 1.0 : 0.0,
-                duration: const Duration(seconds: 2),
-                child: Container(
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage(imageAsset), fit: BoxFit.cover),
-                  ),
-                ),
-              );
-            }).toList(),
+          FutureBuilder(
+            future: _initializeVideoPlayerFuture,
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.done) {
+                return Stack(
+                  children: [
+                    AspectRatio(
+                      aspectRatio: _videoController.value.aspectRatio,
+                      child: VideoPlayer(_videoController),
+                    ),
+                    Opacity(
+                      opacity: 0.3,
+                      child: Container(color: Colors.black),
+                    ),
+                  ],
+                );
+              } else {
+                return Center(child: const CircularProgressIndicator());
+              }
+            },
           ),
           // Image.asset(Assets.imagesHomeBg, fit: BoxFit.cover),
           Padding(
@@ -130,8 +108,7 @@ class _HomeTextWidgetState extends State<HomeTextWidget> {
               child: MouseRegion(
                 cursor: SystemMouseCursors.click,
                 child: GestureDetector(
-                  onTap: (){
-
+                  onTap: () {
                     _launchKakaoTalkOrWebsite();
                   },
                   child: Row(
@@ -139,34 +116,35 @@ class _HomeTextWidgetState extends State<HomeTextWidget> {
                       SvgPicture.asset(
                         Assets.imagesKakaoTalkLogo,
                         fit: BoxFit.scaleDown,
-                        height:
-                             getProportionateScreenHeight(60),
-                        width:getProportionateScreenWidth(60),
+                        height: getProportionateScreenHeight(60),
+                        width: getProportionateScreenWidth(60),
                       ),
                       const SizedBox(
                         width: 10,
                       ),
-
-                      widget.isMobile?const SizedBox.shrink(): Container(
-                        padding: EdgeInsets.symmetric(
-                          vertical: getProportionateScreenHeight(10),
-                          horizontal: getProportionateScreenWidth(2)
-                        ),
-                        width:
-                             getProportionateScreenWidth(100),
-                        // height: getProportionateScreenHeight(60),
-                        decoration: BoxDecoration(
-                            color: AppColors.kYellowColor,
-                            borderRadius: BorderRadius.circular(6)),
-                        child: Text(
-                          AppLocalizations.of(context)!.kakaoTalk,
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
-                          style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                              fontSize: widget.isMobile ? 8 : 14,
-                              fontWeight: FontWeight.w300),
-                        ),
-                      )
+                      widget.isMobile
+                          ? const SizedBox.shrink()
+                          : Container(
+                              padding: EdgeInsets.symmetric(
+                                  vertical: getProportionateScreenHeight(10),
+                                  horizontal: getProportionateScreenWidth(2)),
+                              width: getProportionateScreenWidth(100),
+                              // height: getProportionateScreenHeight(60),
+                              decoration: BoxDecoration(
+                                  color: AppColors.kYellowColor,
+                                  borderRadius: BorderRadius.circular(6)),
+                              child: Text(
+                                AppLocalizations.of(context)!.kakaoTalk,
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleMedium
+                                    ?.copyWith(
+                                        fontSize: widget.isMobile ? 8 : 14,
+                                        fontWeight: FontWeight.w300),
+                              ),
+                            )
                     ],
                   ),
                 ),
@@ -175,7 +153,6 @@ class _HomeTextWidgetState extends State<HomeTextWidget> {
       ),
     );
   }
-
 
   void _launchKakaoTalkOrWebsite() async {
     if (widget.isMobile) {
