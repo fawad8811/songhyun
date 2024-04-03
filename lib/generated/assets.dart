@@ -100,6 +100,13 @@ class Assets {
   static const String imagesKakaoTalkLogo = 'assets/images/kakao_talk_logo.svg';
   static const String imagesKaratica = 'assets/images/karatica.jpg';
   static const String imagesKoreantwogreentree = 'assets/images/koreantwogreentree.png';
+  static const String imagesKorenImageFive = 'assets/images/koren_image_five.png';
+  static const String imagesKorenImageFour = 'assets/images/koren_image_four.png';
+  static const String imagesKorenImageOne = 'assets/images/koren_image_one.png';
+  static const String imagesKorenImageSeven = 'assets/images/koren_image_seven.png';
+  static const String imagesKorenImageSix = 'assets/images/koren_image_six.png';
+  static const String imagesKorenImageThree = 'assets/images/koren_image_three.png';
+  static const String imagesKorenImageTwo = 'assets/images/koren_image_two.png';
   static const String imagesKps = 'assets/images/kps.jpg';
   static const String imagesLakematerials = 'assets/images/lakematerials.jpg';
   static const String imagesLogoFooterEng = 'assets/images/logo_footer_eng.png';

@@ -14,32 +14,32 @@ class TeamScreen extends StatelessWidget {
     TeamMember(
         name: 'Beom seok',
         position: 'Chairman',
-        image: Assets.imagesManagementEight),
+        image: Assets.imagesKorenImageSeven),
     TeamMember(
         name: 'Baek hyeon',
         position: 'President',
-        image: Assets.imagesManagementSix),
+        image: Assets.imagesKorenImageSix),
   ];
   final List<TeamMember> investmentDivisionTeam = [
     TeamMember(
       name: 'Do-Yoon',
       position: 'Vice President',
-      image: Assets.imagesCeoOne,
+      image: Assets.imagesKorenImageFive,
     ),
     TeamMember(
       name: 'Min joon',
       position: 'Executive Managing Director',
-      image: Assets.imagesManagementTwo,
+      image: Assets.imagesKorenImageFour,
     ),
     TeamMember(
       name: 'Kyubok',
       position: 'Director',
-      image: Assets.imagesManagementThree,
+      image: Assets.imagesKorenImageThree,
     ),
     TeamMember(
       name: 'Seong-Ho',
       position: 'Team Manager',
-      image: Assets.imagesManagementFour,
+      image: Assets.imagesKorenImageTwo,
     ),
     // Add more members as needed
   ];
@@ -47,7 +47,7 @@ class TeamScreen extends StatelessWidget {
     TeamMember(
       name: 'Do-Yoon',
       position: 'Team Manager',
-      image: Assets.imagesManagementFive,
+      image: Assets.imagesKorenImageOne,
     ),
     // Add more members as needed
   ];
