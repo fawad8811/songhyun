@@ -38,11 +38,10 @@ class ContactScreen extends StatelessWidget {
                       Text(
                         maxLines: 3,
                         AppLocalizations.of(context)!.addressOne,
-                        style:
-                            Theme.of(context).textTheme.labelMedium!.copyWith(
-                                  color: const Color(0xFF333333),
-                                  fontSize: isMobile ? 12 : 14,
-                                ),
+                        style: Theme.of(context).textTheme.labelLarge!.copyWith(
+                              color: const Color(0xFF333333),
+                              fontSize: isMobile ? 12 : 14,
+                            ),
                       ),
                     ],
                   ),
@@ -61,7 +60,7 @@ class ContactScreen extends StatelessWidget {
                         AppLocalizations.of(context)!.phoneNumber,
                         style: Theme.of(context).textTheme.labelLarge!.copyWith(
                               color: const Color(0xFF333333),
-                              fontSize: isMobile ? 10 : 14,
+                              fontSize: isMobile ? 12 : 18,
                             ),
                       ),
                     ],
@@ -81,7 +80,7 @@ class ContactScreen extends StatelessWidget {
                         AppLocalizations.of(context)!.phoneNumber,
                         style: Theme.of(context).textTheme.labelLarge!.copyWith(
                               color: const Color(0xFF333333),
-                              fontSize: isMobile ? 10 : 14,
+                              fontSize: isMobile ? 12 : 18,
                             ),
                       ),
                     ],
@@ -90,7 +89,9 @@ class ContactScreen extends StatelessWidget {
                 Container(
                     padding: EdgeInsets.zero,
                     // height: getProportionateScreenHeight(100),
-                    width: isMobile ? double.infinity : getProportionateScreenWidth(150),
+                    width: isMobile
+                        ? double.infinity
+                        : getProportionateScreenWidth(150),
                     color: AppColors.kGreen,
                     child: Row(
                       children: [
@@ -109,7 +110,7 @@ class ContactScreen extends StatelessWidget {
                                 .textTheme
                                 .titleMedium
                                 ?.copyWith(
-                              fontSize: 25,
+                                    fontSize: 25,
                                     color: AppColors.kWhite,
                                     fontWeight: FontWeight.w100),
                           ),

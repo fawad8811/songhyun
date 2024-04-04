@@ -45,14 +45,10 @@ class _CustomAppBarState extends State<CustomAppBar> {
                     padding:
                         EdgeInsets.only(left: getProportionateScreenWidth(10)),
                     child: Container(
-                      height: getProportionateScreenHeight(120),
-                      width: getProportionateScreenWidth(90),
                       color: Colors.transparent,
                       child: Image.asset(
                         Assets.imagesHomemainlogo,
                         fit: BoxFit.cover,
-                        // height: getProportionateScreenHeight(200),
-                        // width: getProportionateScreenWidth(100),
                       ),
                     ),
                   ),

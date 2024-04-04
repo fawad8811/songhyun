@@ -1,12 +1,8 @@
 import 'dart:async';
-import 'dart:io';
 
-import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:responsive_config/responsive_config.dart';
-import 'package:songhyun/generated/assets.dart';
-import 'package:songhyun/theme/app_colors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:songhyun/utils/app_exports.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:video_player/video_player.dart';
 
@@ -80,99 +76,74 @@ class _HomeTextWidgetState extends State<HomeTextWidget> {
               }
             },
           ),
-          Padding(
-            padding: EdgeInsets.only(
-                left: getProportionateScreenWidth(26),
-                top: getProportionateScreenHeight(200)),
-            child: SelectableText.rich(
-              TextSpan(
-                style: Theme.of(context).textTheme.labelLarge!.copyWith(
+          Positioned(
+            bottom: getProportionateScreenHeight(100),
+            left: getProportionateScreenWidth(2),
+            child: Text(
+              AppLocalizations.of(context)!.companyNameOne,
+              style: Theme.of(context).textTheme.labelLarge!.copyWith(
                     color: AppColors.kWhite,
-                    fontWeight: FontWeight.w100,
-                    fontSize: widget.isMobile ? 14 : 28),
-                children: <TextSpan>[
-                  TextSpan(
-                    text: AppLocalizations.of(context)!.companyNameOne,
-                    style: Theme.of(context).textTheme.labelLarge!.copyWith(
-                          color: AppColors.kWhite,
-                          fontSize: widget.isMobile ? 14 : 28,
-                          fontWeight: FontWeight.w300,
-                        ),
+                    fontSize: widget.isMobile ? 26 : 60,
+                    fontWeight: FontWeight.w900,
+                    fontFamily: 'Poppins',
+                    height: 1.2,
                   ),
-                  TextSpan(
-                      text: AppLocalizations.of(context)!.pursuitStatement),
-                ],
+            ),
+          ),
+          Positioned(
+            bottom: getProportionateScreenHeight(100),
+            right: getProportionateScreenWidth(5),
+            child: MouseRegion(
+              cursor: SystemMouseCursors.click,
+              child: GestureDetector(
+                onTap: () {
+                  _launchKakaoTalkOrWebsite();
+                },
+                child: Row(
+                  children: [
+                    SvgPicture.asset(
+                      Assets.imagesKakaoTalkLogo,
+                      fit: BoxFit.scaleDown,
+                      height: getProportionateScreenHeight(70),
+                      width: getProportionateScreenWidth(60),
+                    ),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    widget.isMobile
+                        ? const SizedBox.shrink()
+                        : Container(
+                            padding: EdgeInsets.symmetric(
+                                vertical: getProportionateScreenHeight(10),
+                                horizontal: getProportionateScreenWidth(2)),
+                            width: getProportionateScreenWidth(100),
+                            // height: getProportionateScreenHeight(60),
+                            decoration: BoxDecoration(
+                                color: AppColors.kYellowColor,
+                                borderRadius: BorderRadius.circular(6)),
+                            child: Text(
+                              AppLocalizations.of(context)!.kakaoTalk,
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleMedium
+                                  ?.copyWith(
+                                      fontSize: widget.isMobile ? 8 : 14,
+                                      fontWeight: FontWeight.w300),
+                            ),
+                          )
+                  ],
+                ),
               ),
             ),
           ),
-          Padding(
-              padding: EdgeInsets.only(
-                  left: getProportionateScreenWidth(22),
-                  top: getProportionateScreenHeight(550)),
-              child: MouseRegion(
-                cursor: SystemMouseCursors.click,
-                child: GestureDetector(
-                  onTap: () {
-                    _launchKakaoTalkOrWebsite();
-                  },
-                  child: Row(
-                    children: [
-                      SvgPicture.asset(
-                        Assets.imagesKakaoTalkLogo,
-                        fit: BoxFit.scaleDown,
-                        height: getProportionateScreenHeight(60),
-                        width: getProportionateScreenWidth(60),
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      widget.isMobile
-                          ? const SizedBox.shrink()
-                          : Container(
-                              padding: EdgeInsets.symmetric(
-                                  vertical: getProportionateScreenHeight(10),
-                                  horizontal: getProportionateScreenWidth(2)),
-                              width: getProportionateScreenWidth(100),
-                              // height: getProportionateScreenHeight(60),
-                              decoration: BoxDecoration(
-                                  color: AppColors.kYellowColor,
-                                  borderRadius: BorderRadius.circular(6)),
-                              child: Text(
-                                AppLocalizations.of(context)!.kakaoTalk,
-                                maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .titleMedium
-                                    ?.copyWith(
-                                        fontSize: widget.isMobile ? 8 : 14,
-                                        fontWeight: FontWeight.w300),
-                              ),
-                            )
-                    ],
-                  ),
-                ),
-              )),
         ],
       ),
     );
   }
 
   void _launchKakaoTalkOrWebsite() async {
-    if (widget.isMobile) {
-      if (Platform.isAndroid) {
-        const playStoreUrl =
-            "https://play.google.com/store/apps/details?id=com.kakao.talk";
-        await launch(playStoreUrl);
-      } else if (Platform.isIOS) {
-        const appStoreUrl =
-            "https://apps.apple.com/us/app/kakaotalk/id362057947";
-        await launch(appStoreUrl);
-      }
-    } else {
-      const websiteUrl =
-          "http://qr.kakao.com/talk/fVc4CFqYH8_tqzGbMD_9C26tvmg-";
-      await launch(websiteUrl);
-    }
+    launch('https://www.kakaocorp.com/page/service/service/KakaoTalk');
   }
 }
