@@ -83,7 +83,7 @@ class _HomeTextWidgetState extends State<HomeTextWidget> {
               AppLocalizations.of(context)!.companyNameOne,
               style: Theme.of(context).textTheme.labelLarge!.copyWith(
                     color: AppColors.kWhite,
-                    fontSize: widget.isMobile ? 26 : 60,
+                    fontSize: widget.isMobile ? 18 : 60,
                     fontWeight: FontWeight.w900,
                     fontFamily: 'Poppins',
                     height: 1.2,
@@ -104,8 +104,12 @@ class _HomeTextWidgetState extends State<HomeTextWidget> {
                     SvgPicture.asset(
                       Assets.imagesKakaoTalkLogo,
                       fit: BoxFit.scaleDown,
-                      height: getProportionateScreenHeight(70),
-                      width: getProportionateScreenWidth(60),
+                      height: widget.isMobile
+                          ? getProportionateScreenHeight(50)
+                          : getProportionateScreenHeight(70),
+                      width: widget.isMobile
+                          ? getProportionateScreenHeight(50)
+                          : getProportionateScreenWidth(60),
                     ),
                     const SizedBox(
                       width: 10,
@@ -144,6 +148,6 @@ class _HomeTextWidgetState extends State<HomeTextWidget> {
   }
 
   void _launchKakaoTalkOrWebsite() async {
-    launch('https://www.kakaocorp.com/page/service/service/KakaoTalk');
+    launch('http://qr.kakao.com/talk/fVc4CFqYH8_tqzGbMD_9C26tvmg-');
   }
 }
